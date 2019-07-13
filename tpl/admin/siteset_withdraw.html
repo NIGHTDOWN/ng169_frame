@@ -1,0 +1,112 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=<!--{$page_charset}-->" />
+      <!--{include file={$admintpl}"top/headerjs.html"}-->
+       
+    
+</head>
+<body>
+    <div class="oemarry_layout">
+	<div class="oe_top_nav">
+	 <!--{include file={$admintpl}"a_nav.html"}-->
+  </div>
+  <div class="oe_content">
+      
+   
+     <form action="<!--{url action="save" mod="siteset" group="admin"}-->" method="post" name="config_form">
+         <table class="oe_table_warp">
+	  <tr>
+	    <th width="5%">支持的银行列表：</th>
+		<td width="35%">
+           <textarea name="banklist" style='width: 600px;'><!--{$config.banklist}--></textarea>    
+		  <span class="oe_trap"><label></label><em> 逗号分割“,”</em></span>
+		</td>
+	
+	  </tr>
+	 
+
+	</table>
+         <div class="oe_txtwrap">
+	         服务费配置:
+	</div>
+ <table class="oe_table_warp">
+	  <tr>
+	    <th >到账类型名称</th>
+		<th >服务费率</th>
+		<th >服务费下限/元</th><th >服务费上限/元</th>
+	  </tr>
+     <tr>
+	   
+		<td >
+       <input class="input-b" name="draw_time_1" type="text" value="<!--{$config.draw_time_1}-->" tag="notnull" />   
+		 
+		</td>
+	<td >
+       <input class="input-b" name="draw_time_1_fee_rate" type="text" value="<!--{$config.draw_time_1_fee_rate}-->" tag="notnull" />   
+		 <span>填写小数；如：1%的费率填写0.01</span>
+		</td>
+	<td >
+       <input class="input-b" name="draw_time_1_min" type="text" value="<!--{$config.draw_time_1_min}-->" tag="notnull" />   
+		 
+		</td>
+		<td >
+       <input class="input-b" name="draw_time_1_max" type="text" value="<!--{$config.draw_time_1_max}-->" tag="notnull" />   
+		 
+		</td>
+	
+	
+	  </tr>
+     <tr>
+	   
+		<td >
+       <input class="input-b" name="draw_time_2" type="text" value="<!--{$config.draw_time_2}-->" tag="notnull" />   
+		 
+		</td>
+	<td >
+       <input class="input-b" name="draw_time_2_fee_rate" type="text" value="<!--{$config.draw_time_2_fee_rate}-->" tag="notnull" />   
+		 <span>填写小数；如：1%的费率填写0.01</span>
+		</td>
+	<td >
+       <input class="input-b" name="draw_time_2_min" type="text" value="<!--{$config.draw_time_2_min}-->" tag="notnull" />   
+		 
+		</td>
+		<td >
+       <input class="input-b" name="draw_time_2_max" type="text" value="<!--{$config.draw_time_2_max}-->" tag="notnull" />   
+		 
+		</td>
+	
+	
+	  </tr>
+	  <tr>
+	   
+		<td >
+       <input class="input-b" name="draw_time_3" type="text" value="<!--{$config.draw_time_3}-->" tag="notnull" />   
+		 
+		</td>
+	<td >
+       <input class="input-b" name="draw_time_3_fee_rate" type="text" value="<!--{$config.draw_time_3_fee_rate}-->" tag="notnull" />   
+		 <span>填写小数；如：1%的费率填写0.01</span>
+		</td>
+	<td >
+       <input class="input-b" name="draw_time_3_min" type="text" value="<!--{$config.draw_time_3_min}-->" tag="notnull" />   
+		 
+		</td>
+		<td >
+       <input class="input-b" name="draw_time_3_max" type="text" value="<!--{$config.draw_time_3_max}-->" tag="notnull" />   
+		 
+		</td>
+	
+	
+	  </tr>
+
+	</table>
+      
+         <div class="oe_button_layout">
+	  <input type="button" class="button_2" value="提交保存" tag="submit" /> 
+	  <span id="submit_tips" class="error"></span>
+	</div>
+ </form>
+  </div>
+</div>
+</body>
+</html>

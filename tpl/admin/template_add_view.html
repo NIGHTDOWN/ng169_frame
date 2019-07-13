@@ -1,0 +1,72 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=<!--{$page_charset}-->" />
+    <!--{include file={$admintpl}"top/headerjs.html"}-->
+</head>
+<body>
+    <div class="oemarry_layout">
+  <div class="oe_top_nav">
+	 <!--{include file={$admintpl}"a_nav.html"}-->
+	<span><a href="javascript:;" tag="back" url="<!--{url action='run'}-->">&lt;&lt;返回列表</a></span>
+  </div>
+  <div class="a_content oe_dlv">
+<form method="post" action="<!--{url action="add"}-->" >
+  
+     <table class="oe_table_warp">
+     <tr>
+	    <th width="5%"><span class="red">*</span>标题：</th>
+		<td width="35%">
+             <input type="text" name="title" value="<!--{$template.title}-->" class="input-b" tag="notnull" /> <span class="oe_trap"><em>文章标题</em></span>
+              </td></tr>
+         <tr>
+             <th width="5%"><span class="red">*</span>标识：</th>
+             <td width="35%">
+           
+             <input type="text" name="idenfity" value="<!--{$template.idenfity}-->" class="input-b" tag="notnull isnumen"  /><span class="oe_trap"><em>选择文章的分类</em></span>
+              </td>
+         </tr>
+         
+         <tr>
+             <th width="5%"><span class="red">*</span>内容：</th>
+             <td width="35%">
+                             
+                 <textarea name="content" cols="45" rows="30" id="editor_id" tag="notnull"><!--{$template.content}--></textarea> <span class="oe_trap"><em></em></span>
+              </td>
+         </tr>
+         <tr>
+             <th width="5%">排序：</th>
+             <td width="35%">
+                 <input type="text" name="orders" value="<!--{$template.orders}-->" class="input-100" tag=" isnum" /><span class="oe_trap"><em></em></span>
+              </td>
+         </tr>
+
+         <tr>
+	    <th width="5%">状态：</th>
+		<td width="35%">
+            <select name="flag">
+                <option value="0"
+                    <!--{if $template.flag=='0'}-->
+                    select
+                                <!--{/if}-->
+                   >正常</option>
+                <option value="1"
+                    <!--{if $template.flag=='1'}-->
+                    select
+                                <!--{/if}-->
+                   >锁定<option>
+            </select><span class="oe_trap"><em>设置管理员账号的状态</em></span>
+              </td></tr>
+         </table>
+
+
+  
+  <div class="oe_button_layout">
+	  <input type="button" class="button_2" value="提交保存" tag="submit" /> 
+	  <span id="submit_tips" class="error"></span>
+	</div>
+</form>
+</div>
+</div>
+</body>
+    </html>

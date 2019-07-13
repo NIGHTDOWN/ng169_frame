@@ -1,0 +1,80 @@
+<!--{include file={$admintpl}"top/headerjs.html"}-->
+<body>
+<div class="oemarry_layout"> 
+     <div class="oe_top_nav"><!--{include file={$admintpl}"a_nav.html"}--></div>
+  <div class="a_content">
+    <form action="" method="post">
+      <div class="oe_tools_bar clearfix">
+           <a class="icon-checkbox-checked icon-checkbox-unchecked" href="javascript:;" onClick="tools_select('productid[]',this)" title="全选" data="true"> 全选 </a> 
+          <a class="icon-remove-2" href="javascript:;" onclick="boxyn($(this))" do="tools_submit({action:'<!--{url  action="del" group="admin"}-->',id:'productid'})" title="删除"> 删除</a>
+           <a href="<!--{url group='admin' action='add_view'}-->" class="icon-plus"> 添加</a>
+            <div style="display:none" id="area_serach">
+          <input id="areaname" type="text">
+          <input name="查找" value="查找" type="button" onClick="search_str($(this).prev('#areaname').val())">
+        </div>
+            <span class="fr"><a href="javascript:;"  onClick="lbox('筛选条件')"  id="condition" class="icon-search <!--{if $where}-->red<!--{/if}-->"> 筛选条件</a></span>
+ </div>
+      <table class="oe_table_list table_cs"  id="paixun">
+        <tbody>
+          <tr>
+            <th style="width:3%;text-align:center;">选择</th>
+              <th style="width:15%;">服务名称</th>
+              <th style="width:8%;">商家名称</th>
+               <th style="width:8%;text-align:center;">类别</th>
+                 <th style="width:6%;text-align:center;">价格</th>
+               <th style="width:6%;text-align:center;">总数</th>
+                <th style="width:6%;text-align:center;">销售量</th>
+               <th style="width:6%;text-align:center;">浏览次数</th>
+               <th style="width:6%;text-align:center;">点赞次数</th>
+                  <th style="width:6%;text-align:center;">点评总数</th>
+                  <th style="width:6%;text-align:center;">上架</th>
+               <th style="width:6%;text-align:center;">推荐</th>
+            <th style="width:5%;text-align:center;">状态</th>
+            <th style="text-align:center;">操作</th>
+          </tr>
+          <!--{foreach $<!--{$c}--> as $volist}-->
+          <tr>
+            <td style="text-align:center;"><input type="checkbox" value="<!--{$volist.productid}-->" name="productid[]" />
+              </td>
+               <td style="cursor:pointer" who="product" key="<!--{$volist.productid}-->" name="title" tag="ajaxtext"> <!--{$volist.title}--></td>
+               <td > <!--{$volist.merchantname}--></td>
+                <td  ><!--{$volist.catname}--></td>
+               <td style="cursor:pointer" who="product" key="<!--{$volist.productid}-->" name="price" tag="ajaxtext" ><!--{$volist.price}--></td>
+                <td who="product" key="<!--{$volist.productid}-->" name="count" tag="ajaxtext" style="cursor:pointer"><!--{$volist.count}--></td>
+              <td who="product" key="<!--{$volist.productid}-->" name="sales" tag="ajaxtext" style="cursor:pointer"><!--{$volist.sales}--></td>
+            <td who="product" key="<!--{$volist.productid}-->" name="hits" tag="ajaxtext" style="cursor:pointer"><!--{$volist.hits}--></td>
+             <td who="product" key="<!--{$volist.productid}-->" name="zans" tag="ajaxtext" style="cursor:pointer"><!--{$volist.zans}--></td>
+               <td who="product" key="<!--{$volist.productid}-->" name="comments" tag="ajaxtext" style="cursor:pointer"><!--{$volist.comments}--></td>
+            <td who="product" key="<!--{$volist.productid}-->" name="grounding" tag="ajaxchoose" style="cursor:pointer"><!--{if $volist.grounding==0}-->
+              <div class="no"> </div>
+              <!--{else}-->
+              <div class="yes"> </div>
+              <!--{/if}--></td>
+               <td  who="product" key="<!--{$volist.productid}-->" name="elite" tag="ajaxchoose" style="cursor:pointer"><!--{if $volist.elite==0}-->
+                   <div class="no">
+                   </div>
+              <!--{else}-->
+                   <div class="yes">
+                   </div>
+              <!--{/if}--></td>
+            <td who="product" key="<!--{$volist.productid}-->" name="flag" tag="ajaxchoose" style="cursor:pointer"><!--{if $volist.flag==1}-->
+              <div class="no"> </div>
+              <!--{else}-->
+              <div class="yes"> </div>
+              <!--{/if}--></td>
+            <td style="text-align:center;" class="a_edit_del">
+               <a class="oe_ico_green" target="_blank" href="<!--{url action="show" group="index"  args="productid=><!--{$volist.productid}-->"}-->">预览</a>&nbsp; 
+                <a class="oe_ico_blue" href="<!--{url action="show" args="productid=><!--{$volist.productid}-->"}-->">编辑</a> 
+                <a class="oe_ico_red" a="<!--{url action="del" args="productid=><!--{$volist.productid}-->"}-->" onClick="boxyn($(this))">删除</a>
+            </td>
+          </tr>
+          <!--{/foreach}-->
+        </tbody>
+      </table>
+      <div class="oe_page_box"> 
+        <!--{$page}--> 
+      </div>
+    </form>
+  </div>
+</div><!--{include file={$admintpl}"top/search.html"}-->
+</body>

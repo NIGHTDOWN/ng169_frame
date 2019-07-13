@@ -1,0 +1,54 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=<!--{$page_charset}-->" />
+   <!--{include file={$admintpl}"top/headerjs.html"}-->
+   
+</head>
+<body>
+    <div class="oemarry_layout">
+  <div class="oe_top_nav">
+	 <!--{include file={$admintpl}"a_nav.html"}-->
+	<span><a href="javascript:;" tag="back" url="<!--{url action="run"}-->">&lt;&lt;返回列表</a></span>
+  </div>
+  <div class="a_content oe_dlv">
+<form method="post" <!--{if $a=='add'}-->action="<!--{url action='add'}-->"<!--{else}-->action="<!--{url action='save'}-->" <!--{/if}-->>
+                           
+                  
+                         
+                           
+                  
+    <input name="taskid" type="hidden" value="<!--{$<!--{$c}-->.taskid}-->">
+     <table class="oe_table_warp">
+              <tr>
+	    <th width="15%"><span class="red">*</span>名称：</th>
+		<td  width="35%"><input type="text" name="title" tag="notnull" num="30" value="<!--{$<!--{$c}-->.title}-->"  class="input-b"/> </td>
+	 
+              </tr>
+           <tr>
+	    <th width="15%"><span class="red">*</span>奖励排单币数量：</th>
+		<td  width="35%"><input type="text" name="num" tag="notnull fixnum" num="30" value="<!--{$<!--{$c}-->.num}-->"  class="input-b"/> </td>
+	 
+              </tr>
+            <tr>
+             <th ><span class="red">*</span>任务描述:</th>
+		    <td  width="35%"><textarea  cols="45" rows="3" name="desc" class='editor_id'  ><!--{$<!--{$c}-->.desc}--></textarea> </td>
+	  </tr>
+    
+         
+    
+         <tr>
+	    <th ><span class="red">*</span>任务内容：</th>
+		<td >
+            <textarea  cols="45" rows="3" name="content" id='editor_id'  ><!--{$<!--{$c}-->.content}--></textarea></td>
+	  </tr>
+     </table>
+  <div class="oe_button_layout">
+	  <input type="button" class="button_2" value="提交保存" tag="submit" /> 
+	  <span id="submit_tips" class="error"></span>
+	</div>
+	
+</form>
+</div>
+</div>
+</body>

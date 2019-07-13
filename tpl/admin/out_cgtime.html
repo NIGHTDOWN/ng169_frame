@@ -1,0 +1,50 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=<!--{$page_charset}-->" />
+    <!--{include file={$admintpl}"top/headerjs.html"}-->
+    <script
+        type='text/javascript' src='<!--{$static}-->js/jedate.js'>
+    </script>
+</head>
+
+<body>
+    <div class="oemarry_layout">
+  <div class="oe_top_nav">
+	 <!--{include file={$admintpl}"a_nav.html"}-->
+<span><a href="javascript:;" url="<!--{url action='run'}-->" tag="back">&lt;&lt;返回列表</a></span>
+  </div>
+  <div class="a_content oe_dlv">
+<form method="post" >
+  
+     <h1> 输入新的时间:</h1>
+          <table class="oe_table_warp">
+             <tr>
+	    <th width="5%"><span class="red">*</span>输入新的时间：</th>
+		<td width="35%">
+             <input type="text" name="addtime" id="dateinput" value="<!--{$data.starttime|date_format:'%Y-%m-%d %H:%M:%S'}-->" class="input-b " tag="cannull istime " readonly="readonly" /> <span class="oe_trap"><em></em></span>
+              </td></tr>
+       
+         </table>
+
+
+  
+  <div class="oe_button_layout">
+	  <input type="button" class="button_2" value="提交保存" tag="submit" /> 
+	  <span id="submit_tips" class="error"></span>
+	</div>
+</form>
+</div>
+</div>
+ <script type="text/javascript">
+   
+    jeDate({
+		dateCell:"#dateinput",
+		format:"YYYY-MM-DD hh:mm:ss",
+		isinitVal:true,
+		isTime:true, //isClear:false,
+		minDate:"2014-09-19 00:00:00",
+		okfun:function(val){alert(val)}
+	});
+</script>
+</body>

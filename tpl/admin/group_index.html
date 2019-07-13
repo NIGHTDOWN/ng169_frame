@@ -1,0 +1,171 @@
+<!--{include file={$admintpl}"top/headerjs.html"}-->
+
+<body >
+    <div class="oemarry_layout">
+        <div class="oe_top_nav">
+            <!--{include file={$admintpl}"a_nav.html"}-->
+        </div>
+        <link rel="stylesheet" href="<!--{$admintpl}-->res/css/bootstrap.min.css"/>
+        <link rel="stylesheet" href="<!--{$admintpl}-->res/css/jquery.jOrgChart.css"/>
+        <link rel="stylesheet" href="<!--{$admintpl}-->res/css/custom.css"/>
+        <link href="<!--{$admintpl}-->res/css/prettify.css" type="text/css" rel="stylesheet" />
+
+        <script
+            type="text/javascript" src="<!--{$admintpl}-->res/prettify.js">
+        </script>
+
+        <!-- jQuery includes -->
+        <script
+            type="text/javascript" src="<!--{$admintpl}-->res/jquery.min.js">
+        </script>
+        <script
+            type="text/javascript" src="<!--{$admintpl}-->res/jquery-ui.min.js">
+        </script>
+
+        <script
+            src="<!--{$admintpl}-->res/jquery.jOrgChart.js">
+        </script>
+
+        <script>
+            jQuery(document).ready(function() {
+                    $("#org").jOrgChart({
+                            chartElement : '#chart',
+                            /* dragAndDrop  : true*/
+                        });
+                });
+        </script>
+        <style>
+            .ynode{
+                border: none;
+                padding: 5px;
+                width: 100%;
+            }
+            .ytarget{
+                color: red;
+            }
+        </style>
+        <div class="a_content">
+            <ul id="org" style="display:none">
+                <!--{foreach $parent as $list}-->
+                <!--{if $i==1}-->
+                <li class="ymore">
+                    <span id="none_<!--{$list}-->" class="ynode"  data='<!--{$list}-->'>
+
+                        昵称: <!--{$list|userinfo:"realname"}--><br />
+                        账号: <!--{$list|userinfo:"username"}--><br />
+
+                        <a
+                            href="<!--{url mod='user' args="uid:{$list}"}-->" target="_blank">更多信息>>
+                        </a>
+
+                    </span>
+
+                    <!--{/if}-->
+                    <!--{if $i!=1 && $i!=$size}-->
+                    <ul>
+                        <li class="ymore">
+                            <span id="none_<!--{$list}-->" class="ynode"  data='<!--{$list}-->'>
+                                昵称: <!--{$list|userinfo:"realname"}--><br />
+                                账号: <!--{$list|userinfo:"username"}--><br />
+
+                                <a
+                                    href="<!--{url mod='user' args="uid:{$list}"}-->" target="_blank">更多信息>>
+                                </a>
+
+                            </span>
+                        </li>
+                    </ul>
+
+                    <!--{/if}-->
+                    <!--{if  $i==$size}-->
+                    <ul>
+                        <li class="ymore">
+                            <span id="none_<!--{$list}-->" class="ynode ytarget" data='<!--{$list}-->'> 
+                                昵称: <!--{$list|userinfo:"realname"}--><br />
+                                账号: <!--{$list|userinfo:"username"}--><br />
+
+                                <a
+                                    href="<!--{url mod='user' args="uid:{$list}"}-->" target="_blank">更多信息>>
+                                </a>
+                            </span>
+                            <ul>
+                                <!--{foreach $child as $clist}-->
+                                <li  class="ymore">
+                                    <span id="none_<!--{$clist.uid}-->" class="ynode" data='<!--{$clist.uid}-->'>
+                                        昵称: <!--{$clist.uid|userinfo:"realname"}--><br />
+                                        账号: <!--{$clist.uid|userinfo:"username"}--><br />
+
+                                        <a
+                                            href="<!--{url mod='user' args="uid:{$clist.uid}"}-->" target="_blank">更多信息>>
+                                        </a>
+                                    </span>
+                                </li>
+
+
+                                <!--{/foreach}-->
+                            </ul>
+
+
+                        </li>
+                    </ul>
+                </li>
+                <!--{/if}-->
+                <!--{/foreach}-->
+
+            </ul>
+
+            <div id="chart" class="orgChart">
+            </div>
+
+            <script>
+                jQuery(document).ready(function() {
+                        $('.ymore').live('click',function(){
+                                $obj=$(this);
+                                $uid=$(this).children('span').attr('data');
+                                 if($('#none_'+$uid).next('ul').index()>0){
+                                 	d('已经加载过该节点');
+                                    return 0;
+                                }
+                                $url='<!--{url action='getchild'}-->';
+                                $clickurl='<!--{url mod='user'}-->';
+                                yAjax($url,{
+                                        'uid':$uid
+                                    },function(data){
+                                        if(data.flag){
+                                            $html='';
+
+                                            $.each(data.data,function(i,v){
+                                                    $html+=' <li  class="ymore"><span id="none_'+v.uid+'" class="ynode" data='+v.uid+'>昵称:'+v.realname+'<br />账号:'+v.username+'<br /><a href="'+$clickurl+'&uid='+v.uid+'" target="_blank">更多信息>></a></span></li>';
+                                                });
+                                            $html="<ul>"+$html+"</ul>";
+
+
+$('#none_'+$uid).after($html);
+/*$('#chart').html();*/
+ /* $($html).jOrgChart({
+                            chartElement : $obj,
+                            dragAndDrop  : true
+                        });*/
+ $("#org").jOrgChart({
+                            chartElement : '#chart',
+                            /* dragAndDrop  : true*/
+                        });
+
+                                        }else{
+                                            d('无子节点');
+                                        }
+
+                                    });
+
+                            });
+
+                    });
+            </script>
+
+
+
+
+        </div>
+    </div>
+
+</body>

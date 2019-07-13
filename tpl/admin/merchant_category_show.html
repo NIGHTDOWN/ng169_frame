@@ -1,0 +1,106 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=<!--{$page_charset}-->" />
+    <!--{include file={$admintpl}"top/headerjs.html"}-->
+</head>
+
+<body>
+    <div class="oemarry_layout">
+  <div class="oe_top_nav">
+	 <!--{include file={$admintpl}"a_nav.html"}-->
+<span><a href="javascript:;" tag="back" url="<!--{url action='run'}-->">&lt;&lt;返回列表</a></span>
+  </div>
+  <div class="a_content oe_dlv">
+<form method="post" action="<!--{url action="save"}-->" >
+    <input name="catid" type="hidden" value="<!--{$merchant_category.catid}-->">
+     <table class="oe_table_warp">
+        
+	  <tr>
+	    <th width="5%"><span class="red">*</span>分类名：</th>
+		<td width="35%"><input type="text" name="catname" tag="notnull notnum" value="<!--{$merchant_category.catname}-->"  class="input-b"/>
+            <span class="oe_trap"><label></label><em>请填写分类名称</em></span>
+		</td></tr>
+     <tr>
+	    <th width="5%">父级分类：</th>
+		<td width="35%">
+            <!--{assign var="cat" vo_list("fun={get_child} mod={merchant_category} field={catid,catname,depth,alias} array={catid}")}-->
+            <select name='parentid'>
+                <option value=''>顶级分类</option>
+                <!--{foreach $cat as $volist}-->
+                <option value='<!--{$volist.catid}-->'
+                    <!--{if $merchant_category.parentid==$volist.catid}-->
+                  selected="selected"
+                                <!--{/if}-->
+                    >
+                     <!--{section name=customer loop=$volist.depth}-->
+                    |
+                    <!--{/section}-->
+                    <!--{section name=customer loop=$volist.depth}-->
+                    --<!--{/section}-->
+                    
+                    <!--{$volist.catname}--></option>
+                <!--{/foreach}-->
+            </select>
+            
+              <span class="oe_trap"><label></label><em>请选择区域的父级分类,不选则为顶级分类</em></span>
+              </td>
+
+     </tr>
+          <tr>
+	    <th width="5%">别名：</th>
+		<td width="35%"><input type="text" name="alias" value="<!--{$merchant_category.alias}-->" class="input-b" tag="cannull isnumen"/></td></tr>
+        <tr>
+	    <th width="5%">排序：</th>
+		<td width="35%"><input type="text" name="orders" value="<!--{$merchant_category.orders}-->" class="input-b" tag="cannull isnum"/></td></tr>
+         <tr>
+	            <th width="5%">推荐：</th>
+		        <td width="35%">
+                    <select name="elite">
+                        <option value="0"
+                            <!--{if $merchant_category.flag=='0'}-->
+                            selected
+                                        <!--{/if}-->
+                            >关闭</option>
+                        <option value="1"
+                            <!--{if $merchant_category.flag=='1'}-->
+                            selected
+                                        <!--{/if}-->
+                            >开启</option>
+                    </select></td></tr>
+         <tr>
+	            <th width="5%">锁定：</th>
+		        <td width="35%">
+                    <select name="flag">
+                        <option value="0"
+                            <!--{if $merchant_category.flag=='0'}-->
+                            selected
+                                        <!--{/if}-->
+                           >显示</option>
+                        <option value="1"
+                            <!--{if $merchant_category.flag=='1'}-->
+                            selected
+                                        <!--{/if}-->
+                           >隐藏</option>
+                    </select></td></tr>
+           <tr>
+	    <th width="5%">meta标题：</th>
+		<td width="35%"><input type="text" name="metatitle" value="<!--{$merchant_category.alias}-->" class="input-b" /></td></tr>
+         <tr>
+	    <th width="5%">meta关键词：</th>
+		<td width="35%"><textarea rows="2"  cols="45" name="metakeyword" ></textarea></td></tr>
+           <tr>
+	    <th width="5%">meta描述：</th>
+		<td width="35%"><textarea rows="2"  cols="45" name="metadesc"></textarea></td></tr>
+     </table>
+
+
+  
+  <div class="oe_button_layout">
+	  <input type="button" class="button_2" value="提交保存" tag="submit" /> 
+	  <span id="submit_tips" class="error"></span>
+	</div>
+</form>
+</div>
+</div>
+</body>

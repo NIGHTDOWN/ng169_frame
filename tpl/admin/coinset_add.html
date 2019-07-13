@@ -1,0 +1,116 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=<!--{$page_charset}-->" />
+    <!--{include file={$admintpl}"top/headerjs.html"}-->
+</head>
+<body>
+    <div class="oemarry_layout">
+  <div class="oe_top_nav">
+	 <!--{include file={$admintpl}"a_nav.html"}-->
+	<span><a href="javascript:;" tag="back" url="<!--{url action='run'}-->">&lt;&lt;返回列表</a></span>
+  </div>
+  <div class="a_content oe_dlv">
+<form method="post" action="<!--{url action="add"}--> " >
+    <input name="sid" type="hidden" value="<!--{$data.sid}-->">
+     <table class="oe_table_warp">
+     <tr>
+	    <th width="5%"><span class="red">*</span>套餐名称：</th>
+		<td width="35%">
+             <input type="text" name="title" value="<!--{$data.title}-->" class="input-b" tag="notnull" /> <span class="oe_trap"><em>设置名</em></span>
+              </td></tr>
+<tr>
+             <th width="5%">设置类型：</th>
+             <td width="35%">
+               
+                 <select name='stype' tag='notnull'>
+                     <option value=''>--选择设置类型--</option>
+                     <option value='0'>金币套餐</option>
+                     <option value='1'>VIP套餐</option>
+                    
+                 </select><span class="oe_trap"><em></em></span>
+              </td>
+         </tr>
+		 <tr>
+             <th width="5%">国家：</th>
+             <td width="35%">
+                 <!--{assign var="cat" vo_list("fun={get_all} mod={country} field={countryid,country,alias} array={flag:0} num={50}")}-->
+                
+                 <select name='countryid' tag='notnull'>
+                     <option value=''>--选择国家--</option>
+                     <!--{foreach $cat as $volist}-->
+                     <option value='<!--{$volist.countryid}-->'
+                         <!--{if $data.countryid==$volist.countryid}-->
+                         selected
+                                <!--{/if}-->
+                         >
+                        
+                         <!--{$volist.country}-->--<!--{$volist.alias}--></option>
+                     <!--{/foreach}-->
+                 </select><span class="oe_trap"><em>选择国家</em></span>
+              </td>
+         </tr>
+         <tr>
+	    <th width="5%"><span class="red">*</span>购买数量：</th>
+		<td width="35%">
+             <input type="text" name="dhcoin" value="<!--{$data.dhcoin}-->" class="input-b" tag='notnull' /> <span class="oe_trap"><em>金币设置为金币数量/vip设置为购买月数</em></span>
+              </td></tr>
+              <tr>
+	    <th width="5%"><span class="red"></span>单价：</th>
+		<td width="35%">
+             <input type="text" name="price" value="<!--{$data.price}-->" class="input-b"  tag='' /> <span class="oe_trap"><em>单价（对vip设置生效）</em></span>
+              </td></tr>
+        <tr>
+	    <th width="5%"><span class="red">*</span>价格：</th>
+		<td width="35%">
+             <input type="text" name="prices" value="<!--{$data.prices}-->" class="input-b"  tag='notnull' /> <span class="oe_trap"><em>实际价格</em></span>
+              </td></tr>
+              <tr>
+	    <th width="5%"><span class="red">*</span>折扣：</th>
+		<td width="35%">
+             <input type="text" name="coinrate" value="<!--{$data.coinrate}-->" class="input-b" tag="notnull" /> <span class="oe_trap"><em>小数，17%的折扣，则输入0.17</em></span>
+              </td></tr>
+         <tr>
+             <th width="5%"><span class="red"></span>简介：</th>
+             <td width="35%">
+                             
+                 <textarea name="desc" cols="45" rows="5" runat="server" ><!--{$data.desc}--></textarea> <span class="oe_trap"><em></em></span>
+              </td>
+         </tr>
+
+         <tr>
+	    <th width="5%">状态：</th>
+		<td width="35%">
+            <select name="flag">
+                <option value="0"
+                    <!--{if $data.flag=='0'}-->
+                    selected
+                                <!--{/if}-->
+                   >正常</option>
+                <option value="1"
+                    <!--{if $data.flag=='1'}-->
+                    selected
+                                <!--{/if}-->
+                   >停用</option>
+            </select><span class="oe_trap"><em></em></span>
+              </td></tr>
+        
+<tr>
+	    <th width="5%">排序：</th>
+		<td width="35%">
+           <input type="text" name="orders" value="<!--{$data.orders}-->" class="input-b" tag="notnull fixnum" /> <span class="oe_trap"><em></em></span>
+             <span class="oe_trap"><em>数字越小排序越前</em></span>
+              </td></tr>
+         </table>
+
+
+  
+  <div class="oe_button_layout">
+	  <input type="button" class="button_2" value="提交保存" tag="submit" /> 
+	  <span id="submit_tips" class="error"></span>
+	</div>
+</form>
+</div>
+</div>
+</body>
+    </html>

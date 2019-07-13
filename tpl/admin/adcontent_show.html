@@ -1,0 +1,109 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=<!--{$page_charset}-->" />
+   <!--{include file={$admintpl}"top/headerjs.html"}-->
+    <style type="text/css">
+        .input-100 {
+            height: 19px;
+        }
+    </style>
+    
+</head>
+<body>
+    <div class="oemarry_layout">
+  <div class="oe_top_nav">
+	 <!--{include file={$admintpl}"a_nav.html"}-->
+	<span><a href="javascript:;" tag="back" url="<!--{url action="run"}-->">&lt;&lt;返回列表</a></span>
+  </div>
+  <div class="a_content oe_dlv">
+<form method="post" action="<!--{url action='save'}-->" >
+                           
+                  
+                          
+                           
+                  
+    <input name="imgid" type="hidden" value="<!--{$<!--{$c}-->.imgid}-->">
+     <table class="oe_table_warp">
+              <tr>
+	    <th width="15%"><span class="red">*</span>广告名称：</th>
+		<td  width="35%"><input type="text" name="title" tag="notnull" num="30" value="<!--{$<!--{$c}-->.title}-->"  class="input-b"/> </td>
+	  <th width="15%"><span class="red">*</span>链接：</th>
+		<td  width="35%"><input type="text" name="url" tag="notnull isurl" num="30" value="<!--{$<!--{$c}-->.url}-->"  class="input-b"/> </td>
+              </tr><tr>
+             <th ><span class="red">*</span>广告位标示：</th>
+		<td><input type="text" name="identify" tag="notnull isnumen" num="30" value="<!--{$<!--{$c}-->.identify}-->"  class="input-b"/>    <span class="oe_trap">
+                <label></label>
+                <em>填写广告位标示</em></span></td>
+             <th >商户ID：</th>
+		<td >
+            <input type="text" name="muid" tag="cannull isnum" num="30" value="<!--{$<!--{$c}-->.muid}-->"  class="input-100"/>
+            <button class="btn1" type="button"   onclick="showcall('<!--{url mod="merchant" action="call"}-->','选择商家id')">查看商家id</button>
+                    </td>
+          </tr>
+         <tr>
+	    <th >产品图片：</th>
+		<td>
+            <button id="oe_img_button" class="drawimg" tag="img_up_one" type="button">上传图片</button><span class="oe_trap"><label></label><em>图片尺寸(宽,高)为
+               该广告位的尺寸
+            </em></span>
+            <span class="oe_img"></span>
+                <span id="viewimg_drawimg">
+                          <!--{if <!--{$<!--{$c}-->.drawimg}-->!=''}-->
+                        <div style="float:left;width:auto;margin-right:5px;">
+                            <div style="height:80px;width:80px;overflow:hidden;cursor:pointer;margin-top:5px;" class="upimg_view">
+                                <img onclick="window.open('<!--{$<!--{$c}-->.drawimg}-->');" src="<!--{$<!--{$c}-->.drawimg}-->" alt="点击查看大图" style="height: 80px; width: 80px; margin-top: 0px; margin-left: 15px;"> </div>
+                              <input type="hidden" name="cover" value="<!--{$<!--{$c}-->.drawimg}-->"> <button onclick="javascript:delobj($(this).parent('div'));" style=" background: none repeat scroll 0 0 #fafafa; border: 1px solid #ebebeb;border-radius: 3px; cursor: pointer;display: block;margin-top: 10px;width: 80px;" type="button">删除</button></div>
+                   <!--{/if}--> 
+                </span></td>
+          </tr>
+         <tr>
+            <th ><span class="red"></span>开始时间</th>
+		<td >
+                    <input type="text" name="stime" tag="" value="<!--{$<!--{$c}-->.stime|date_format:"%Y-%m-%d"}-->"  class="input-100 date"/>
+            <label></label></td>
+               <th >结束时间：</th>
+		<td >
+             <input type="text" name="etime" tag="" value="<!--{$<!--{$c}-->.etime|date_format:"%Y-%m-%d"}-->" class="input-100 date" />
+            </td>
+	  </tr>
+         <tr>
+            <th >排序：</th>
+		<td >
+                    <input type="text" name="orders" tag="cannull fixnum" value="<!--{$<!--{$c}-->.orders}-->"  class="input-100"/> 
+            <label><span class="oe_trap"><em>
+    
+            </em></span> </label>
+		</td>
+           <th >状态：</th>
+		<td >
+                    <select name="flag">
+                        <option value="0"
+                            <!--{if $<!--{$c}-->.flag=='0'}-->
+                            selected
+                                        <!--{/if}-->
+                            >正常</option>
+                        <option value="1"
+                            <!--{if $<!--{$c}-->.flag=='1'}-->
+                            selected
+                                        <!--{/if}-->
+                            >锁定</option>
+                    </select>
+            <label><span class="oe_trap"></span> </label>
+		</td> 
+	  </tr>
+         <tr>
+
+	    <th >描述：</th>
+		<td >
+            <input type="text" name="alt" tag="cannull" num="30" value="<!--{$<!--{$c}-->.alt}-->"  class="input-b"/></td>
+	  </tr>
+     </table>
+  <div class="oe_button_layout">
+	  <input type="button" class="button_2" value="提交保存" tag="submit" /> 
+	  <span id="submit_tips" class="error"></span>
+	</div>
+</form>
+</div>
+</div>
+</body>

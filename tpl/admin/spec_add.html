@@ -1,0 +1,66 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=<!--{$page_charset}-->" />
+    <!--{include file={$admintpl}"top/headerjs.html"}-->
+</head>
+
+<body>
+    <div class="oemarry_layout">
+  <div class="oe_top_nav">
+	 <!--{include file={$admintpl}"a_nav.html"}-->
+<span><a href="javascript:;" tag="back" url="<!--{url action='run'}-->">&lt;&lt;返回列表</a></span>  </div>
+  <div class="a_content oe_dlv">
+<form method="post" action="<!--{url action=$a}-->" >
+    <input name="id" type="hidden" value="<!--{$select.id}-->">
+     <table class="oe_table_warp">
+        <input type="hidden" value="<!--{$select.catid}-->" name="catid" />
+          <input type="hidden" value="<!--{$select.id}-->" name="id" />
+	  <tr>
+	    <th width="5%"><span class="red">*</span>分类名：</th>
+		<td width="35%"><input type="text" name="catname"  disabled="disabled"  value="<!--{$select.catname}-->"  class="input-b"/>
+            <span class="oe_trap"><label></label></span>
+		</td></tr>
+     
+        <tr>
+	    <th width="5%"><!--{if $c=='attribute'}-->属性名称：<!--{else}-->规格名称：<!--{/if}--></th>
+		<td width="35%"><input type="text" name="sname" value="<!--{$select.sname}-->" class="input-b" tag="notnull "/></td></tr>
+<tr>
+	    <th width="5%">排序</th>
+		<td width="35%"><input type="text" name="orders" value="<!--{$select.orders}-->" class="input-b" tag="fixnum "/></td></tr>
+
+<tr>
+	            <th width="5%">是否推荐：</th>
+		        <td width="35%">
+                    <select name="setmuid">
+                        <option value="<!--{$select.setmuid}-->"
+                            <!--{if $select.setmuid!='0'}-->
+                            select
+                                        <!--{/if}-->
+                            >否</option>
+                        <option value="0"
+                            <!--{if $select.stype=='0'}-->
+                            select
+                                        <!--{/if}-->
+                            >是</option>
+                    </select></td></tr>
+ <tr>
+	    <th width="5%">可选值：</th>
+		<td width="35%">
+		<textarea name='var' style="width: 400px"><!--{$select.var}--></textarea>
+		
+            <span class="oe_trap"><label>多个值以逗号分割“,”</label></span>
+		</td></tr>
+       
+     </table>
+
+
+  
+  <div class="oe_button_layout">
+	  <input type="button" class="button_2" value="提交保存" tag="submit" /> 
+	  <span id="submit_tips" class="error"></span>
+	</div>
+</form>
+</div>
+</div>
+</body>

@@ -1,0 +1,143 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=<!--{$page_charset}-->" />
+      <!--{include file="<!--{$tpl_path}-->top/headerjs.html"}-->
+    <style type="text/css">
+        .auto-style1 {
+            height: 25px;
+        }
+        .button_4{       
+         background: url("../images/btn2.gif") no-repeat scroll;
+    border: medium none;
+    cursor: pointer;
+    height: 32px;
+    width: 78px;
+    color: #333;
+    text-align: center;
+    line-height: 32px;
+    display: block;
+}
+    </style>
+   
+    <script>
+        function aaa()
+        {
+            $ar = {
+                'port': $('[name=mailport]').val(),
+                'sendmail': $('[name=sendmail]').val(),
+                'sendname': $('[name=sendname]').val(),
+                'sendpassword': $('[name=mailpassword]').val(),
+                'sendtype': $('[name=sendtype]').val(),
+                'smtp': $('[name=mailserver]').val(),
+                'ssl': $('[name=mailssl]').val(),
+                'test_email': $('[name=test_email]').val()
+            };
+            $ur = '<!--{url action="mailset_try" mod="siteset" group="admin"}-->';
+            yAjax($ur, $ar, null);
+          
+        }
+
+
+
+
+</script>
+</head>
+
+<body>
+    <div class="oemarry_layout">
+  <div class="oe_top_nav">
+	 <!--{include file="<!--{$tpl_path}-->a_nav.html"}-->
+	
+  </div>
+  <div class="oe_content">
+      
+   
+    
+ <table class="oe_table_warp">
+        <tr>
+	    <th width="10%">预付款匹配</th>
+		<td width="25%">
+                   <div class="oe_button_layout">
+      <a href="<!--{url action="startyfk" mod="" group="admin"}-->" class="oe_ico_blue"  > 确认开启</a>
+		  <span class="oe_trap"><label></label><em> </em></span></div>
+		</td>
+		
+		
+		
+	   
+	  </tr>  
+	  <tr>
+	    <th width="10%">开启系统匹配</th>
+		<td width="25%">
+                   <div class="oe_button_layout">
+      <a href="<!--{url action="start" mod="" group="admin"}-->" class="oe_ico_blue"  > 确认开启</a>
+		  <span class="oe_trap"><label></label><em> </em></span></div>
+		</td>
+		
+		
+		 <th width="10%">手动匹配设置：</th>
+    <td width="25%">
+     <div class="oe_button_layout">
+         <a href="<!--{url action="add" mod="pay" group="admin"}-->" class="oe_ico_blue"  > 进入设置</a>
+         </div>
+    </td>
+	   
+	  </tr>
+	     
+
+<tr>
+      <th width="10%">完成得：</th>
+    <td width="25%">
+          <form action="<!--{url action="in" mod="" group="admin"}-->" method="post" name="config_form">
+         <div class="oe_button_layout">
+                <input class="input-s" type="text" value="" name="iid" tag="notnull isnum">
+         <a type="button" class="oe_ico_green" tag="submit"  >确认</a>
+          <span class="oe_trap"><label></label><em> </em></span></div>
+          </form> 
+    </td>
+    
+    
+      <th width="10%">完成舍：</th>
+        <td width="25%">
+            <form action="<!--{url action="out" mod="" group="admin"}-->" method="post" name="config_form">
+         <div class="oe_button_layout">
+                <input class="input-s" type="text" value="" name="oid" tag="notnull isnum">
+         <a type="button" class="oe_ico_green" tag="submit"  > 确认</a>
+          <span class="oe_trap"><label></label><em> </em></span></div>
+          </form>
+        </td>
+    </tr>
+<tr>
+      <th width="10%">订单超时确认：</th>
+    <td width="25%">
+          <form action="<!--{url action="order" mod="" group="admin"}-->" method="post" name="config_form">
+         <div class="oe_button_layout">
+         <input class="input-s" type="text" value="" name="payid" >
+         <a type="button" class="oe_ico_green" tag="submit"  >确认</a>
+          <span class="oe_trap"><label></label><em> </em></span></div>
+          </form> 
+    </td>
+      <th width="10%">单条得匹配：</th>
+        <td width="25%">
+         <form action="<!--{url action="startone" mod="" group="admin"}-->" method="post" name="config_form">
+         <div class="oe_button_layout">
+                <input class="input-s" type="text" value="" name="iid" tag="notnull isnum">
+         <a type="button" class="oe_ico_green" tag="submit"  > 确认匹配该条</a>
+          <span class="oe_trap"><label></label><em> </em></span></div>
+          </form>
+        </td>
+    
+     
+    </tr>
+
+
+	</table>
+         <div class="oe_button_layout">
+	  
+	</div>
+ 
+  </div>
+</div>
+    
+</body>
+</html>

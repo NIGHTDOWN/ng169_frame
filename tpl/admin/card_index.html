@@ -1,0 +1,89 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=<!--{$page_charset}-->" />
+    <!--{include file={$admintpl}"top/headerjs.html"}-->
+    <style>
+    	.input-bb {
+
+padding: 2px;
+height: 22px;
+line-height: 22px;
+border: 1px solid #ddd;
+}
+    </style>
+</head>
+<body>
+    <div class="oemarry_layout">
+  <div class="oe_top_nav">
+	 <!--{include file={$admintpl}"a_nav.html"}-->
+<span><a href="javascript:;" url="<!--{url action='run' mod='user'}-->" tag="back">&lt;&lt;返回列表</a></span>
+  </div>
+  <div class="a_content oe_dlv">
+  <tbody>
+  <!--{foreach $card as $list}-->
+<form method="post" action="<!--{url action='save'}-->" >
+    <input name="id" type="hidden" value="<!--{$list.id}-->">
+    <h3>卡号<!--{$i}--></h3>
+    <hr>
+     <table class="oe_table_warp" style="border:">
+	  <tr>
+	      <th width="10%">收款人名：</th>
+		<td width="10%">
+                    <input type="text" name="accountrealname" tag="cannull " value="<!--{$list.accountrealname}-->"  class="input-bb"/>
+       
+		</td>
+	    <th width="10%"><span class="red">*</span>银行/平台：</th>
+		<td width="10%">
+		  <select name="accountname" >
+                                            <option value="">请选择</option>	
+                                            	<!--{foreach from=","|explode:$config.banklist item=slist}-->
+                                            	  <option
+                                            	  <!--{if <!--{$slist}-->==<!--{$list.accountname}-->}-->
+                                            	  selected="selected"
+                                            	  <!--{/if}-->
+                                            	   value="<!--{$slist}-->"><!--{$slist}--></option>
+                                            	<!--{/foreach}-->
+                                            </select>
+		
+		
+		  <th width="10%"><span class="red">*</span>卡号/账号：</th>
+		<td width="10%"><input type="text" name="account" tag="notnull" value="<!--{$list.account}-->"  class="input-bb"/>
+         
+		</td>
+        
+	
+	      <th width="10%">银行地址：</th>
+		<td width="20%">
+                    <input type="text" name="accountaddress" tag="" value="<!--{$list.accountaddress}-->"  class="input-bb" />
+       
+		</td>
+	     <th width="10%">支付宝：</th>
+		<td width="20%">
+                    <input type="text" name="zfb" tag="" value="<!--{$list.zfb}-->"  class="input-bb" />
+       
+		</td>
+		  <td width="10%">
+		  	 <div class="oe_button_layout">
+	  <input type="button" class="button_2" value="保存" tag="submit" /> 
+	  
+	</div>
+	
+		 <div class="oe_button_layout">
+	  <input type="button" class="button_2" value="删除" onclick="_go_url('<!--{url args="id:{$list.id}" action='del'}-->')" /> 
+	  
+	</div>
+         
+		</td>
+        
+	  </tr>
+         </table>
+ 
+</form>
+ <!--{/foreach}-->
+ </tbody>
+ 
+ <!--{include file={$admintpl}"paix.html"}-->
+</div>
+</div>
+</body>

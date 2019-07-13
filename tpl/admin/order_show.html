@@ -1,0 +1,227 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//Dspan XHTML 1.0 divansitional//EN" "http://www.w3.org/div/xhtml1/Dspan/xhtml1-divansitional.dspan">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=<!--{$page_charset}-->" />
+	<!--{include file={$admintpl}"top/headerjs.html"}-->
+	<style type="text/css">
+		.order-detail{margin:20px auto;}
+.order-detail dl{padding:6px 5px;font-size:12px;}
+.order-detail dt{font-weight:700;width:78px;float:left;display:inline;}
+.order-detail dd{xmargin-bottom:4px;padding-left:80px;word-wrap:break-word;}
+.order-detail hr{margin:10px 0 5px;background-color:#D1D7DC;border:medium none;color:#D1D7DC;height:1px;}
+.order-detail .dl dt{clear:both;float:none;display:inherit;padding-bottom:5px;}
+.order-detail .dl dd{float:left;padding:5px 40px 5px 0;}
+.order-detail .dl dd a{color:#000;}
+.order-detail table{margin-top:5px;}
+.order-detail th{border-top:1px solid #DDDDDD;border-bottom:1px solid #DDDDDD;line-height:130%;padding:8px 10px;text-align:center;background:#E8F2FF;color:#404040;}
+.order-detail td{padding:8px 5px;line-height:130%;vertical-align:middle;text-align:center;border-left:1px solid #DDDDDD;border-bottom:1px solid #ddd;}
+.order-detail .first{border-left:1px solid #DDDDDD;}
+.order-detail .last{border-right:1px solid #DDDDDD;}
+.order-detail .pic-info{display:inline;float:left;margin-right:10px;}
+.order-detail .txt-info{color:#808080;line-height:18px;margin-left:60px;text-align:left;}
+.order-detail .txt-info p{margin-top:4px;}
+.order-detail .money_s{text-align:right;padding:40px 8px 0 0;}
+.order-detail .money_s span{display: block;font-size:80%;font-weight:700;padding:0 2px;color: #949494}
+.order-detail .money{text-align:right;padding:20px 8px 0 0;}
+.order-detail .money b{color:#FF5500;font-size:16px;font-weight:700;padding:0 2px;}
+.order-desc{
+	margin-bottom:15px
+}
+	</style>
+	 
+</head>
+<body>
+	<div class="oemarry_layout">
+		<div class="oe_top_nav">
+			<!--{include file={$admintpl}"a_nav.html"}-->
+			<span><a href="javascript:;" tag="back" url="<!--{url action="run"}-->">&lt;&lt;返回列表</a></span>
+		</div>
+		<div class="a_content oe_dlv">
+		<div class="order-desc">
+	
+	 <!--{if $data.status==0}-->
+            <div class="order">
+            <div class="orderdesc">
+            <b>当前订单状态：未付款。</b><br />
+            <ul>
+            
+            	<li>  <a class="oe_ico_red" onclick="return confirm('确定是否要取消？');" href="<!--{url  mod='order' args="oid:{$data.ordernum}" action='cancel'}-->">关闭订单</a></span></li>
+            </ul>
+            
+           
+            
+               
+                </div>
+            </div>
+<!--{elseif $data.status==1}-->
+<div class="order">
+            <div class="orderdesc">
+            <b>当前订单状态：等待卖家发货</b><br />
+            <ul>
+            	<li><span>强制完成订单 <a class="button oe_ico_red" target="_blank" href="<!--{url action='sure' args="oid:{$data.ordernum}" }-->">完成订单</a></span></li>
+            	
+            </ul>
+            <!--{elseif $data.status==2}-->
+            <div class="order">
+            <div class="orderdesc">
+            <b>当前订单状态：卖家已经发货</b><br />
+            <ul>
+            	<li><span>点击这里 <a class="button button-pay oe_ico_red" target="_blank" href="<!--{url action='sure' args="oid:{$data.ordernum}" }-->">完成订单</a></span></li>
+            	
+            </ul>
+            
+           
+            
+               
+                </div>
+            </div>
+            
+<!--{elseif $data.status==3}-->
+            <div class="order">
+            <div class="orderdesc">
+            <b>当前订单状态：交易成功</b><br />
+<!--{if $data.cflag}-->
+<ul style='margin-top: 15px;'>
+	<li >
+		<a class="button oe_ico_green" href="<!--{url mod='order' action='comment' args="oid:{$data.ordernum}"}-->">查看用户评价</a>
+	</li>
+</ul>
+<!--{/if}-->
+<!--{if $data.scflag}-->
+<ul style='margin-top: 15px;'>
+	<li>
+		<a class="button oe_ico_blue" href="<!--{url mod='order' action='comment' args="oid:{$data.ordernum}"}-->">查看商户评论</a>
+	</li>
+</ul>
+<!--{/if}-->
+                </div>
+            </div>
+ <!--{elseif $data.status==4}-->
+            <div class="order">
+            <div class="orderdesc">
+            <b>当前订单状态：交易关闭</b><br />
+
+                </div>
+            </div>
+<!--{/if}-->
+	
+</div>
+    <div class="hd">
+        <ul class="tabs">
+            <li class="active"><a href="#">订单信息</a></li>
+        </ul>
+    </div>
+    
+    
+    
+    <div class="order-detail">
+      
+      
+      <!--{if $data.sendtime}--><dl class="clearfix">
+    	<dt> 物流信息：</dt>
+        <dd>
+            <!--{$data.sender}-->  ,
+            【<!--{$data.sendnum}-->】 <!--{$data.sendtime|date_format:"%Y-%m-%d %H:%M:%S"}-->  ,
+                        
+		</dd>
+    </dl><hr>
+      <!--{/if}-->
+      
+        <dl class="clearfix">
+    	<dt>收货地址：</dt>
+        <dd>
+            <!--{$data.realname}-->  ,
+            <!--{$data.mobile}--> <!--{$data.phone}-->  ,
+                        <!--{$data.address}-->
+		</dd>
+    </dl>
+    
+     
+        
+        <dl class="clearfix">
+    	<dt>买家留言：</dt>
+        <dd> <!--{$data.mark}--></dd>
+    </dl>
+           <hr>
+    
+        
+        <dl class="dl clearfix">
+    	<dt>卖家信息</dt>
+        <dd><a href="<!--{url mod='shop' action='show' args="id:{$data.muid}" group='index'}-->" target="_blank">店铺名：<!--{$data.merchantname}--></a></dd>       
+        <dd>联系电话：<!--{$data.sphone}--></dd>        <dd>店铺地址：<!--{$data.provinceid|getprovince}--><!--{$data.cityid|getcity}--> <!--{$data.areaid|getarea}--> <!--{$data.saddress}--></dd>    </dl>
+        
+    <hr>
+    
+    <dl class="dl clearfix">
+    	<dt>订单信息</dt>
+        <dd>订单编号：<!--{$data.ordernum}--></dd>
+        <dd>创建时间：<!--{$data.createtime|date_format:"%Y-%m-%d %H:%M:%S"}--></dd>
+                            </dl>
+
+    <hr>
+
+    
+    
+    <table width="100%">
+        <tbody><tr>
+            <th class="first">商品</th>
+             <th width="13%">商品属性</th>
+            <th width="13%">状态</th>
+            <th width="13%">单价(元)</th>
+            <th width="10%">数量</th>
+            <th width="13%" class="last">商品总价(元)</th>
+        </tr>
+        <!--{foreach $data.productlist as $volist}-->
+                <tr>
+                <td class="item">
+            <div class="pic-info"><img src="<!--{$volist.smallimg|imgsize:'80,80'}-->" width="70"></div>
+            <div class="txt-info">
+            <a href="<!--{url mod='product' action='detail' group='index' args="productid:{$volist.productid}"}-->" target="_blank"><!--{$volist.productname|tostr}--></a>
+                        </div>
+            </td>
+          <td style="color: #808080"> <!--{if $volist.spec}-->   <!--{$volist.spec}--><!--{/if}--></td>
+            <td> <!--{if $volist.tkflag==1 || $volist.shflag==1}-->  
+						<a class="org" href="<!--{url mod='depot' action='show' args="refundid:{$volist.refundid},id:{$volist.id}"}-->">处理中</a>						<!--{elseif $volist.tkflag==2 || $volist.shflag==2}-->  
+						<a class="org" href="<!--{url mod='depot' action='show' args="refundid:{$volist.refundid},id:{$volist.id}"}-->">完成</a>	
+						<!--{elseif $volist.tkflag==4 || $volist.shflag==4}-->  
+						<a class="red" href="<!--{url mod='depot' action='show' args="refundid:{$volist.refundid},id:{$volist.id}"}-->">关闭</a>	
+					<!--{/if}-->
+						
+						<!--{if $volist.jr}-->
+							<a class="red" href="<!--{url mod='depot' action='show' args="refundid:{$volist.refundid},id:{$volist.id}"}-->">已申请平台介入</a>	
+						<!--{/if}-->
+						
+					</td>
+            <td><!--{$volist.price}--></td>
+            <td><!--{$volist.num}--></td>
+            <td class="last"><!--{$volist.subtotal}--></td>
+        </tr>
+<!--{/foreach}-->
+            </tbody></table>
+        
+    <div class="money_s">
+    		<!--{if $data.logisfee}--><span>运费  <b><!--{$data.logisfee}--></b> 元</span><!--{/if}-->
+    	<span> 订单总价  <b><!--{$data.totals}--></b> 元</span>
+    	 
+    </div>
+  	<div class="money">
+    	 实付款 <b><!--{$data.paytotal}--></b> 元
+    </div>
+    <!--{if $data.status==0}-->
+    	<div class="money">
+    	<form action="<!--{url action='changtotal'}-->" method="post">
+    	<input type="hidden" name='oid' value="<!--{$data.orderid}-->"/>
+    	 <b>修改订单金额：</b> <b><input tag='notnull' class="input-b" name='paytotal' value="<!--{$data.paytotal}-->"/></b> 元
+    	 <br />
+    	
+    	 <button type="submit" class="btn oe_ico_red">确认修改</button>
+    	 </form>
+    </div>
+    <!--{/if}-->
+    </div>
+</div>
+</div>
+	</div>
+</body>
+
+

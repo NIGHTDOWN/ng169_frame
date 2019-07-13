@@ -1,0 +1,300 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=<!--{$page_charset}-->" />
+   <!--{include file={$admintpl}"top/headerjs.html"}-->
+</head>
+<body>
+    <div class="oemarry_layout">
+  <div class="oe_top_nav">
+	 <!--{include file={$admintpl}"a_nav.html"}-->
+	<span><a href="javascript:;" tag="back"  url="<!--{url action="run"}-->">&lt;&lt;返回列表</a></span>
+  </div>
+  <div class="a_content oe_dlv">
+<form method="post" action="<!--{url action='save'}-->" >
+                         
+    <input name="productid" type="hidden" value="<!--{$<!--{$c}-->.productid}-->">
+     <table class="oe_table_warp">
+              <tr>
+	    <th no="15%"><span class="red">*</span>标题：</th>
+		<td colspan="3"><input type="text" name="title" tag="notnull max" num="30" value="<!--{$<!--{$c}-->.title}-->"  class="input-300"/> <label><span class="oe_trap"><em>标题长度最大30个字符</em></span></label></td>
+	  </tr>
+	  <tr>
+	    <th width="15%"><span class="red">*</span>分类：</th>
+		<td width="35%">
+            <select name='catid'>
+                <!--{assign var="cat" vo_list("fun={get_child} mod={product_category} field={catid,catname,depth} array={catid}")}-->
+              
+                <!--{foreach $cat as $volist}-->
+                <option value='<!--{$volist.catid}-->'
+                    <!--{if $<!--{$c}-->.catid==$volist.catid}-->
+                    selected="selected"
+                                <!--{/if}-->
+                    >
+                     <!--{section name=customer loop=$volist.depth-1}-->
+                    |
+                    <!--{/section}-->
+                    <!--{section name=customer loop=$volist.depth-1}-->
+                    --<!--{/section}-->
+
+                    <!--{$volist.catname}-->
+                </option>
+                <!--{/foreach}-->
+            </select> <label></label>
+		</td>
+            <th width="15%"><span class="red">*</span>商家ID：</th>
+		<td width="35%">
+                    <input type="text" name="muid" tag="notnull isnum" value="<!--{$<!--{$c}-->.muid}-->"  class="input-100"/> <button class="btn1" type="button"   onclick="showcall('<!--{url mod="merchant" action="call"}-->','选择商家id')">查看商家id</button></td>
+	  </tr>
+          <tr>
+             <th ><span class="red">*</span>单价：</th>
+		<td >
+             <input type="text" name="price" tag="notnull isnum " value="<!--{$<!--{$c}-->.price}-->"  class="input-100"/><!--{$config.currency}--> <label></label>
+		</td>
+                <th >原价：</th>
+		<td >
+                    <input type="text" name="originalprice" tag="cannull isnum " value="<!--{$<!--{$c}-->.originalprice}-->"  class="input-100"/> <label></label>&nbsp;</td>
+
+         </tr>
+         <tr>
+             <th ><span class="red">*</span>物流费用：</th>
+		<td >
+                    <select name="canbes">
+                        <option value="1"
+                            <!--{if $<!--{$c}-->.canbes=='1'}-->
+                            selected
+                                        <!--{/if}-->
+                            >开启</option>
+                        <option value="0"
+                            <!--{if $<!--{$c}-->.canbes=='0'}-->
+                            selected
+                                        <!--{/if}-->
+                            >关闭</option>
+                        
+                    </select><!--{$config.currency}--> </td>
+                <th >预约定金：</th>
+		<td >
+                    <input type="text" name="bondfee" tag="cannull isnum" value="<!--{$<!--{$c}-->.bondfee}-->"  class="input-100"/><!--{$config.currency}--> <span class="oe_trap"><label></label><em>计量单位</em></span>
+		</td>
+
+         </tr>
+         <tr>
+             <th ><span class="red">*</span>库存：</th>
+		<td >
+             <input type="text" name="count" tag="cannull fixnum " value="<!--{$<!--{$c}-->.count}-->"  class="input-100"/><!--{$config.currency}--> </td>
+                <th >销量：</th>
+		<td >
+                    <input type="text" name="sales" tag="cannull fixnum " value="<!--{$<!--{$c}-->.sales}-->"  class="input-100"/> <label></label>&nbsp;</td>
+
+         </tr>
+          <tr>
+	    <th >产品图片：</th>
+		<td colspan="3">
+            <button id="oe_img_button" class="drawimg" tag="img_up_more" type="button">上传图片</button>
+            <span class="oe_img"></span>
+            
+                <span id="viewimg_drawimg">
+                          <!--{if <!--{$<!--{$c}-->.thumbimg}-->!=''}-->
+                        <!--{foreach $<!--{$c}-->.thumbimg as $key=>$k}-->
+                        <div style="float:left;width:auto;margin-right:5px;">
+                            <div style="height:80px;width:80px;overflow:hidden;cursor:pointer;margin-top:5px;" class="upimg_view">
+                                <img width="80px" src="<!--{$k}-->"  style="height: 80px; width: 50px; margin-top: 0px; margin-left: 15px;"> </div>
+                            <input type="hidden" name="drawimg[]" value="<!--{$<!--{$c}-->.drawimg[<!--{$key}-->]}-->"> <button onclick="javascript:delobj($(this).parent('div'));" style=" background: none repeat scroll 0 0 #fafafa; border: 1px solid #ebebeb;border-radius: 3px; cursor: pointer;display: block;margin-top: 10px;width: 80px;" type="button">删除</button></div>  
+                    <!--{/foreach}--> <!--{/if}--> 
+                </span></td>
+          </tr>
+   
+         
+         <tr>
+             <th >产品属性：</th>
+		<td  colspan="3">
+            <div style="width:500px">
+                    <span class="oe_trap"><em>如:(属性名:品牌;属性值:华硕)</em></span>
+            <table class="oe_table_warp" width="70%">
+                <tr>
+                    <th style="text-align:center">属性名</th>
+                    <th style="text-align:center">属性值</th>
+                    <th style="text-align:center">排序</th>
+                    <th colspan="2" style="text-align:center">操作</th>
+                </tr>
+              <!--{assign var="tpldata" vo_list("fun={get_all} mod={product_attr} field={attrvalue,attrname,attrid,orders} array={productid=><!--{$<!--{$c}-->.productid}-->,attrtype=>0}")}-->
+                   <!--{if ($tpldata|sizeof)==0}-->
+                <tr class="oe_ge">
+                    <td><input type="text" name="attrname[]" tag="cannull " value=""  class="input-100"/>
+                      
+                        <input type="hidden" name="attrtype[]" tag="cannull " value="0"  class="input-100"/>
+                    </td>
+                    <td><input type="text" name="attrvalue[]" tag="cannull " value=""  class="input-200"/></td>
+                    <td><input type="text" name="orders[]" tag="cannull fixnum" value=""  class="input-100"/></td>
+                      <td >
+	            </td>	<td >  <input type="button" class="btn1" value="删除" onclick="delobj($(this).parent().parent(), true, 'oe_ge')" /></td>
+                </tr>
+                <!--{/if}-->
+                <!--{foreach $tpldata as $volist}-->
+                  <tr class="oe_sx">
+                    <td><input type="text" name="attrname[]" tag="cannull " value="<!--{$volist.attrname}-->"  class="input-100"/>
+                     
+                        <input type="hidden" name="attrtype[]" tag="cannull " value="0"  class="input-100"/>
+                    </td>
+                    <td><input type="text" name="attrvalue[]" tag="cannull " value="<!--{$volist.attrvalue}-->"  class="input-100"/></td>
+                    <td><input type="text" name="orders[]" tag="cannull fixnum" value="<!--{$volist.orders}-->"  class="input-100"/></td>
+                      <td >
+	            </td>	<td >  <input type="button" class="btn1" value="删除" onclick="delobj($(this).parent().parent(), true, 'oe_sx')" /></td>
+                </tr>
+                   <!--{/foreach}-->
+            </table></div>
+            <input type="button" class="btn1" value="添加更多"  onclick="addhtml($('.oe_sx'), $('.oe_sx').parent())" />
+		</td>
+         </tr>
+<tr>
+             <th >产品规格：</th>
+		<td  colspan="3">
+            <div style="width:500px">
+                <span class="oe_trap"><em>如:(规格名:颜色;规格值:白色,红色,蓝色)</em></span>
+            <table class="oe_table_warp" width="100%">
+                <tr>
+                    <th style="text-align:center">规格名</th>
+                    <th style="text-align:center">规格值<span class="oe_trap"><em>(多个值用逗号&#39;,&#39;分隔)</em></span></th>
+                    <th style="text-align:center">排序</th>
+                    <th colspan="2" style="text-align:center">操作</th>
+                </tr>
+                   <!--{assign var="tpldata" vo_list("fun={get_all} mod={product_attr} field={attrvalue,attrname,attrid,orders} array={productid=><!--{$<!--{$c}-->.productid}-->,attrtype=>1}")}-->
+                <!--{if ($tpldata|sizeof)==0}-->
+                <tr class="oe_ge">
+                    <td><input type="text" name="attrname[]" tag="cannull " value=""  class="input-100"/>
+                      
+                        <input type="hidden" name="attrtype[]" tag="cannull " value="1"  class="input-100"/>
+                    </td>
+                    <td><input type="text" name="attrvalue[]" tag="cannull " value=""  class="input-200"/></td>
+                    <td><input type="text" name="orders[]" tag="cannull fixnum" value=""  class="input-100"/></td>
+                      <td >
+	            </td>	<td >  <input type="button" class="btn1" value="删除" onclick="delobj($(this).parent().parent(), true, 'oe_ge')" /></td>
+                </tr>
+                <!--{/if}-->
+                 <!--{foreach $tpldata as $volist}-->
+             
+                <tr class="oe_ge">
+                    <td><input type="text" name="attrname[]" tag="cannull " value="<!--{$volist.attrname}-->"  class="input-100"/>
+                  
+                        <input type="hidden" name="attrtype[]" tag="cannull " value="1"  class="input-100"/>
+                    </td>
+                    <td><input type="text" name="attrvalue[]" tag="cannull " value="<!--{$volist.attrvalue}-->"  class="input-200"/></td>
+                    <td><input type="text" name="orders[]" tag="cannull fixnum" value="<!--{$volist.orders}-->"  class="input-100"/></td>
+                      <td >
+	            </td>	<td >  <input type="button" class="btn1" value="删除" onclick="delobj($(this).parent().parent(), true, 'oe_ge')" /></td>
+                </tr>
+               <!--{/foreach}-->
+            </table>   </div>
+         
+            <input type="button" class="btn1" value="添加更多"  onclick="addhtml($('.oe_ge'), $('.oe_ge').parent())" />
+		</td>
+         </tr>
+        
+        <tr>
+	    <th>服务详情：</th>
+		<td colspan="3"><textarea rows="30"  cols="45" name="content"  id="editor_id" ><!--{$<!--{$c}-->.content}--></textarea></td></tr>
+          <tr>
+	    <th no="15%">浏览总数：</th>
+		<td no="35%"><input type="text" name="hits" tag="cannull isnum" value="<!--{$<!--{$c}-->.hits}-->"  class="input-100"/><label><span class="oe_trap"><em> </em></span> </label>
+		</td>
+            <th no="15%">点赞总数：</th>
+		<td no="35%">
+                    <input type="text" name="zans" tag="cannull isnum" value="<!--{$<!--{$c}-->.zans}-->"  class="input-100"/> 
+            <label><span class="oe_trap"><em>
+            </em></span> </label>
+		</td>
+	  </tr>
+         <tr>
+	    <th no="15%">点评总数：</th>
+		<td no="35%"><input type="text" name="comments" tag="cannull isnum" value="<!--{$<!--{$c}-->.comments}-->"  class="input-100"/> <label><span class="oe_trap"><em> </em></span> </label>
+		</td>
+            <th no="15%">排序：</th>
+		<td no="35%">
+                    <input type="text" name="orders" tag="cannull fixnum" value="<!--{$<!--{$c}-->.orders}-->"  class="input-100"/> 
+            <label><span class="oe_trap"><em>
+    
+            </em></span> </label>
+		</td>
+	  </tr>
+         <tr>
+	    <th no="15%">上架：</th>
+		<td no="35%">
+                    <select name="grounding">
+                        <option value="1"
+                            <!--{if $<!--{$c}-->.grounding=='1'}-->
+                            selected
+                                        <!--{/if}-->
+                            >上架</option>
+                        <option value="0"
+                            <!--{if $<!--{$c}-->.grounding=='0'}-->
+                            selected
+                                        <!--{/if}-->
+                            >下架</option>
+                        
+                    </select>
+            <label><span class="oe_trap"><em> </em></span> </label>
+		</td>
+            <th no="15%">推荐：</th>
+		<td no="35%">
+                    <select name="elite">
+                        <option value="0"
+                            <!--{if $<!--{$c}-->.elite=='0'}-->
+                            selected
+                                        <!--{/if}-->
+                            >不推荐</option>
+                        <option value="1"
+                            <!--{if $<!--{$c}-->.elite=='1'}-->
+                            selected
+                                        <!--{/if}-->
+                            >推荐</option>
+                    </select>
+            <label><span class="oe_trap"><em>
+    
+            </em></span> </label>
+		</td>
+	  </tr>
+         <tr>
+	    <th no="15%">状态：</th>
+		<td no="35%">
+                    <select name="flag">
+                        <option value="0"
+                            <!--{if $<!--{$c}-->.flag=='0'}-->
+                            selected
+                                        <!--{/if}-->
+                            >正常</option>
+                        <option value="1"
+                            <!--{if $<!--{$c}-->.flag=='1'}-->
+                            selected
+                                        <!--{/if}-->
+                            >锁定</option>
+                        
+                    </select>
+            <label><span class="oe_trap"><em> </em></span> </label>
+		</td>
+	  </tr>
+         <tr>
+	    <th no="15%">页面标题：</th>
+		<td no="35%"><input type="text" name="metatitle" tag="cannull " value="<!--{$<!--{$c}-->.metatitle}-->"  class="input-b"/><label><span class="oe_trap"><em> </em></span> </label>
+		</td>
+	  </tr>
+         <tr>
+	    <th no="15%">页面关键词：</th>
+		<td no="35%"><input type="text" name="metakeyword" tag="cannull " value="<!--{$<!--{$c}-->.metakeyword}-->"  class="input-b"/><label><span class="oe_trap"><em> </em></span> </label>
+		</td>
+	  </tr>
+         <tr>
+	    <th no="15%">页面描述：</th>
+		<td no="35%">
+            <textarea  cols="45" rows="3" name="metadesc"><!--{$<!--{$c}-->.metadesc}--></textarea></td>
+	  </tr>
+     </table>
+  <div class="oe_button_layout">
+	  <input type="button" class="button_2" value="提交保存" tag="submit" /> 
+	  <span id="submit_tips" class="error"></span>
+	</div>
+</form>
+</div>
+</div>
+  
+
+</body>

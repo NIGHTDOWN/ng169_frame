@@ -1,0 +1,53 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=<!--{$page_charset}-->" />
+    <!--{include file={$admintpl}"top/headerjs.html"}-->
+</head>
+
+<body>
+    <div class="oemarry_layout">
+  <div class="oe_top_nav">
+	 <!--{include file={$admintpl}"a_nav.html"}-->
+	<span><a href="javascript:;" url="<!--{url action='run'}-->" tag="back">&lt;&lt;返回列表</a></span>
+  </div>
+  <div class="a_content oe_dlv">
+<form method="post" action="" >
+    <input name="id" type="hidden" value="<!--{$domian.id}-->">
+     <table class="oe_table_warp">
+        
+	  <tr>
+	    <th width="5%"><span class="red">*</span>域名：</th>
+		<td width="35%"><input type="text" name="domian" tag="notnull notnum" value="<!--{$domian.domian}-->"  class="input-b"/>
+            <span class="oe_trap"><label></label><em>如：baidu.com</em></span>
+		</td></tr>
+<tr>
+	    <th width="5%"><span class="red">*</span>ip：</th>
+		<td width="35%"><input type="text" name="ip" tag="notnull notnum" value="<!--{$domian.ip}-->"  class="input-b"/>
+            <span class="oe_trap"><label></label><em>如：192.168.1.1</em></span>
+		</td></tr>
+ <tr>
+	    <th width="5%">禁止访问：</th>
+		<td width="35%">
+            <select name="flag">
+                <option value="0"
+                    <!--{if $domian.flag=='0'}-->
+                    selected
+                                <!--{/if}-->
+                   > 否</option>
+                <option value="1"
+                    <!--{if $domian.flag=='1'}-->
+                    selected
+                                <!--{/if}-->
+                   >是</option>
+            </select>禁止访问即指向127.0.0.1</td></tr>
+     </table>
+
+  <div class="oe_button_layout">
+	  <input type="button" class="button_2" value="提交保存" tag="submit" /> 
+	  <span id="submit_tips" class="error"></span>
+	</div>
+</form>
+</div>
+</div>
+</body>

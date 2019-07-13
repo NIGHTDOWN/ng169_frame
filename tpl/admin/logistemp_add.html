@@ -1,0 +1,386 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=<!--{$page_charset}-->" />
+    <!--{include file={$admintpl}"top/headerjs.html"}-->
+</head>
+
+<body>
+    <div class="oemarry_layout">
+  <div class="oe_top_nav">
+	 <!--{include file={$admintpl}"a_nav.html"}-->
+<span><a href="javascript:;" tag="back" url="<!--{url action='run'}-->">&lt;&lt;返回列表</a></span>  </div>
+  <div class="a_content oe_dlv">
+<form id='logis' method="post" action="<!--{url action=$a}-->" >
+    
+     <table class="oe_table_warp">
+       
+          <input type="hidden" value="<!--{$select.logistempid}-->" name="logistempid" />
+          
+           <tr>
+	    <th width="5%"><span class="red">*</span>店铺名称：</th>
+		<td width="35%"><input type="text" name="merchantname"   value="<!--{$select.merchantname}-->" <!--{if $a=='show'}-->disabled<!--{/if}--> class="input-b"/>
+            <span class="oe_trap"><label></label></span>
+		</td></tr>
+
+	  <tr>
+	    <th width="5%"><span class="red">*</span>模板名称：</th>
+		<td width="35%"><input type="text" name="logisname"    value="<!--{$select.logisname}-->"  class="input-b"/>
+            <span class="oe_trap"><label></label></span>
+		</td></tr>
+     
+        <tr>
+        <tr>
+        	   <th width="15%">区域</th>
+		<td width="35%">
+                   <script>
+           $cityurl='<!--{url action='city' mod='merchant'}-->';
+           $areaurl='<!--{url action='area' mod='merchant'}-->';
+           $(function(){
+           	$("[name='provinceid']").change(function(){
+           		yAjax($cityurl,{provinceid:$(this).val()},function($data){
+           			if($data.flag){
+           				$html='';
+           				$.each($data.data,function(i,v){
+           					$html+='<option value='+v.cityID+'>'+v.city+'</option>';
+           				});
+           				
+           				if($("[name='cityid']").get(0)){
+           					$("[name='cityid']").html($html);	
+           				}else{
+           					$html="<select name='cityid'>"+$html+'</select>';
+           				$("[name='provinceid']").after($html);	
+           				}
+           			}else{
+           				showd('数据获取失败');
+           			}
+           		});
+           	});
+           	
+           	$("[name='cityid']").live('change',function(){
+           		yAjax($areaurl,{cityid:$(this).val()},function($data){
+           			if($data.flag){
+           				$html='';
+           				$.each($data.data,function(i,v){
+           					$html+='<option value='+v.areaID+'>'+v.area+'</option>';
+           				});
+           				
+           				if($("[name='areaid']").get(0)){
+           					$("[name='areaid']").html($html);	
+           				}else{
+           					$html="<select name='areaid'>"+$html+'</select>';
+           				$("[name='cityid']").after($html);	
+           				}
+
+           			}else{
+           				showd('数据获取失败');
+           			}
+           		});
+           	});
+           	
+           	
+           	
+           	
+           });
+           	
+           </script>
+              <!--{assign var="cat" vo_list("fun={get_all} mod={province} field={provinceID,province} array={flag:0}")}-->
+            <select name='provinceid'>
+                 <option value='0'>-请选择-</option>
+                <!--{foreach $cat as $volist}-->
+               
+                <option value='<!--{$volist.provinceID}-->'
+                    <!--{if $select.provinceid==$volist.provinceID}-->
+                  selected="selected"
+                                <!--{/if}-->
+                    >
+                    <!--{$volist.province}--></option>
+                <!--{/foreach}-->
+            </select>
+             
+             <!--{if $select.cityid}-->
+              <!--{assign var="cat" vo_list("fun={get_all} mod={city} field={cityID,city} array={flag:0,fatherID:{$select.provinceid}}")}-->
+            <select name='cityid'>
+                  <option value='0'>-请选择-</option>
+                <!--{foreach $cat as $volist}-->
+                <option value='<!--{$volist.cityID}-->'
+                    <!--{if $select.cityid==$volist.cityID}-->
+                  selected="selected"
+                                <!--{/if}-->
+                    >
+                    
+                    
+                    <!--{$volist.city}--></option>
+                <!--{/foreach}-->
+            </select>
+             <!--{/if}-->
+             <!--{if $select.areaid}-->
+              <!--{assign var="cat" vo_list("fun={get_all} mod={area} field={areaID,area} array={flag:0,fatherID:{$select.cityid}}")}-->
+            <select name='areaid'>
+               <option value='0'>-请选择-</option>
+                <!--{foreach $cat as $volist}-->
+                <option value='<!--{$volist.areaID}-->'
+                    <!--{if $select.areaid==$volist.areaID}-->
+                  selected="selected"
+                                <!--{/if}-->
+                    >
+                    <!--{$volist.area}--></option>
+                <!--{/foreach}-->
+            </select>
+             <!--{/if}-->  
+            
+		</td>
+        </tr>
+	    <tr>
+
+	            <th width="5%">是否包邮：</th>
+		        <td width="35%">
+                    <select name="ltype">
+                        <option value="0"
+                            <!--{if $select.ltype=='0'}-->
+                            selected
+                                        <!--{/if}-->
+                            >否</option>
+                        <option value="1"
+                            <!--{if $select.ltype=='1'}-->
+                            selected
+                                        <!--{/if}-->
+                            >是</option>
+                    </select></td></tr>
+                     <tr>
+
+	            <th width="5%">计价方式：</th>
+		        <td width="35%">
+                    <select name="pricingmode">
+                        <option value="0"
+                            <!--{if $select.pricingmode=='0'}-->
+                            selected
+                                        <!--{/if}-->
+                            > 按件数</option>
+                        <option value="1"
+                            <!--{if $select.pricingmode=='1'}-->
+                            selected
+                                        <!--{/if}-->
+                            >按重量</option>
+                             <option value="2"
+                            <!--{if $select.pricingmode=='2'}-->
+                            selected
+                                        <!--{/if}-->
+                            >按体积</option>
+                    </select></td></tr>
+                      <tr>
+
+	            <th width="5%">运送方式：</th>
+		        <td width="35%" class="ysfs">
+		        <style>
+		        	#ems_con input{
+		        		border: 2px inset;
+		        	}
+		        </style>
+   <script>
+   	$(function(){
+   		$("[name='pricingmode']").change(function(){
+   			
+   			$('.ysfs').find('div').remove();
+   			$('.ysfs').find('[type=checkbox]').attr('checked',false);
+   		});
+   		
+   		$('.logischoose').change(function(){
+   			if($(this).attr('checked')){
+   			$type=$("[name='pricingmode']").val();
+   			
+   			$name=$(this).attr('name');
+   			$obj=$('.logisbox'+$name);
+   		
+   			switch($type){
+			   	case '0':
+			   	
+			   		$val='件';
+			   		$html=$obj.html().replace(/m³/g,$val);
+			   		$('#logis').find($(this)).parent().append($($html));
+			   		/*$(this).parent().append($($html));*/
+			   		break;
+			   	case '1':$val='kg';
+			   	$html=$obj.html().replace(/m³/g,$val);
+			   	$(this).parent().append($($html));
+			   		break;
+			   		case '2':$val='';
+			   		
+			   		  	$(this).parent().append($($obj.html()));
+			   		
+			   		break;
+			   }
+   			}else{
+   				$(this).parent().children('#ems_con').remove();
+   			}
+
+   		});
+   		$('#submit').click(function(){
+   			$.post($('#logis').attr('action'),$('#logis').find(':input').serialize(),function(data){
+   				data=jta(data);
+   				
+   				if(data.flag){
+   					showd(data.data);
+   					_go_url('<!--{url action='run'}-->');
+   				}else{
+   					showd(data.error.errormsg);
+   				}
+   			});
+   			
+   		});
+   	});
+   	
+   </script>
+    <LABEL >
+      
+        <INPUT style="" class=logischoose name='kd' value='1'  type="checkbox" <!--{if $select.kd}-->checked="checked"<!--{/if}-->>
+        快递
+        <!--{if $select.kd}-->
+<DIV id=ems_con>
+        <DIV style="BORDER-BOTTOM: #999999 1px solid; BORDER-LEFT: #999999 1px solid;width: 520px; PADDING-BOTTOM: 10px; PADDING-LEFT: 10px; PADDING-RIGHT: 10px; BORDER-TOP: #999999 1px solid; BORDER-RIGHT: #999999 1px solid; PADDING-TOP: 10px">
+            <TABLE width="100%">
+                <TBODY>
+                    <TR>
+                        <TD style="PADDING-BOTTOM: 10px; PADDING-LEFT: 10px; PADDING-RIGHT: 10px; PADDING-TOP: 10px" bgColor=#f3feed>&nbsp; 默认运费：
+                            <INPUT  style="WIDTH: 50px" id=default_ems_num onkeyup="value=value.replace(/[^\d]/g,'')" name=kdnum value=<!--{$select.kdnum}-->>m³内，
+                            <INPUT  style="WIDTH: 50px" id=default_ems_price onkeyup="value=value.replace(/[^\d]/g,'')" name=kdmoney value=<!--{$select.kdmoney}-->>元， 每增加
+                            <INPUT  style="WIDTH: 50px" id=add_ems_num onkeyup="value=value.replace(/[^\d]/g,'')" name=kdnummore value=<!--{$select.kdnummore}-->>m³， 增加运费
+                            <INPUT  style="WIDTH: 50px" id=add_ems_price onkeyup="value=value.replace(/[^\d]/g,'')" name=kdmoneymore value=<!--{$select.kdmoneymore}-->>元
+                         
+                        </TD>
+                    </TR>
+                </TBODY>
+            </TABLE>
+            
+            
+        </DIV>
+    </DIV>
+<!--{/if}-->
+        </LABEL><br>
+
+    <LABEL >
+        <INPUT style="" class=logischoose name='ems' value=1  type=checkbox <!--{if $select.ems}-->checked="checked"<!--{/if}-->>EMS
+         <!--{if $select.ems}-->
+    <DIV id=ems_con>
+        <DIV style="BORDER-BOTTOM: #999999 1px solid; BORDER-LEFT: #999999 1px solid;width: 520px; PADDING-BOTTOM: 10px; PADDING-LEFT: 10px; PADDING-RIGHT: 10px; BORDER-TOP: #999999 1px solid; BORDER-RIGHT: #999999 1px solid; PADDING-TOP: 10px">
+            <TABLE width="100%">
+                <TBODY>
+                    <TR>
+                        <TD style="PADDING-BOTTOM: 10px; PADDING-LEFT: 10px; PADDING-RIGHT: 10px; PADDING-TOP: 10px" bgColor=#f3feed>&nbsp; 默认运费：
+                            <INPUT  style="WIDTH: 50px" id=default_ems_num onkeyup="value=value.replace(/[^\d]/g,'')" name=emsnum value=<!--{$select.emsnum}-->>m³内，
+                            <INPUT  style="WIDTH: 50px" id=default_ems_price onkeyup="value=value.replace(/[^\d]/g,'')" name=emsmoney value=<!--{$select.emsmoney}-->>元， 每增加
+                            <INPUT  style="WIDTH: 50px" id=add_ems_num onkeyup="value=value.replace(/[^\d]/g,'')" name=emsnummore value=<!--{$select.emsnummore}-->>m³， 增加运费
+                            <INPUT  style="WIDTH: 50px" id=add_ems_price onkeyup="value=value.replace(/[^\d]/g,'')" name=emsmoneymore value=<!--{$select.emsmoneymore}-->>元
+                         
+                        </TD>
+                    </TR>
+                </TBODY>
+            </TABLE>
+            
+            
+        </DIV>
+    </DIV>
+    <!--{/if}-->
+        </LABEL><br>
+   
+    <LABEL>
+        <INPUT style="" class=logischoose name='py' value=1  type=checkbox <!--{if $select.py}-->checked="checked"<!--{/if}-->>平邮
+        <!--{if $select.py}-->
+    
+    <DIV id=ems_con>
+        <DIV style="BORDER-BOTTOM: #999999 1px solid; BORDER-LEFT: #999999 1px solid;width: 520px; PADDING-BOTTOM: 10px; PADDING-LEFT: 10px; PADDING-RIGHT: 10px; BORDER-TOP: #999999 1px solid; BORDER-RIGHT: #999999 1px solid; PADDING-TOP: 10px">
+            <TABLE width="100%">
+                <TBODY>
+                    <TR>
+                        <TD style="PADDING-BOTTOM: 10px; PADDING-LEFT: 10px; PADDING-RIGHT: 10px; PADDING-TOP: 10px" bgColor=#f3feed>&nbsp; 默认运费：
+                            <INPUT  style="WIDTH: 50px" id=default_ems_num onkeyup="value=value.replace(/[^\d]/g,'')" name=pynum value=<!--{$select.pynum}-->>m³内，
+                            <INPUT  style="WIDTH: 50px" id=default_ems_price onkeyup="value=value.replace(/[^\d]/g,'')" name=pymoney value=<!--{$select.pymoney}-->>元， 每增加
+                            <INPUT  style="WIDTH: 50px" id=add_ems_num onkeyup="value=value.replace(/[^\d]/g,'')" name=pynummore value=<!--{$select.pynummore}-->>m³， 增加运费
+                            <INPUT  style="WIDTH: 50px" id=add_ems_price onkeyup="value=value.replace(/[^\d]/g,'')" name=pymoneymore value=<!--{$select.pymoneymore}-->>元
+                         
+                        </TD>
+                    </TR>
+                </TBODY>
+            </TABLE>
+        </DIV>
+    </DIV>
+    <!--{/if}-->
+        </LABEL><br>
+    
+    <DIV class=form-error></DIV>
+</td>
+		        </tr>
+       
+     </table>
+
+  <div class="oe_button_layout">
+	  <input type="button" class="button_2" value="提交保存" id="submit" /> 
+	  <span id="submit_tips" class="error"></span>
+	</div>
+</form>
+</div>
+</div>
+<div id='logisbox'>
+<div class="logisboxkd none">
+	<DIV id=ems_con>
+        <DIV style="BORDER-BOTTOM: #999999 1px solid; BORDER-LEFT: #999999 1px solid;width: 520px; PADDING-BOTTOM: 10px; PADDING-LEFT: 10px; PADDING-RIGHT: 10px; BORDER-TOP: #999999 1px solid; BORDER-RIGHT: #999999 1px solid; PADDING-TOP: 10px">
+            <TABLE width="100%">
+                <TBODY>
+                    <TR>
+                        <TD style="PADDING-BOTTOM: 10px; PADDING-LEFT: 10px; PADDING-RIGHT: 10px; PADDING-TOP: 10px" bgColor=#f3feed>&nbsp; 默认运费：
+                            <INPUT  style="WIDTH: 50px" id=default_ems_num onkeyup="value=value.replace(/[^\d]/g,'')" name=kdnum value=1>m³内，
+                            <INPUT  style="WIDTH: 50px" id=default_ems_price onkeyup="value=value.replace(/[^\d]/g,'')" name=kdmoney value=10>元， 每增加
+                            <INPUT  style="WIDTH: 50px" id=add_ems_num onkeyup="value=value.replace(/[^\d]/g,'')" name=kdnummore value=1>m³， 增加运费
+                            <INPUT  style="WIDTH: 50px" id=add_ems_price onkeyup="value=value.replace(/[^\d]/g,'')" name=kdmoneymore value=10>元
+                         
+                        </TD>
+                    </TR>
+                </TBODY>
+            </TABLE>
+            
+            
+        </DIV>
+    </DIV>
+</div>
+<div class="logisboxems none">
+	<DIV id=ems_con>
+        <DIV style="BORDER-BOTTOM: #999999 1px solid; BORDER-LEFT: #999999 1px solid;width: 520px; PADDING-BOTTOM: 10px; PADDING-LEFT: 10px; PADDING-RIGHT: 10px; BORDER-TOP: #999999 1px solid; BORDER-RIGHT: #999999 1px solid; PADDING-TOP: 10px">
+            <TABLE width="100%">
+                <TBODY>
+                    <TR>
+                        <TD style="PADDING-BOTTOM: 10px; PADDING-LEFT: 10px; PADDING-RIGHT: 10px; PADDING-TOP: 10px" bgColor=#f3feed>&nbsp; 默认运费：
+                            <INPUT  style="WIDTH: 50px" id=default_ems_num onkeyup="value=value.replace(/[^\d]/g,'')" name=emsnum value=1>m³内，
+                            <INPUT  style="WIDTH: 50px" id=default_ems_price onkeyup="value=value.replace(/[^\d]/g,'')" name=emsmoney value=10>元， 每增加
+                            <INPUT  style="WIDTH: 50px" id=add_ems_num onkeyup="value=value.replace(/[^\d]/g,'')" name=emsnummore value=1>m³， 增加运费
+                            <INPUT  style="WIDTH: 50px" id=add_ems_price onkeyup="value=value.replace(/[^\d]/g,'')" name=emsmoneymore value=10>元
+                         
+                        </TD>
+                    </TR>
+                </TBODY>
+            </TABLE>
+            
+            
+        </DIV>
+    </DIV>
+</div>
+<div class="logisboxpy none">
+	<DIV id=ems_con>
+        <DIV style="BORDER-BOTTOM: #999999 1px solid; BORDER-LEFT: #999999 1px solid;width: 520px; PADDING-BOTTOM: 10px; PADDING-LEFT: 10px; PADDING-RIGHT: 10px; BORDER-TOP: #999999 1px solid; BORDER-RIGHT: #999999 1px solid; PADDING-TOP: 10px">
+            <TABLE width="100%">
+                <TBODY>
+                    <TR>
+                        <TD style="PADDING-BOTTOM: 10px; PADDING-LEFT: 10px; PADDING-RIGHT: 10px; PADDING-TOP: 10px" bgColor=#f3feed>&nbsp; 默认运费：
+                            <INPUT  style="WIDTH: 50px" id=default_ems_num onkeyup="value=value.replace(/[^\d]/g,'')" name=pynum value=1>m³内，
+                            <INPUT  style="WIDTH: 50px" id=default_ems_price onkeyup="value=value.replace(/[^\d]/g,'')" name=pymoney value=10>元， 每增加
+                            <INPUT  style="WIDTH: 50px" id=add_ems_num onkeyup="value=value.replace(/[^\d]/g,'')" name=pynummore value=1>m³， 增加运费
+                            <INPUT  style="WIDTH: 50px" id=add_ems_price onkeyup="value=value.replace(/[^\d]/g,'')" name=pymoneymore value=10>元
+                         
+                        </TD>
+                    </TR>
+                </TBODY>
+            </TABLE>
+        </DIV>
+    </DIV>
+</div>
+</div>
+</body>

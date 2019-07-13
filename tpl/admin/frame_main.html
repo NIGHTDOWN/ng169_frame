@@ -1,0 +1,123 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=<!--{$page_charset}-->" />
+<!--{include file={$admintpl}"top/headerjs.html"}-->
+<body>
+
+<div class="a_main oemarry_layout">
+    <div class="oe_top_nav">
+	 <!--{include file={$admintpl}"a_nav.html"}-->
+  </div>
+  <div class="a_content">
+  <h2>系统信息</h2>
+    <div class="a_system">
+      <table class="a_table">
+       
+        <tr>
+         <th width="20%">站点域名：</th>
+          <td width="30%"><!--{$config.site_url}--></td>
+          <th width="20%">操作系统：</th>
+          <td width="30%"><!--{$sysdata.os}--></td>         
+        </tr>
+        <tr>
+          <th>服务器IP：</th>
+          <td><!--{$sysdata.serverip}--></td>
+          <th>客户端IP：</th>
+          <td><!--{$sysdata.clientip}--></td>
+        </tr>
+
+        <tr>
+          <th>PHP版本：</th>
+          <td><!--{$sysdata.phpversion}--></td>
+          <th>curl支持：</th>
+          <td><!--{$sysdata.curl}--></td>
+        </tr>
+        <tr>
+          <th>GD版本：</th>
+          <td><!--{$sysdata.gd}--></td>
+          <th>iconv支持：</th>
+          <td><!--{$sysdata.iconv}--></td>
+        </tr>
+        <tr>
+          <th>url fopen：</th>
+          <td><!--{$sysdata.urlopen}--></td>
+           <th>web引擎：</th>
+          <td><!--{$sysdata.webengine}--></td>
+        </tr>
+        <tr>
+         <th width="20%">支付宝：</th>
+          <td width="30%"><img style="width: 250px" src='<!--{$admintpl}-->images/zfb.jpg'/></td>
+          <th width="20%">微信：</th>
+          <td width="30%"><img  style="width: 250px" src='<!--{$admintpl}-->images/wx.png'/></td>         
+        </tr>
+      </table>
+    </div>  
+  </div> 
+  <div class="a_content">
+    <h2>dns server</h2>
+    <pre>
+    	<p style="text-align:center;text-indent:2em;">
+	<span style="font-size:14px;"><strong>本服务为快速dns server ，专为开发。</strong></span>
+</p>
+<p style="text-indent:2em;">
+	<span style="background-color:#FF9900;font-size:14px;">相信大家都有一个烦恼（开发的时候需要绑定域名，每次都要修改host，对方也要修改host才能访问你的服务。然而对方可能是个小白，啥也不会</span><img src="http://chat.com/tpl/static/js/plugins/emoticons/images/27.gif" border="0" alt="" /><span style="background-color:#FF9900;font-size:14px;">，也可能对方客户端是手机端，修改host超级麻烦“要root或者越狱”，另外网上的dns服务搭建也是超级麻烦，一堆命令敲下去，小白瞬间懵逼了有没有</span><img src="http://chat.com/tpl/static/js/plugins/emoticons/images/18.gif" border="0" alt="" /><span style="background-color:#FF9900;font-size:14px;">，然后好不容易安装好了又是各种错误，说明正向解析，反向解析，总之一个字，超级烦）</span>
+</p>
+<p style="text-indent:2em;">
+	<span style="font-size:14px;">所以呢本工程师决定为大家做个福利工具 </span><strong><span style="font-size:14px;">dns server</span></strong>
+</p>
+<p style="text-indent:2em;">
+	<span style="font-size:14px;">优势：(<strong><span style="color:#E53333;">如果各位大佬觉得好用的话可以打赏下</span></strong>)</span>
+</p>
+<p style="text-indent:2em;">
+	<span style="color:#E53333;font-size:14px;">避免了重复修改host，一次修改兼容所有配置了此dns的客户端</span>
+</p>
+<p style="text-indent:2em;">
+	<span style="color:#E53333;font-size:14px;">（</span>
+</p>
+<p style="text-indent:2em;">
+	<span style="color:#E53333;font-size:14px;">1、可以修改pc端的 dns 或者手机设置里面的ip，配置成对应的本服务服务器ip即可，（这个对小白来说可能比较复杂）</span>
+</p>
+<p style="text-indent:2em;">
+	<span style="color:#E53333;font-size:14px;">2、直接改路由器里面dhcp配置把dns 改成&nbsp;</span><span style="color:#E53333;font-size:14px;">本服务服务器ip&nbsp;</span>
+</p>
+<p style="text-indent:2em;">
+	<span style="color:#E53333;font-size:14px;">）</span>
+</p>
+<p style="text-indent:2em;">
+	<span style="color:#E53333;font-size:14px;">本服务器可以架设在本地也可以直接架设在公网服务器；公网的用户只要解析到本服务器；所有你配置的域名都会按照你的解析生效。开发也方便了。</span>
+</p>
+<p style="text-indent:2em;">
+	<span style="font-size:14px;">本服务依赖：mysql php（） webserver（apache 或者nginx，不装也可以；通过直接修改/hosts</span><span style="font-size:14px;">）</span>
+</p>
+<p style="text-indent:2em;">
+	<span style="font-size:14px;">访问 域名/index.php管理后台</span>
+</p>
+<p style="text-indent:2em;">
+	<span style="font-size:14px;">后台账号：admin</span>
+</p>
+<p style="text-indent:2em;">
+	<span style="font-size:14px;">后台密码：admin</span>
+</p>
+<p style="text-indent:2em;">
+	<span style="font-size:14px;">安装：/install.php</span>
+</p>
+<p style="text-indent:2em;">
+	<span style="font-size:14px;">服务开启：执行命令 php dns.php（开启防火墙端口 udp 53）</span>
+</p>
+<p style="text-indent:2em;">
+	<span style="font-size:14px;">本程序官网：</span><a class="ke-insertfile" href="http://www.ng169.com" target="_blank"><span style="font-size:14px;">霓光网络</span></a>
+</p>
+<p style="text-indent:2em;">
+	<br />
+</p>
+<p style="text-indent:2em;">
+	<br />
+</p>
+    </pre>
+  
+  </div>
+</div>
+ 
+</body>
+</html>

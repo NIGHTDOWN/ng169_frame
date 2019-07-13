@@ -1,0 +1,112 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=<!--{$page_charset}-->" />
+   <!--{include file={$admintpl}"top/headerjs.html"}-->
+</head>
+<body>
+    <div class="oemarry_layout">
+  <div class="oe_top_nav">
+	 <!--{include file={$admintpl}"a_nav.html"}-->
+	<span><a href="javascript:;" tag="back" url="<!--{url action="run"}-->">&lt;&lt;返回列表</a></span>
+  </div>
+  <div class="a_content oe_dlv">
+<form method="post" action="<!--{url action='add'}-->" >
+                           
+                  
+                              <input type="hidden" name="cover" value="<!--{$ads.drawimg}-->"> 
+                           
+                  
+    <input name="albumid" type="hidden" value="<!--{$ads.albumid}-->">
+     <table class="oe_table_warp">
+              <tr>
+	    <th width="15%"><span class="red">*</span>广告位名称：</th>
+		<td  width="35%"><input type="text" name="name" tag="notnull" num="30" value="<!--{$ads.name}-->"  class="input-b"/> </td>
+	    <th width="15%"></th>
+		<td  width="35%"></td>
+              </tr>
+         <tr>
+             <th ><span class="red">*</span>广告位标示：</th>
+		<td><input type="text" name="identify" tag="notnull isnumen" num="30" value="<!--{$ads.identify}-->"  class="input-b"/>    <span class="oe_trap">
+                <label></label>
+                <em>前台调用使用,唯一</em></span></td>
+	    <th ><span class="red">*</span>分类：</th>
+		<td>
+        
+            <select name='type'>
+                <option value=''>幻灯片</option>
+                 <option value=''>单图</option>
+                 <option value=''>文字</option>
+             
+            </select>
+          
+                </td>
+          </tr>
+   
+         
+         <tr>
+             
+            <th >展示模块;</th>
+		<td >
+                    <input type="text" name="mod" tag="cannull " value="<!--{$ads.mod}-->"  class="input-100"/> 
+            <label><span class="oe_trap"><em>限制在指定展示模块：的模块展示,不填则所有模块可调用</em></span></label></td>
+               <th >展示城市：</th>
+		<td >
+                  
+            <!--{assign var="tpldata" value=area()}-->
+            <script>
+                $msg = jta('<!--{$tpldata}-->');
+                load_area_box($msg, '<!--{$ads.areaname}-->', 'cityid', '<!--{$ads.cityid}-->',2);</script>
+            <span class="oe_trap">
+                <label></label>
+                <em>选择要展示的城市,不填写则无限制</em></span>
+            </td>
+	  </tr>
+         <tr>
+             
+            <th ><span class="red">*</span>宽度</th>
+		<td >
+                    <input type="text" name="width" tag="notnull fixnum" value="<!--{$ads.width}-->"  class="input-100"/>PX 
+            <label></label></td>
+               <th ><span class="red">*</span>高度：</th>
+		<td >
+                  
+                              <input type="text" name="height" tag="notnull fixnum" value="<!--{$ads.height}-->"  class="input-100"/>PX
+            
+            </td>
+	  </tr>
+         
+         <tr>
+             <th >状态：</th>
+		<td >
+                    <select name="flag">
+                        <option value="0"
+                            <!--{if $ads.flag=='0'}-->
+                            selected
+                                        <!--{/if}-->
+                            >正常</option>
+                        <option value="1"
+                            <!--{if $ads.flag=='1'}-->
+                            selected
+                                        <!--{/if}-->
+                            >锁定</option>
+                    </select>
+            <label><span class="oe_trap"><em>
+    
+            </em></span> </label>
+		</td>  
+	  </tr>
+         <tr>
+	    <th >描述：</th>
+		<td >
+            <textarea  cols="45" rows="3" name="desc"><!--{$ads.desc}--></textarea></td>
+	  </tr>
+     </table>
+  <div class="oe_button_layout">
+	  <input type="button" class="button_2" value="提交保存" tag="submit" /> 
+	  <span id="submit_tips" class="error"></span>
+	</div>
+</form>
+</div>
+</div>
+</body>

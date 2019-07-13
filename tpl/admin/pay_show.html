@@ -1,0 +1,361 @@
+    <!--{include file={$admintpl}"top/headerjs.html"}-->
+</head>
+<body>
+    <style>
+        .alt{
+    width:200px;
+    float:left;
+    }     
+
+    </style>
+    <div class="oemarry_layout">
+  <div class="oe_top_nav">
+	 <!--{include file={$admintpl}"a_nav.html"}-->
+<span><a href="javascript:;" url="<!--{url action='run'}-->" aa="back">&lt;&lt;返回列表</a></span>
+  </div>
+  <div class="a_content oe_dlv">
+         <h1>交易状态</h1><form method="post" action="<!--{url action='save'}-->" >
+    <input name="payid" type="hidden" value="<!--{$data.payid}-->">
+     <table class="oe_table_warp">
+	  <tr>
+	    <th width="6.1%" ><span class=""> 订单状态</span>：</th>
+		<td width="35%">
+           <!--{if $data.flag==0}-->待支付
+                 <!--{elseif $data.flag==1}-->待确认
+                 <!--{elseif $data.flag==2}--> 完成
+                 <!--{elseif $data.flag==3}--><span class="red">纠纷中 </span>
+                 <!--{elseif $data.flag==4}--> <span class="red">关闭 </span>
+                <!--{/if}-->
+         <label></label>
+		</td>
+	    
+	  </tr>
+      <!--{if $data.flag>0 && $data.drawimg}-->
+
+         <tr>
+             <th>小票</th>
+             <td>
+<img src="<!--{$data.drawimg}-->"  style="width:400px;height:100px" /> 
+                 <a id="send_email1" target="_blank" class="oe_ico_blue" href="<!--{$data.drawimg}-->">查看原图</a>
+                     </td>
+         </tr>
+         
+                <!--{/if}-->
+             <!--{if $data.flag>2}-->
+           <tr>
+             <th > 纠纷类型:</th>
+             <td> 
+                 <!--{$jbtype.<!--{$data.contenttype}-->}-->
+                     </td>
+              
+                     </td>
+         </tr> <tr>
+            
+                <th >详情:</th>
+             <td>
+                 <!--{$data.content}-->  </td>
+         </tr>
+            <!--{/if}-->
+          </table>
+  <div class="oe_button_layout">
+
+	</div>
+</form>
+      
+<!--{if $data.flag!=2 && $data.flag!=4}--> 
+        <h1>订单处理</h1>
+      <form method="post" action="<!--{url action='save'}-->" >
+    <input name="payid" type="hidden" value="<!--{$data.payid}-->">
+     <table class="oe_table_warp">
+
+    
+    <tr><td width="15%"></td>
+        <td>
+         <div class="center" style="margin-left:45px;margin-top:40px">
+
+              <div style="margin-right: 70px;margin-left: 5px;float:left"><input type="radio" name="name" value="2" />确认收款</div> 
+              <div style="margin-right: 70px;margin-left: 5px;float:left"><input type="radio" name="name" value="3" />关闭订单<span class="red">(拉黑付款方)</span></div> 
+            <div style="margin-right: 70px;margin-left: 5px;float:left"> <input type="radio" name="name" value="4" />关闭订单<span class="red">(拉黑收款方)</span></div> 
+           <div style="margin-right: 70px;margin-left: 5px;float:left">  <input type="radio" name="name" value="5" />关闭订单<span class="red">(拉双方)</span></div> 
+         </div></td></tr>
+         </table>
+    <div class="oe_button_layout">
+	  <input type="submit" class="button_2" value="确认操作" /> 
+	  <span id="submit_tips" class="error"></span>
+	</div>
+</form>
+     <!--{/if}-->
+      <h1>付款人信息</h1>
+<form method="post" action="<!--{url action='save'}-->" >
+    <input name="payid" type="hidden" value="<!--{$data.payid}-->">
+     <table class="oe_table_warp">
+	  <tr>
+	    <th width="15%"><span class="">付款人账号</span>：</th>
+		<td width="35%">
+            <span class="alt"><!--{$data.fromuid|userinfo:"username"}--> </span>
+         <label></label>
+		</td>
+	    <th >关联舍编号：</th>
+		<td >
+              <span class="alt">  <!--{$data.oid}--></span>
+            <a id="send_email0" class="oe_ico_blue" href="<!--{url mod='out' action='' args="oid:{$data.oid}" group=''}-->" >查看舍单</a>
+		</td>
+	  </tr>
+         <tr>
+	    <th >付款人姓名：</th>
+		<td >
+            
+               <span class="alt">  <!--{$data.fromuid|userinfo:"realname"}--></span>
+         
+          
+		</td>
+            <th no="15%">付款人手机：</th>
+		<td no="35%">
+               <span class="alt"> <!--{$data.fromuid|userinfo:"mobile"}--></span>
+         
+            <label></label>
+		</td>
+	  </tr>
+         <tr>
+	    <th >付款人管理员姓名：</th>
+		<td >  <span class="alt"> <!--{<!--{$data.fromuid|userinfo:"gid"}-->|userinfo:"realname"}--></span>
+            <label></label>
+		</td>
+            <th no="15%">付款人管理员手机：</th>
+		<td no="35%"><span class="alt"><!--{<!--{$data.fromuid|userinfo:"gid"}-->|userinfo:"mobile"}--></span>
+            <label></label>
+		</td>
+	  </tr>
+         <tr>
+	    <th >创建时间：</th>
+		<td >
+            <span class="alt"><!--{$data.addtime|date_format:'%Y-%m-%d %H:%M:%S'}--></span>
+            <th no="15%">用户确认时间：</th>
+		<td no="35%">
+             <span class="alt"><!--{$data.paytime|date_format:'%Y-%m-%d %H:%M:%S'}--></span>
+            <label></label>
+		</td>
+	  </tr>
+         
+<tr>
+	    <th no="15%">银行类型：</th>
+		<td no="35%">
+                   
+              <span class="alt">    
+                            <!--{if <!--{$data.fromuid|userinfo:"paytype"}-->=='0'}-->
+                        工商银行
+                                        <!--{/if}-->
+                      
+                            <!--{if <!--{$data.fromuid|userinfo:"paytype"}-->=='1'}-->
+                            招商银行
+                                        <!--{/if}-->
+                          
+                            <!--{if <!--{$data.fromuid|userinfo:"paytype"}-->=='2'}-->
+                            民生银行
+                                        <!--{/if}-->
+                   
+                            <!--{if <!--{$data.fromuid|userinfo:"paytype"}-->=='3'}-->
+                            光大银行
+                                        <!--{/if}-->
+                          
+                            <!--{if <!--{$data.fromuid|userinfo:"paytype"}-->=='4'}-->
+                            建设银行
+                                        <!--{/if}-->
+                      
+                            <!--{if <!--{$data.fromuid|userinfo:"paytype"}-->=='5'}-->
+                            中国银行
+                                        <!--{/if}-->
+                      
+                            <!--{if <!--{$data.fromuid|userinfo:"paytype"}-->=='6'}-->
+                            支付宝
+                                        <!--{/if}-->
+                          
+                            <!--{if <!--{$data.fromuid|userinfo:"paytype"}-->=='7'}-->
+                            微信
+                                        <!--{/if}-->
+
+            </span>
+		</td>
+          <th no="15%">电子货币类型：</th>
+		<td no="35%">
+                   
+              <span class="alt">    
+                            <!--{if !<!--{$data.fromuid|userinfo:"electronictype"}-->}-->
+                        未开通
+                                        <!--{/if}-->
+                      
+                            <!--{if <!--{$data.fromuid|userinfo:"electronictype"}-->=='1'}-->
+                            支付宝
+                                        <!--{/if}-->
+                          
+                            <!--{if <!--{$data.fromuid|userinfo:"electronictype"}-->=='2'}-->
+                            微信
+                                        <!--{/if}-->
+                   
+                          
+
+            </span>
+		</td>
+	  </tr>
+         <tr>
+            <th no="15%">卡号：</th>
+		<td no="35%">
+            <span class="alt" style="width:auto;min-width:250px"><!--{$data.fromuid|userinfo:"payname"}--></span>
+            </td>
+              <th no="15%">账户：</th>
+		<td no="35%">
+            <span class="alt" style="width:auto;min-width:250px"><!--{$data.fromuid|userinfo:"electronicuser"}--></span>
+            </td>
+	  </tr>
+       <tr>
+	    <th no="15%">开户支行/分行地址：</th>
+		<td no="35%">
+             <span class="alt" style="width:auto;min-width:250px"><!--{$data.fromuid|userinfo:"payaddress"}--></span>
+       
+	  </tr>
+          </table>
+  <div class="oe_button_layout">
+
+	</div>
+</form>
+      <h1>收款人信息</h1>
+      <form method="post" action="<!--{url action='save'}-->" >
+             
+    <input name="payid" type="hidden" value="<!--{$data.payid}-->">
+     <table class="oe_table_warp">
+  
+	  <tr>
+	    <th width="15%"><span class="">收款人账号</span>：</th>
+		<td width="35%">
+            <span class="alt">   <!--{$data.touid|userinfo:"username"}--> </span>
+         <label></label>
+		</td>
+	    <th >关联舍编号：</th>
+		<td >
+              <span class="alt">  <!--{$data.iid}--></span>
+            <a id="send_email0" class="oe_ico_blue" href="<!--{url mod='in' action='' args="iid:{$data.iid}" group=''}-->" >查看得单</a>
+		</td>
+	  </tr>
+         <tr>
+	    <th >收款人姓名：</th>
+		<td >
+            
+               <span class="alt">  <!--{$data.touid|userinfo:"realname"}--></span>
+         
+          
+		</td>
+            <th no="15%">收款人手机：</th>
+		<td no="35%">
+               <span class="alt"> <!--{$data.touid|userinfo:"mobile"}--></span>
+         
+            <label></label>
+		</td>
+	  </tr>
+         <tr>
+	    <th >付款人管理员姓名：</th>
+		<td >  <span class="alt"> <!--{<!--{$data.touid|userinfo:"gid"}-->|userinfo:"realname"}--></span>
+            <label></label>
+		</td>
+            <th no="15%">收款人管理员手机：</th>
+		<td no="35%"><span class="alt"><!--{<!--{$data.touid|userinfo:"gid"}-->|userinfo:"mobile"}--></span>
+            <label></label>
+		</td>
+	  </tr>
+         <tr>
+	    <th >创建时间：</th>
+		<td >
+            <span class="alt"><!--{$data.addtime|date_format:'%Y-%m-%d %H:%M:%S'}--></span>
+            <th no="15%">用户确认时间：</th>
+		<td no="35%">
+             <span class="alt"><!--{$data.etime|date_format:'%Y-%m-%d %H:%M:%S'}--></span>
+            <label></label>
+		</td>
+	  </tr>
+         
+<tr>
+	    <th no="15%">银行类型：</th>
+		<td no="35%">
+                   
+              <span class="alt">    
+                            <!--{if <!--{$data.touid|userinfo:"paytype"}-->=='0'}-->
+                        工商银行
+                                        <!--{/if}-->
+                      
+                            <!--{if <!--{$data.touid|userinfo:"paytype"}-->=='1'}-->
+                            招商银行
+                                        <!--{/if}-->
+                          
+                            <!--{if <!--{$data.touid|userinfo:"paytype"}-->=='2'}-->
+                            民生银行
+                                        <!--{/if}-->
+                   
+                            <!--{if <!--{$data.touid|userinfo:"paytype"}-->=='3'}-->
+                            光大银行
+                                        <!--{/if}-->
+                          
+                            <!--{if <!--{$data.touid|userinfo:"paytype"}-->=='4'}-->
+                            建设银行
+                                        <!--{/if}-->
+                      
+                            <!--{if <!--{$data.touid|userinfo:"paytype"}-->=='5'}-->
+                            中国银行
+                                        <!--{/if}-->
+                      
+                            <!--{if <!--{$data.touid|userinfo:"paytype"}-->=='6'}-->
+                            支付宝
+                                        <!--{/if}-->
+                          
+                            <!--{if <!--{$data.touid|userinfo:"paytype"}-->=='7'}-->
+                            微信
+                                        <!--{/if}-->
+                      
+                         
+                   
+            </span>
+		</td>
+           <th no="15%">电子货币类型：</th>
+		<td no="35%">
+                   
+              <span class="alt">    
+                            <!--{if !<!--{$data.touid|userinfo:"electronictype"}-->}-->
+                        未开通
+                                        <!--{/if}-->
+                      
+                            <!--{if <!--{$data.touid|userinfo:"electronictype"}-->=='1'}-->
+                            支付宝
+                                        <!--{/if}-->
+                          
+                            <!--{if <!--{$data.touid|userinfo:"electronictype"}-->=='2'}-->
+                            微信
+                                        <!--{/if}-->
+                   
+                          
+
+            </span>
+		</td>
+	  </tr>
+         <tr>
+            <th no="15%">卡号：</th>
+		<td no="35%">
+            <span class="alt" style="width:auto;min-width:250px"><!--{$data.touid|userinfo:"payname"}--></span>
+            </td>
+                <th no="15%">账户：</th>
+		<td no="35%">
+            <span class="alt" style="width:auto;min-width:250px"><!--{$data.fromuid|userinfo:"electronicuser"}--></span>
+            </td>
+	  </tr>
+       <tr>
+	    <th no="15%">开户支行/分行地址：</th>
+		<td no="35%">
+             <span class="alt" style="width:auto;min-width:250px"><!--{$data.touid|userinfo:"payaddress"}--></span>
+       
+	  </tr>
+          </table>
+  
+</form>
+    
+      
+</div>
+</div>
+  
+</body>

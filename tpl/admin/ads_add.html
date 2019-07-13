@@ -1,0 +1,124 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=<!--{$page_charset}-->" />
+    <!--{include file={$admintpl}"top/headerjs.html"}-->
+    
+    <style>
+    	h3{
+    		border-top-style: groove;
+    font-size: 18px;
+    padding: 6px 0;margin: 5px 0px;
+    width: auto;
+    	}
+    </style>
+</head>
+<body>
+    <div class="oemarry_layout">
+  <div class="oe_top_nav">
+	 <!--{include file={$admintpl}"a_nav.html"}-->
+<span><a href="javascript:;" url="<!--{url action='run'}-->" tag="back">&lt;&lt;返回列表</a></span>
+  </div>
+  <div class="a_content oe_dlv">
+<form method="post" action="<!--{url action=$a}-->" >
+ <input  type="hidden" name="adsid" value="<!--{$data.adsid}-->"/>
+    <h3>广告位：</h3>
+     <table class="oe_table_warp">
+     <tr>
+	    <th width="15%"><span class="red">*</span>广告位名称：</th>
+		<td width="35%"><input type="text" name="adname" tag="notnull" value="<!--{$data.adname}-->"   class="input-b"/>
+		</td>
+	  </tr>
+  <tr>
+	    <th width="15%"><span class="red">*</span>广告位标示：</th>
+		<td width="35%"><input type="text" name="identify" tag="notnull" value="<!--{$data.identify}-->" <!--{if $a=='show'}-->disabled<!--{/if}-->   class="input-b"/>
+		</td>
+	  </tr>
+	  <tr>
+	    <th width="15%"><span class="red">*</span>广告位类型：</th>
+		<td width="35%">
+		<select name='adtype'>
+                <option value=''>选择类型</option>
+                
+              
+                <option value='0'  
+                    <!--{if $data.adtype==0}-->
+                  selected="selected"
+                                <!--{/if}-->
+                    >
+                    图片</option>
+                 <option value='1'  
+                    <!--{if $data.adtype==1}-->
+                  selected="selected"
+                                <!--{/if}-->
+                    >
+                    幻灯片</option>
+                     <option value='2'  
+                    <!--{if $data.adtype==2}-->
+                  selected="selected"
+                                <!--{/if}-->
+                    >
+                    文字</option>
+            </select>
+		
+            
+		</td>
+       
+	  </tr>
+<tr>
+	    <th width="15%">广告位尺寸：</th>
+		<td width="35%">宽度：<input type="text" name="width" tag="cannull fixnum" value="<!--{$data.width}-->"   class="input-b"/>
+		高度：<input type="text" name="height" tag="cannull fixnum" value="<!--{$data.height}-->"   class="input-b"/>
+		</td>
+	  </tr>
+       
+
+
+
+<tr>
+	    <th width="15%"><span class="red">*</span>广告位总数：</th>
+		<td width="35%">
+		<input type="text" name="num" tag="cannull fixnum" value="<!--{$data.num}-->"   class="input-b"/>
+		
+		
+            
+		</td>
+       
+	  </tr>
+
+<tr>
+	    <th width="15%"><span class="red">*</span>状态：</th>
+		<td width="35%">
+		<select name='flag'>
+                <option value=''>-选择-</option>
+                
+              
+                <option value='0'  
+                    <!--{if $data.flag==0}-->
+                  selected="selected"
+                                <!--{/if}-->
+                    >
+                    是</option>
+                 <option value='1'  
+                    <!--{if $data.flag==1}-->
+                  selected="selected"
+                                <!--{/if}-->
+                    >
+                    否</option>
+                  
+            </select>
+		
+            
+		</td>
+       
+	  </tr>
+         </table>
+    
+  <div class="oe_button_layout">
+	  <input type="button" class="button_2" value="提交保存" tag="submit" /> 
+	  <span id="submit_tips" class="error"></span>
+	</div>
+</form>
+</div>
+</div>
+</body>

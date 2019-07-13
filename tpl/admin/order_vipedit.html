@@ -1,0 +1,125 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=<!--{$page_charset}-->" />
+	<!--{include file={$admintpl}"top/headerjs.html"}-->
+	<script>
+    
+		function checkgid($obj){
+			$url='<!--{url action='isexist'}-->';
+			$value=$($obj).val();
+			yAjax($url,{'username':$value},function(data){
+    			
+					if(data.flag){
+						change_form_statu(true);
+						$callback.call($obj, $msg, 1);
+    			
+					}
+					else{
+						change_form_statu(false);
+						$callback.call($obj, data.error.errormsg, 0);
+					}	
+				});
+    	
+		}
+	</script>
+	<style>
+		.headimg{
+			width: 80px;
+			height: 80px;
+		
+    		
+		}
+	</style>
+</head>
+<body>
+	<div class="oemarry_layout">
+		<div class="oe_top_nav">
+			<!--{include file={$admintpl}"a_nav.html"}-->
+			<span><a href="javascript:;" url="<!--{url action='run'}-->" tag="back">&lt;&lt;返回列表</a></span>
+		</div>
+		<div class="a_content oe_dlv">
+			<form method="post" action="" >
+    <input name="oid" type="hidden" value="<!--{$data.oid}-->">
+     <table class="oe_table_warp">
+     <tr>
+	    <th width="5%"><span class="red">*</span>用户ID：</th>
+		<td width="35%">
+              <span class="oe_trap"><em><!--{$data.uid}--></em></span>
+              </td></tr>
+<tr>
+	    <th width="5%"><span class="red">*</span>用户昵称：</th>
+		<td width="35%">
+              <span class="oe_trap"><em><!--{$data.username}--></em></span>
+              </td></tr>
+            
+              <tr>
+	    <th width="5%"><span class="red">*</span>订单号:</th>
+		<td width="35%">
+              <span class="oe_trap"><em><!--{$data.ordernum}--></em></span>
+              </td></tr>
+              <tr>
+	    <th width="5%"><span class="red">*</span>VIP类型</th>
+		<td width="35%">
+              <span class="oe_trap"><em><!--{$viptype[$data.viptype]}--></em></span>
+              </td></tr>
+              <tr>
+	    <th width="5%"><span class="red">*</span>支付类型</th>
+		<td width="35%">
+              <span class="oe_trap"><em><!--{$paytype[$data.paytype]}--></em></span>
+              </td></tr>
+<tr>
+	    <th width="5%"><span class="red">*</span>金额</th>
+		<td width="35%">
+              <span class="oe_trap"><em><!--{$data.cash/100}--></em></span>
+              </td></tr>
+              <tr>
+	    <th width="5%"><span class="red">*</span>VIP到期时间</th>
+		<td width="35%">
+       <span class="oe_trap"><em>  <!--{$data.viptime|date_format:"%Y-%m-%d %H:%M:%S"}--></em></span>
+              </td></tr>
+               <tr>
+	    <th width="5%"><span class="red">*</span>设备渠道</th>
+		<td width="35%">
+       <span class="oe_trap"><em>  <!--{$mobiletype[$data.mobiletype]}--></em></span>
+              </td></tr>
+     <tr>
+	    <th width="5%"><span class="red">*</span>状态</th>
+		<td width="35%">
+             <span class="oe_trap"><em>  <!--{if $data.paystatus=='0'}-->
+                             待支付
+                           <!--{elseif $data.paystatus=='1'}-->
+                           支付完成
+                          <!--{elseif $data.paystatus=='2'}-->
+                                     取消
+                                        <!--{/if}--></em></span>
+              </td></tr>
+<tr>
+	    <th width="5%"><span class="red">*</span>下单时间</th>
+		<td width="35%">
+             <span class="oe_trap"><em> <!--{$data.addtime|date_format:"%Y-%m-%d %H:%M:%S"}--></em></span>
+              </td></tr>
+<!--{if $data.paystatus=='0'}-->
+  <tr>
+	    <th width="5%"><span class="red">*</span>修改</th>
+		<td width="35%">
+          <select name="paystatus" tag='notnull'>
+          <option value="" >--选择--</option>
+                <option value="1" >完成</option>
+                <option value="2"><font style="color: red">取消</font></option>
+            </select> <span class="oe_trap"><em> 
+             </em></span>
+              </td></tr>       
+<!--{/if}-->
+         </table>
+
+
+  
+  <div class="oe_button_layout">
+	  <input type="button" class="button_2" value="提交保存" tag="submit" /> 
+	  <span id="submit_tips" class="error"></span>
+	</div>
+</form>
+		</div>
+	</div>
+</body>

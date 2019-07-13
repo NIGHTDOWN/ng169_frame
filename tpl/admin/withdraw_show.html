@@ -1,0 +1,116 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=<!--{$page_charset}-->" />
+    <!--{include file={$admintpl}"top/headerjs.html"}-->
+</head>
+<body>
+    <div class="oemarry_layout">
+  <div class="oe_top_nav">
+	 <!--{include file={$admintpl}"a_nav.html"}-->
+	<span><a href="javascript:;" tag="back" url="<!--{url action='wait'}-->">&lt;&lt;返回列表</a></span>
+  </div>
+  <div class="a_content oe_dlv">
+<form method="post" action="<!--{url action="deal"}--> " >
+    <input name="id" type="hidden" value="<!--{$data.id}-->">
+     <table class="oe_table_warp">
+     
+     <tbody>
+     <tr> <td colspan="6"><h1>提款信息：</h1></td></tr>
+     <tr>
+     	<th>交易号：</th><td><!--{$data.id}--></td>
+     	</tr>
+    <tr>
+     	<th><b>提款金额：</b></th><td style="color:red;font-size: 200%"><!--{$data.money}--></td>
+     	<th>金币：</th><td style="color:red;"><!--{$data.fee}--></td>
+     </tr>
+    <tr >
+     		<th>收款人：</th><td style="color:#3402fd"><!--{$data.recvrealname}--></td>
+     	<th>收款号：</th><td  style="color:#3402fd"><!--{$data.recvnum}--></td>
+     
+     
+     </tr>
+      
+<tr>
+     	<th>提现时间：</th><td><!--{$data.addtime|date_format:"%Y-%m-%d %H:%M:%S"}--></td>
+     	<th>到账类型：</th><td>
+     	<!--{if $data.choosetype==1}--><!--{$config.draw_time_1}-->
+     		<!--{elseif $data.choosetype==2}--><!--{$config.draw_time_2}-->
+     		<!--{elseif $data.choosetype==3}--><!--{$config.draw_time_3}-->
+     		<!--{/if}-->
+     		
+     	</td>
+     	
+     
+     </tr>
+
+</tbody>
+    
+     <tbody>
+     <tr> <td colspan="6"><h1>用户信息：</h1></td></tr>
+     <tr>
+     	<th>用户账号：</th><td><!--{$data.username}--></td>
+     	<th>用户国家：</th><td><!--{$data.realname}--></td>
+     	<th>用户剩余金币：</th><td><!--{$data.coin/100}--></td>
+     </tr>
+    
+</tbody>
+<!--{if $data.status!=0}-->
+      <tbody>
+     <tr> <td colspan="6"><h1>操作员：</h1></td></tr>
+     <tr>
+     	<th>管理员账号：</th><td><!--{$data.adminname}--></td>
+     	<th>处理时间：</th><td><!--{$data.paytime|date_format:"%Y-%m-%d %H:%M:%S"}--></td>
+     
+     </tr>
+    <tr>
+     	<th>操作截图</th><td colspan="4"><img src="<!--{$data.adminimg}-->" style="width:100px;height:100px"></td>
+     </tr>
+      <tr>
+     	<th>操作备注</th><td colspan="4"><!--{$data.admindesc}--></td>
+     </tr>
+</tbody>   
+<!--{else}-->
+ <tbody>
+     <tr> <td colspan="6"><h1>操作</h1></td></tr>
+     <tr>
+     	<th>打款结果</th><td colspan="4">
+     		<select name="type" tag='notnull'>
+     			<option value="">==请选择==</option>
+     			<option value="1">完成</option>
+     			<option value="2">关闭</option>
+     		</select>
+     	</td>
+     	
+     
+     </tr>
+    <tr>
+     	<th>操作截图</th><td colspan="4">
+     	<div class="img">
+     	<button tag="img_up_one" class="adminimg" type="button" id="oe_img_button">上传</button>
+     		</div>
+     	</td>
+     </tr>
+      <tr>
+     	<th>操作备注</th><td colspan="4">
+     		<textarea name="admindesc" style="width: 600px;height:200px"> </textarea>
+     	</td>
+     </tr>
+</tbody> 
+     <!--{/if}-->  
+
+         </table>
+
+
+  
+  <div class="oe_button_layout">
+  <input type="button" class="button_2" style="    background: #fc5f00;border-radius: 10px;" value="自动打款"  onclick="_go_url('<!--{url action='paypal' args="id:$data.id"}-->')"/> 
+	  <input type="button" class="button_2" value="人工打款" tag="submit" /> 
+	  
+	  <span id="submit_tips" class="error"></span>
+	</div>
+</form>
+</div>
+</div>
+</body>
+    </html>

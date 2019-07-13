@@ -1,0 +1,93 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=<!--{$page_charset}-->" />
+   <!--{include file={$admintpl}"top/headerjs.html"}-->
+</head>
+<body>
+    <div class="oemarry_layout">
+  <div class="oe_top_nav">
+	 <!--{include file={$admintpl}"a_nav.html"}-->
+<span><a href="javascript:;" url="<!--{url action='run'}-->" tag="back">&lt;&lt;返回列表</a></span>
+  </div>
+  <div class="a_content oe_dlv">
+<form method="post" action="<!--{url action='add'}-->" >
+                           
+                  
+                              <input type="hidden" name="drawimg[]" value="<!--{$<!--{$c}-->.drawimmg[$key]}-->"> 
+                           
+                  
+    <input name="actid" type="hidden" value="<!--{$<!--{$c}-->.actid}-->">
+     <table class="oe_table_warp">
+              <tr>
+	    <th width="10%"><span class="red">*</span>标题：</th>
+		<td width="50%"><input type="text" name="title" tag="notnull max" num="30" value="<!--{$<!--{$c}-->.title}-->"  class="input-300"/> <label><span class="oe_trap"><em>标题长度最大30个字符</em></span></label></td>
+	  </tr>
+         <tr>
+	    <th width="10%"><span class="red">*</span>创建人ID：</th>
+		<td width="50%"><input type="text" name="fromid" tag="notnull fixnum" value="<!--{$<!--{$c}-->.fromid}-->"  class="input-100"/> <label><span class="oe_trap"><em>填0则为系统消息;否则请填写用户,或者商户ID</em></span></label></td>
+	  </tr>
+	  <tr>
+            <th ><span class="red">*</span>用户/商户ID：</th>
+		<td >
+            <textarea value="<!--{$<!--{$c}-->.toid}-->"  name="toid" cols="46" rows="2" tag="notnull"></textarea><span class="oe_trap"><em>填写用户id,商户id,支持用户,商户id同时使用,用"逗号"分隔,群发所有填写0,群发商户填-1,群发用户-2</em></span></td>
+	  </tr>
+   
+         
+        <tr>
+	    <th>&nbsp;活动详情：</th>
+		<td><textarea rows="15"  cols="45" name="content"  id="editor_id" ><!--{$<!--{$c}-->.content}--></textarea></td></tr>
+         <tr>
+             
+	    <th no="15%">状态：</th>
+		<td no="35%">
+                    <select name="flag">
+                        <option value="1"
+                            <!--{if $<!--{$c}-->.flag=='0'}-->
+                            selected
+                                        <!--{/if}-->
+                            >正常</option>
+                        <option value="0"
+                            <!--{if $<!--{$c}-->.flag=='1'}-->
+                            selected
+                                        <!--{/if}-->
+                            >锁定</option>
+                        
+                    </select>
+            <label><span class="oe_trap"></span> </label>
+		</td>
+	  
+	  </tr>
+         <tr>
+            <th no="15%">发送：</th>
+		<td no="35%">
+                    <select name="status">
+                        <option value="1"
+                            <!--{if $<!--{$c}-->.status=='1'}-->
+                            selected
+                                        <!--{/if}-->
+                            >发送</option>
+                        <option value="0"
+                            <!--{if $<!--{$c}-->.status=='0'}-->
+                            selected
+                                        <!--{/if}-->
+                            >不发送</option>
+                        
+                    </select>
+            <label><span class="oe_trap"><em>
+    
+            </em></span> </label>
+		</td>
+             
+	  </tr>
+         </table>
+  <div class="oe_button_layout">
+	  <input type="button" class="button_2" value="提交保存" tag="submit" /> 
+	  <span id="submit_tips" class="error"></span>
+	</div>
+</form>
+</div>
+</div>
+  
+
+</body>

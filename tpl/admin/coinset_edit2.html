@@ -1,0 +1,103 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=<!--{$page_charset}-->" />
+    <!--{include file={$admintpl}"top/headerjs.html"}-->
+</head>
+<body>
+    <div class="oemarry_layout">
+  <div class="oe_top_nav">
+	 <!--{include file={$admintpl}"a_nav.html"}-->
+	<span><a href="javascript:;" tag="back" url="<!--{url action='run'}-->">&lt;&lt;返回列表</a></span>
+  </div>
+  <div class="a_content oe_dlv">
+<form method="post" action="" >
+    <input name="sid" type="hidden" value="<!--{$data.sid}-->">
+     <table class="oe_table_warp">
+      <tr>
+	    <th width="5%">管理员ID：</th>
+		<td width="35%">
+             <!--{$data.adminid}-->
+              </td></tr>
+<tr>
+             <th width="5%">上次修改：</th>
+             <td width="35%">
+              <!--{$data.addtime|date_format:"%Y-%m-%d %H:%M:%S"}-->
+                
+              </td>
+         </tr>
+         
+     <tr>
+	    <th width="5%"><span class="red">*</span>设置名：</th>
+		<td width="35%">
+             <!--{$data.title}-->
+              </td></tr>
+<tr>
+             <th width="5%">设置类型：</th>
+             <td width="35%">
+                <!--{if $data.stype==0}-->金币比例设置
+                <!--{elseif $data.stype==1}-->现金兑换折扣设置
+                <!--{/if}-->
+              </td>
+         </tr>
+		 <tr>
+             <th width="5%">国家：</th>
+             <td width="35%">
+                 <!--{assign var="cat" vo_list("fun={get_all} mod={country} field={countryid,country,alias} array={flag:0} num={50}")}-->
+                
+                 <select name='countryid' tag='notnull'>
+                     <option value=''>--选择国家--</option>
+                     <!--{foreach $cat as $volist}-->
+                     <option value='<!--{$volist.countryid}-->'
+                         <!--{if $data.countryid==$volist.countryid}-->
+                         selected
+                                <!--{/if}-->
+                         >
+                        
+                         <!--{$volist.country}-->--<!--{$volist.alias}--></option>
+                     <!--{/foreach}-->
+                 </select><span class="oe_trap"><em>选择国家</em></span>
+              </td>
+         </tr>
+         
+        
+              <tr>
+	    <th width="5%"><span class="red">*</span>比例：</th>
+		<td width="35%">
+             <input type="text" name="coinrate" value="<!--{$data.coinrate}-->" class="input-b" tag="notnull" /> <span class="oe_trap"> <em>比列配置为整数，1比1000输入为1000</em>
+             
+             </span>
+              </td></tr>
+         
+
+         <tr>
+	    <th width="5%">状态：</th>
+		<td width="35%">
+            <select name="flag">
+                <option value="0"
+                    <!--{if $data.flag=='0'}-->
+                    selected
+                                <!--{/if}-->
+                   >正常</option>
+                <option value="1"
+                    <!--{if $data.flag=='1'}-->
+                    selected
+                                <!--{/if}-->
+                   >停用</option>
+            </select><span class="oe_trap"><em></em></span>
+              </td></tr>
+        
+
+         </table>
+
+
+  
+  <div class="oe_button_layout">
+	  <input type="button" class="button_2" value="提交保存" tag="submit" /> 
+	  <span id="submit_tips" class="error"></span>
+	</div>
+</form>
+</div>
+</div>
+</body>
+    </html>

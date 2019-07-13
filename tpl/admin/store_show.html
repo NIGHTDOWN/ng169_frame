@@ -1,0 +1,244 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=<!--{$page_charset}-->" />
+   <!--{include file={$admintpl}"top/headerjs.html"}-->
+</head>
+<body>
+    <div class="oemarry_layout">
+  <div class="oe_top_nav">
+	 <!--{include file={$admintpl}"a_nav.html"}-->
+	<span><a href="javascript:;" tag="back" url="<!--{url action="run"}-->">&lt;&lt;返回列表</a></span>
+  </div>
+  <div class="a_content oe_dlv">
+<form method="post" action="<!--{url action='save'}-->" >
+                              <input type="hidden" name="muid" value="<!--{$<!--{$c}-->.muid}-->"> 
+     <table class="oe_table_warp">
+              <tr>
+	    <th >商户名称：</th>
+		<td ><input type="text"  disabled="disabled" value="<!--{$<!--{$c}-->.merchantname}-->"  class="alt"/> <label></label></td>
+                  <th >押金：</th>
+		<td ><input type="text"  disabled="disabled" value="<!--{$<!--{$c}-->.yj}--><!--{$config.currency}-->"  class="alt"/> <label></label></td>
+	  </tr>
+             <tr>
+                     <th >店铺入驻状态：</th>
+		<td ><input type="text"  disabled="disabled" value="<!--{if $<!--{$c}-->.status==1}-->已入驻<!--{elseif  $<!--{$c}-->.status==4}-->入驻过期<!--{/if}-->"  class="alt"/> <label></label></td>
+             <th >实名认证：</th>
+		      <td >
+                    <select name="smrz">
+                        <option value="0"
+                            <!--{if $<!--{$c}-->.smrz=='0'}-->
+                            selected
+                                        <!--{/if}-->
+                            >未认证</option>
+                          <option value="1"
+                            <!--{if $<!--{$c}-->.smrz=='1'}-->
+                            selected
+                                        <!--{/if}-->
+                            >已认证</option>
+                    </select>
+            </td>
+             
+              </tr>
+              <tr>
+             <th >消保：</th>
+		      <td >
+                    <select name="xb">
+                        <option value="0"
+                            <!--{if $<!--{$c}-->.xb=='0'}-->
+                            selected
+                                        <!--{/if}-->
+                            >未认证</option>
+                        <option value="1"
+                            <!--{if $<!--{$c}-->.xb=='1'}-->
+                            selected
+                                        <!--{/if}-->
+                            >已认证</option>
+                    </select>
+            </td>
+                  <th >企业认证：</th>
+	      	<td >
+                    <select name="qyrz">
+                        <option value="0"
+                            <!--{if $<!--{$c}-->.qyrz=='0'}-->
+                            selected
+                                        <!--{/if}-->
+                            >未认证</option>
+                        <option value="1"
+                            <!--{if $<!--{$c}-->.qyrz=='1'}-->
+                            selected
+                                        <!--{/if}-->
+                            >已认证</option>
+                    </select>
+            </td>
+
+              </tr>
+         <tr>
+             <th >入驻时间：</th>
+		      <td >
+                    <input type="text" name="statustime" tag="cannull " value="<!--{$<!--{$c}-->.statustime|date_format:"%Y-%m-%d"}-->"  class="input-100 date"/> </td>
+             <th >入驻时长：</th>
+		      <td >
+                    <input type="text" name="statuslong" tag="cannull isnum " value="<!--{$<!--{$c}-->.statuslong}-->"  class="input-100"/> 
+                    天</td>
+              </tr>
+              <tr>
+             <th >实名认证开始时间：</th>
+		      <td >
+                    <input type="text" name="smrztime" tag="cannull " value="<!--{$<!--{$c}-->.smrztime|date_format:"%Y-%m-%d"}-->"  class="input-100 date"/> </td>
+             <th >实名认证时长：</th>
+		      <td >
+                    <input type="text" name="smrzlong" tag="cannull isnum " value="<!--{$<!--{$c}-->.smrzlong}-->"  class="input-100"/> 
+                    天</td>
+              </tr>
+              <tr>
+             <th >企业认证开始时间：</th>
+		      <td >
+                    <input type="text" name="qyrztime" tag="cannull " value="<!--{$<!--{$c}-->.qyrztime|date_format:"%Y-%m-%d"}-->" class="input-100 date"/> </td>
+             <th >企业认证时长：</th>
+		      <td >
+                    <input type="text" name="qyrzlong" tag="cannull isnum " value="<!--{$<!--{$c}-->.qyrzlong}-->"  class="input-100"/> 
+                    天</td>
+              </tr>
+              <tr>
+             <th >消保开始时间：</th>
+		      <td >
+                    <input type="text" name="xbtime" tag="cannull " value="<!--{$<!--{$c}-->.xbtime|date_format:"%Y-%m-%d"}-->" class="input-100 date"/> </td>
+             <th >消保时长：</th>
+		      <td >
+                    <input type="text" name="xblong" tag="cannull isnum " value="<!--{$<!--{$c}-->.xblong}-->"  class="input-100"/> 
+                    天</td>
+              </tr>
+         <tr>
+          <th >剩余产品条目：</th>
+		<td >
+             <input type="text" name="products" tag="cannull isnum" value="<!--{$<!--{$c}-->.products}-->"  class="input-100"/> 
+            <label><span class="oe_trap"><em>商户还可以发布的产品总数</em></span></label></td>
+                <th >剩余服务条目：</th>
+		<td >
+                    <input type="text" name="servers" tag="cannull isnum " value="<!--{$<!--{$c}-->.servers}-->"  class="input-100"/> <label>
+</label>&nbsp;<label><span class="oe_trap"><em>商户还可以发布的服务总数</em></span></label></td>
+         </tr>
+          <tr>
+             <th >剩余活动条目：</th>
+		<td >
+                    <input type="text" name="activitys" tag="cannull isnum " value="<!--{$<!--{$c}-->.activitys}-->"  class="input-100"/><label><span class="oe_trap"><em>商户还可以发布的活动总数</em></span></label></td>
+                    <th >剩余团购条目：</th>
+		<td >
+                    <input type="text" name="grouppurchases" tag="cannull isnum " value="<!--{$<!--{$c}-->.grouppurchases}-->"  class="input-100"/> <label>
+</label><label><span class="oe_trap"><em>商户还可以发布的团购总数</em></span></label></td>
+         </tr>
+         <tr>
+          <th >剩余优惠券条目：</th>
+		<td >
+                    <input type="text" name="coupons" tag="cannull isnum " value="<!--{$<!--{$c}-->.coupons}-->"  class="input-100"/> 
+            <label><span class="oe_trap"><em>商户还可以创建的优惠券总数</em></span></label></td>
+             <th >自定义菜单：</th>
+	      	<td >
+                    <select name="custommenuflag">
+                        <option value="0"
+                            <!--{if $<!--{$c}-->.custommenuflag=='0'}-->
+                            selected
+                                        <!--{/if}-->
+                            >无</option>
+                        <option value="1"
+                            <!--{if $<!--{$c}-->.custommenuflag=='1'}-->
+                            selected
+                                        <!--{/if}-->
+                            >有</option>
+                        
+                    </select>
+                 
+            <label><span class="oe_trap"><em>商户可以自定义菜单</em></span></label></td>
+         </tr>
+         <tr>
+             <th >自定义banner：</th>
+		      <td >
+                    <select name="custombannerflag">
+                        <option value="0"
+                            <!--{if $<!--{$c}-->.custombannerflag=='0'}-->
+                            selected
+                                        <!--{/if}-->
+                            >无</option>
+                        <option value="1"
+                            <!--{if $<!--{$c}-->.custombannerflag=='1'}-->
+                            selected
+                                        <!--{/if}-->
+                            >有</option>
+                    </select>
+            <label><span class="oe_trap"><em>商户可以上传自定义的banner</em></span></label></td>
+             <th >店铺点评设置开关：</th>
+		      <td >
+                    <select name="bespokeflag">
+                      
+                        <option value="0"
+                            <!--{if $<!--{$c}-->.bespokeflag=='0'}-->
+                            selected
+                                        <!--{/if}-->
+                            >关闭</option>
+                          <option value="1"
+                            <!--{if $<!--{$c}-->.bespokeflag=='1'}-->
+                            selected
+                                        <!--{/if}-->
+                            >开启</option>
+                    </select>
+            <label><span class="oe_trap"><em>商户是否可以控制店铺点评权限</em></span></label></td>
+         </tr>
+         <tr>
+             <th >自定义菜单权限开始时间：</th>
+		      <td >
+                    <input type="text" name="custommenuflagtime" tag="cannull " value="<!--{$<!--{$c}-->.custommenuflagtime|date_format:"%Y-%m-%d"}-->"  class="input-100 date"/> </td>
+             <th >自定义菜单权限时长：</th>
+		      <td >
+                    <input type="text" name="custommenuflaglong" tag="cannull isnum" value="<!--{$<!--{$c}-->.custommenuflaglong}-->"  class="input-100"/> 
+                    天</td>
+         </tr>
+         <tr>
+             <th >自定义banner权限开始时间：</th>
+		      <td >
+                    <input type="text" name="custombannerflagtime" tag="cannull " value="<!--{$<!--{$c}-->.custombannerflagtime|date_format:"%Y-%m-%d"}-->" class="input-100 date"/>  </td>
+             <th >自定义banner权限时长：</th>
+		      <td >
+                    <input type="text" name="custombannerflaglong" tag="cannull isnum " value="<!--{$<!--{$c}-->.custombannerflaglong}-->"  class="input-100"/> 天</td>
+         </tr><tr>
+             <th >店铺点评设置权限开始时间：</th>
+		      <td >
+                    <input type="text" name="bespokeflagtime" tag="cannull " value="<!--{$<!--{$c}-->.bespokeflagtime|date_format:"%Y-%m-%d"}-->" class="input-100 date"/>  </td>
+             <th >店铺点评设置权限时长：</th>
+		      <td >
+                    <input type="text" name="bespokeflaglong" tag="cannull isnum " value="<!--{$<!--{$c}-->.bespokeflaglong}-->"  class="input-100"/> 天</td>
+         </tr>
+          <tr>
+             <th >VIP：</th>
+		      <td >
+                    <input type="text" name="vip" tag="cannull fixnum max" num="1" value="<!--{$<!--{$c}-->.vip}-->" class="input-100 "/> <span>0表示未开通</span> </td>
+             <th >VIP开通时间：</th>
+		      <td >
+                    <input type="text" name="viptime" tag="cannull " value="<!--{$<!--{$c}-->.viptime|date_format:"%Y-%m-%d"}-->"  class="input-100 date"/> </td>
+         </tr>
+         <tr>
+             <th >VIP开通时长：</th>
+		      <td >
+                    <input type="text" name="viplong" tag="cannull isnum " value="<!--{$<!--{$c}-->.viplong}-->" class="input-100"/> 天</td>
+        
+         </tr>
+           <tr>
+	    <th>页面标题：</th>
+		<td colspan="3">
+                    <input type="text" name="metatitle"  value="<!--{$<!--{$c}-->.metatitle}-->"  class="input-b"/></td></tr>
+           <tr>
+	    <th>页面关键词：</th>
+		<td colspan="3">
+                    <input type="text" name="metakeyword" value="<!--{$<!--{$c}-->.metakeyword}-->"  class="input-b"/></td></tr>
+        <tr>
+	    <th>页面描述：</th>
+		<td colspan="3"><textarea rows="4"  cols="45" name="metadesc"  id="" ><!--{$<!--{$c}-->.metadesc}--></textarea></td></tr>
+          </table>
+  <div class="oe_button_layout">
+	  <input type="button" class="button_2" value="提交保存" tag="submit" /> 
+	  <span id="submit_tips" class="error"></span>
+	</div>
+</form>
+</div>
+</div>
+</body>

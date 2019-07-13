@@ -1,0 +1,134 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=<!--{$page_charset}-->" />
+    <!--{include file={$admintpl}"top/headerjs.html"}-->
+</head>
+<body>
+    <div class="oemarry_layout">
+  <div class="oe_top_nav">
+	 <!--{include file={$admintpl}"a_nav.html"}-->
+	<span><a href="javascript:;" tag="back" url="<!--{url action='run'}-->">&lt;&lt;返回列表</a></span>
+  </div>
+  <div class="a_content oe_dlv">
+<form method="post" action="<!--{url action="save"}--> " >
+    <input name="articleid" type="hidden" value="<!--{$article.articleid}-->">
+     <table class="oe_table_warp">
+     <tr>
+	    <th width="5%"><span class="red">*</span>标题：</th>
+		<td width="35%">
+             <input type="text" name="title" value="<!--{$article.title}-->" class="input-b" tag="notnull" /> <span class="oe_trap"><em>文章标题</em></span>
+              </td></tr>
+ <tr>
+	    <th width="5%"><span class="red">*</span>图片：</th>
+		<td class="img" >
+		 <button tag='img_up_one' class='pic' type="button" id="oe_img_button">上传图片</button>
+                 <!--{if $article.pic}-->
+				 <span id="viewimg_img"><div style="float:left;width:auto;"><div class="upimg_view" style="height:80px;width:80px;overflow:hidden;cursor:pointer;margin-top:5px;"><img alt="点击查看大图" src="<!--{$article.pic}-->" width="80px" onclick="window.open('<!--{$article.pic}-->');" style="height: 80px; width: 79px; margin-top: 0px; margin-left: 0.5px;"></div><input type="hidden" value="<!--{$article.pic}-->" name="pic"> <button type="button" style=" background: none repeat scroll 0 0 #fafafa; border: 1px solid #ebebeb;border-radius: 3px; cursor: pointer;display: block;margin-top: 10px;width: 80px;" onclick="javascript:delobj($(this).parent('div'));">删除</button></div></span>
+                 
+              <!--{/if}-->   
+		
+		
+		
+		</td></tr>
+		 <tr>
+             <th width="5%">国家：</th>
+             <td width="35%">
+                 <!--{assign var="cat" vo_list("fun={get_all} mod={country} field={countryid,country,alias} array={flag:0} num={50}")}-->
+                
+                 <select name='countryid' tag='notnull'>
+                     <option value=''>--选择国家--</option>
+                     <!--{foreach $cat as $volist}-->
+                     <option value='<!--{$volist.countryid}-->'
+                         <!--{if $article.countryid==$volist.countryid}-->
+                         selected
+                                <!--{/if}-->
+                         >
+                        
+                         <!--{$volist.country}-->--<!--{$volist.alias}--></option>
+                     <!--{/foreach}-->
+                 </select><span class="oe_trap"><em>选择国家</em></span>
+              </td>
+         </tr>
+         <tr>
+             <th width="5%">分类：</th>
+             <td width="35%">
+                 <!--{assign var="cat" vo_list("fun={get_child} mod={article_category} field={catid,catname,depth} array={catid}")}-->
+                 <select name='catid'>
+                     <option value=''>--选择文章分类--</option>
+                     <!--{foreach $cat as $volist}-->
+                     <option value='<!--{$volist.catid}-->'
+                         <!--{if $article.catid==$volist.catid}-->
+                         selected
+                                <!--{/if}-->
+                         >
+                         <!--{section name=customer loop=$volist.depth-1}-->
+                         |
+                         <!--{/section}-->
+                         <!--{section name=customer loop=$volist.depth-1}-->
+                         --<!--{/section}-->
+                         <!--{$volist.catname}--></option>
+                     <!--{/foreach}-->
+                 </select><span class="oe_trap"><em>选择文章的分类</em></span>
+              </td>
+         </tr>
+        
+         <tr>
+             <th width="5%"><span class="red">*</span>内容：</th>
+             <td width="35%">
+                             
+                 <textarea name="content" cols="45" rows="30" runat="server" id="editor_id" ><!--{$article.content}--></textarea> <span class="oe_trap"><em></em></span>
+              </td>
+         </tr>
+
+         <tr>
+	    <th width="5%">状态：</th>
+		<td width="35%">
+            <select name="flag">
+                <option value="0"
+                    <!--{if $article.flag=='0'}-->
+                    selected
+                                <!--{/if}-->
+                   >显示</option>
+                <option value="1"
+                    <!--{if $article.flag=='1'}-->
+                    selected
+                                <!--{/if}-->
+                   >隐藏</option>
+            </select><span class="oe_trap"><em></em></span>
+              </td></tr>
+         <tr>
+	    <th width="5%">推荐：</th>
+		<td width="35%">
+            <select name="elite">
+                <option value="0"
+                    <!--{if $article.elite=='0'}-->
+                    selected
+                                <!--{/if}-->
+                   >不推荐</option>
+                <option value="1"
+                    <!--{if $article.elite=='1'}-->
+                    selected
+                                <!--{/if}-->
+                   >推荐</option>
+            </select><span class="oe_trap"><em>推荐到前台</em></span>
+              </td></tr>
+<tr>
+	    <th width="5%">排序：</th>
+		<td width="35%">
+           <input type="text" name="orders" value="<!--{$article.orders}-->" class="input-b" tag="notnull fixnum" /> <span class="oe_trap"><em>文章标题</em></span>
+             <span class="oe_trap"><em>数字越小排序越前</em></span>
+              </td></tr>
+         </table>
+
+
+  
+  <div class="oe_button_layout">
+	  <input type="button" class="button_2" value="提交保存" tag="submit" /> 
+	  <span id="submit_tips" class="error"></span>
+	</div>
+</form>
+</div>
+</div>
+</body>
+    </html>

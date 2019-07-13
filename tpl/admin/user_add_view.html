@@ -1,0 +1,116 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=<!--{$page_charset}-->" />
+    <!--{include file={$admintpl}"top/headerjs.html"}-->
+    <script>
+    
+    	function checkgid($obj){
+    		$url='<!--{url action='isexist'}-->';
+    		$value=$($obj).val();
+    		yAjax($url,{'username':$value},function(data){
+    			
+    		if(data.flag){
+    			 change_form_statu(true);
+           $callback.call($obj, $msg, 1);
+    			
+    		}
+    		else{
+    			 change_form_statu(false);
+            	$callback.call($obj, data.error.errormsg, 0);
+    		}	
+    		});
+    	
+    	}
+    </script>
+    
+</head>
+<body>
+    <div class="oemarry_layout">
+  <div class="oe_top_nav">
+	 <!--{include file={$admintpl}"a_nav.html"}-->
+<span><a href="javascript:;" url="<!--{url action='run'}-->" tag="back">&lt;&lt;返回列表</a></span>
+  </div>
+  <div class="a_content oe_dlv">
+<form method="post" action="<!--{url action='add'}-->" >
+ 
+    <h3>账号信息</h3>
+     <table class="oe_table_warp">
+	  <tr>
+	    <th width="15%"><span class="red">*</span>用户名：</th>
+		<td width="35%"><input type="text" name="username" tag="notnull" value="<!--{$data.username}-->"  class="input-b"/>
+            <span class="oe_trap"><label></label><em>唯一</em></span>
+		</td>
+            <th width="15%">昵称：</th>
+		<td width="35%">
+                    <input type="text" name="nickname" tag=""  value="<!--{$data.nickname}-->"  class="input-b"/>
+            <label></label>
+		</td>
+	  </tr>
+         <tr>
+          <th ><span class="red">*</span>手机：</th>
+		<td ><input type="text" name="mobile" tag="notnull ismobile" value="<!--{$data.mobile}-->"  class="input-b"/>
+            <span class="oe_trap"><label></label><em>唯一</em></span>
+		</td>
+	    <th ><span class="red">*</span>邮箱：</th>
+		<td ><input type="text" name="email" tag=" " value="<!--{$data.email}-->"  class="input-b"/>
+            <span class="oe_trap"><label></label><em>唯一</em></span>
+		</td>
+         
+	  
+	   
+            
+	  </tr>
+<tr>
+	  
+            <th no="15%">账号状态</th>
+		<td no="35%">
+                    <select name="flag">
+                        <option value="0"
+                            <!--{if $data.flag=='0'}-->
+                            selected
+                                        <!--{/if}-->
+                            >正常</option>
+                        <option value="1"
+                            <!--{if $data.flag=='1'}-->
+                            selected
+                                        <!--{/if}-->
+                            >锁定</option>
+                    </select>
+            <label></label>
+		</td>
+	  </tr>
+	  <tr>
+	    <th width="15%"><span class="red">*</span>登入密码：</th>
+		<td width="35%"><input type="password" name="password" tag="notnull iscomplex" value="<!--{$data.username}-->"  class="input-b"/>
+            <span class="oe_trap"><label></label><em>唯一</em></span>
+		</td>
+            <th width="15%">确认登入密码：</th>
+		<td width="35%">
+                    <input type="password" name="cpassword" tag="notnull isequal" value=""  class="input-b"/>
+            <label></label>
+		</td>
+	  </tr>
+<tr>
+	    <th width="15%"><span class="red">*</span>安全密码</th>
+		<td width="35%"><input type="password" name="safepwd" tag="notnull iscomplex" value="<!--{$data.username}-->"  class="input-b"/>
+            <span class="oe_trap"><label></label><em></em></span>
+		</td>
+            <th width="15%">确认安全密码：</th>
+		<td width="35%">
+                    <input type="password" name="csafepwd" tag="notnull isequal" value=""  class="input-b"/>
+            <label></label>
+		</td>
+	  </tr>
+         </table>
+          
+         
+         
+  <div class="oe_button_layout">
+	  <input type="button" class="button_2" value="提交保存" tag="submit" /> 
+	  <span id="submit_tips" class="error"></span>
+	</div>
+</form>
+</div>
+</div>
+</body>

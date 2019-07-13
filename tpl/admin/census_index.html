@@ -1,0 +1,193 @@
+
+
+<!--{include file={$admintpl}"top/headerjs.html"}-->
+<body>
+	<div class="oemarry_layout"> 
+		<div class="oe_top_nav"><!--{include file={$admintpl}"a_nav.html"}--></div>
+		<div class="a_content">
+			<form action="" method="post">
+			<input type="hidden" name="html"/>
+				<script>
+					function dcexcel($html){
+						$url='<!--{url mod='user' action='excel'}-->';
+						$('[name=html]').val($html.get(0).outerHTML);
+						$('form:first').attr('action',$url);
+						$('form:first').submit();
+					}
+
+				</script>
+				<div class="oe_tools_bar clearfix">
+					<a class="icon-checkbox-checked icon-checkbox-unchecked" href="javascript:;" onClick="tools_select('logid[]',this)" title="全选" data="true"> 全选 </a> 
+					<a class="icon-list" href="javascript:;" > <select name="year"  tag='notnull'>
+							<option value="">选择年份</option>
+		 
+			
+							<option value="2019">2019</option>
+							<option value="2020">2020</option>
+							<option value="2021">2021</option>
+							<option value="2022">2022</option>
+							<option value="2023">2023</option>
+							<option value="2024">2024</option>
+							<option value="2025">2025</option>
+							<option value="2026">2026</option>
+							<option value="2027">2027</option>
+							<option value="2028">2028</option>
+							<option value="2029">2029</option>
+							<option value="2030">2030</option>
+			
+						</select></a>
+					<a class="icon-list" href="javascript:;" >  <select name="mouth" tag='notnull'>
+		
+							<option value="">选择月份</option>
+							<option value="01">01</option>
+							<option value="02">02</option>
+							<option value="03">03</option>
+							<option value="04">04</option>
+							<option value="05">05</option>
+							<option value="06">06</option>
+							<option value="07">07</option>
+							<option value="08">08</option>
+							<option value="09">09</option>
+							<option value="10">10</option>
+							<option value="11">11</option>
+							<option value="12">12</option>
+						</select></a>
+					<a class="" href="javascript:submit();" tag='submit'> 确定</a>
+		
+					<a class="" href="javascript:dcexcel($('.oe_table_list'));"> 导出excel</a>
+        
+            
+          
+				</div>
+				<table class="oe_table_list table_cs"  id="paixun">
+					<tbody>
+						<tr>
+							<th style="width:5%;text-align:center;">选择</th>
+							<th style="width:15%;">日期</th>
+							<th style="">安装量</th>
+							<th style="">注册量</th>
+							<th style="">邀请加入人数</th>
+							<th style="">新闻总阅读量</th>
+							<th style="">有效阅读量</th>
+							<th style="">有效阅读比例</th>
+							<th style="">转发总数</th>
+							<th style="">转发总阅读量</th>
+							<th style="">转发有效阅读量</th>
+							<th style="">转发有效阅读比例</th>
+							<th style="">阅读/分享给出金币数</th>
+							<th style="">邀请好友给出金币数</th>
+							<th style="">兑换现金总额</th>
+                
+             
+						</tr>
+						<!--{foreach $data as $volist}-->
+						<tr class="list">
+							<td style="text-align:center;"><input type="checkbox" value="<!--{$volist.logid}-->" name="logid[]" />
+							</td>
+							<td > <!--{$volist.indate}--></td>
+							<td > <!--{$volist.install}--></td>
+							<td > <!--{$volist.reg}--></td>
+							<td > <!--{$volist.sharereg}--></td>
+							<td > <!--{$volist.newsread}--></td>
+							<td > <!--{$volist.newsreads}--></td>
+							<td > <!--{$volist.rate}-->%</td>
+							<td > <!--{$volist.zfnum}--></td>
+							<td > <!--{$volist.zfreadnum}--></td>
+							<td > <!--{$volist.zfreads}--></td>
+							<td > <!--{$volist.zfreadrate}-->%</td>
+							<td > <!--{$volist.taskcoin}--></td>
+							<td > <!--{$volist.regcoin}--></td>
+							<td > <!--{$volist.txcoin}--></td>
+            
+           
+						</tr>
+						<!--{/foreach}-->
+						<tr style="text-align:center;background: #ddd" class="sum">
+							<td style="text-align:center;">合计：
+							</td>
+							<td > </td>
+							<td > </td>
+							<td > </td>
+							<td > </td>
+							<td > </td>
+							<td > </td>
+							<td > </td>
+							<td > </td>
+							<td > </td>
+							<td > </td>
+							<td > </td>
+							<td > </td>
+							<td ></td>
+							<td > </td>
+            
+           
+						</tr>
+					</tbody>
+				</table>
+				<div class="oe_page_box"> 
+					<!--{$page}--> 
+				</div>
+			</form>
+		</div>
+	</div>
+	<script>
+		function tj($i){
+			$k=0;
+			$('.list').each(function($ii,$v){
+					$int=parseInt($($v).children('td').eq($i).text());
+					$k+=$int;
+				});
+			$('.sum').children('td').eq($i).text($k);
+			/*return $i;*/
+		}
+		$(function(){
+				$l=$('.list').eq(0).children('td').length;
+				$i=1;
+				while($i<=$l){
+					$i++;
+					if($i==7 ||$i==11){
+						$k=parseInt($('.sum').children('td').eq($i-1).text())/parseInt($('.sum').children('td').eq($i-2).text())*100;
+//						$k=Math.ceil($k,2);
+						$k=$k.toFixed(2);
+					$('.sum').children('td').eq($i).text($k+"%");
+					}
+					else{tj($i);}	
+				}
+			});
+	</script>
+	<div style="display: none;" id="searchbox">
+		<form method="post" style="width:400px;" action="">
+			<input name="sflag" type="hidden" value="1">
+			<table align="center" width="473" class="oe_table_warp">
+      
+				<tbody>
+					<tr>
+						<td height="40" style="text-align:right;">年：</td>
+						<td>
+       
+            
+						</td>
+           
+					</tr><tr>
+						<td height="40" style="text-align:right;">月：</td>
+						<td>
+      
+            
+						</td>
+           
+					</tr>
+
+       
+        
+       
+				</tbody></table>
+   
+			<div style="text-align:center">
+				<input name="" value="清空" class="oe_boxbut" tag="reset" type="button">
+				<span style="padding-left:50px;"></span>
+				<input name="" value="提交查询" class="oe_boxbut" tag="submit" type="button">
+			</div>
+		</form>
+	</div>
+</body>
+

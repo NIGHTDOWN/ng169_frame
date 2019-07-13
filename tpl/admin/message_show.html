@@ -1,0 +1,80 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=<!--{$page_charset}-->" />
+    <!--{include file={$admintpl}"top/headerjs.html"}-->
+</head>
+
+<body>
+    <div class="oemarry_layout">
+  <div class="oe_top_nav">
+	 <!--{include file={$admintpl}"a_nav.html"}-->
+<span><a href="javascript:;" tag="back" url="<!--{url action='recv'}-->">&lt;&lt;返回列表</a></span>  </div>
+  <div class="a_content oe_dlv">
+<form method="post" action="<!--{url action="send"}-->" >
+    <input name="pid" type="hidden" value="<!--{"msgid"|getGET}-->">
+     <table class="oe_table_warp">
+	  <div>
+	  	<div style="padding:10px;" id="ticket_view">
+                  
+                    <h1>
+                      <span>    <!--{if $main.fj}--><a target="_blank" href="<!--{$main.fj}-->"><img style="" src="<!--{$admintpl}-->images/png.png"></a><!--{/if}--></span>
+                    <!--{$main.msgid}-->: <!--{$main.title}-->
+                    </h1>
+                  核心问题: <!--{$main.msgtype}-->
+            <div style="border-radius: 10px; padding: 10px; margin: 10px 0; background: #ffffff; border: solid 1px #cfcfcf; ">
+                    <h2><!--{$main.content}--></h2>
+                    <p>时间: <!--{$main.addtime|date_format:"%Y-%m-%d %H:%M:%S"}-->  
+                    </p></div>
+                    <div>
+                    <!--{foreach $data as $list}-->
+                        <div style="border-radius: 10px; padding: 10px; margin: 10px 0; background: #ffffff; border: solid 1px #cfcfcf; ">
+                         
+                            <h3>
+                            <!--{if $list.fj}--><a target="_blank" href="<!--{$list.fj}-->"><img style="" src="<!--{$admintpl}-->images/png.png"></a><!--{/if}-->
+                            <!--{if $list.fromid}--><!--{$list.fromid|userinfo:'realname'}--><!--{else}--><!--{if $list.alias}--><!--{$list.alias}--><!--{else}-->审计部<!--{/if}--><!--{/if}--></h3>
+
+                            <p><!--{$list.content}--></p>
+                            <p><!--{$list.addtime|date_format:"%Y-%m-%d %H:%M:%S"}--></p>
+                            <p></p>
+                            <div style="clear: both;"></div>
+                        </div>
+<!--{/foreach}-->
+                    </div>
+                    <p></p>
+                  
+                    
+               
+                </div>
+	  	
+	  	
+	  </div>
+           </table>
+<div class="a_content oe_dlv">
+<form method="post" action="<!--{url action="send"}-->" >
+    <input name="pid" type="hidden" value="<!--{$main.msgid}-->">
+     <table class="oe_table_warp">
+         <tr>
+	    <th width="5%">添加附件：</th>
+		<td width="35%">
+			<button type="button" class="fj" tag='img_up_one' url='<!--{url ip="<!--{$config.upurl}-->" group='index' mod='upimg'}-->'>添加附件图片</button>
+
+		</td></tr>
+
+         <tr>
+	    <th width="5%">内容：</th>
+		<td width="35%"><textarea rows="2"  cols="45" name="content" ></textarea></td></tr>
+           </table>
+
+  <div class="oe_button_layout">
+	  <input type="button" class="button_2" value="回复" tag="submit" /> 
+	  <span id="submit_tips" class="error"></span>
+	   <input type="button" class="button_2" value=" 返回" tag="back" /> 
+	</div>
+</form>
+</div>
+ 
+</form>
+</div>
+</div>
+</body>

@@ -1,0 +1,108 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=<!--{$page_charset}-->" />
+    <!--{include file={$admintpl}"top/headerjs.html"}-->
+</head>
+
+<body>
+    <div class="oemarry_layout">
+  <div class="oe_top_nav">
+	 <!--{include file={$admintpl}"a_nav.html"}-->
+	<span><a href="javascript:;" tag="back" url="<!--{url action='run'}-->">&lt;&lt;返回列表</a></span>
+  </div>
+  <div class="a_content oe_dlv">
+<form method="post" action="<!--{url action="save"}-->" >
+    <input name="abid" type="hidden" value="<!--{$singlepage.abid}-->">
+     <table class="oe_table_warp">
+        
+	  <tr>
+	    <th width="5%"><span class="red">*</span>标题：</th>
+		<td width="35%"><input type="text" name="title" tag="notnull notnum" value="<!--{$singlepage.title}-->"  class="input-b"/>
+            <span class="oe_trap"><label></label><em>填写单页标题</em></span>
+		</td></tr>
+     <tr>
+     <tr>
+	    <th width="5%">标识：</th>
+		<td width="35%"><input type="text" name="identify" value="<!--{$singlepage.identify}-->" class="input-b" /></td></tr>
+	    <th width="5%"><span class="red">*</span>选择分类</th>
+		<td width="35%"> <!--{assign var="cat" vo_list("fun={get_child} mod={singlepage_category} field={catid,catname,depth,alias} array={catid}")}-->
+            <select name='catid'>
+                <option value=''>顶级分类</option>
+                <!--{foreach $cat as $volist}-->
+                <option value='<!--{$volist.catid}-->'
+                    <!--{if $singlepage.catid==$volist.catid}-->
+                  selected="selected"
+                                <!--{/if}-->
+                    >
+                     <!--{section name=customer loop=$volist.depth}-->
+                    |
+                    <!--{/section}-->
+                    <!--{section name=customer loop=$volist.depth}-->
+                    --<!--{/section}-->
+                    
+                    <!--{$volist.catname}--></option>
+                <!--{/foreach}-->
+            </select>
+		</td></tr>
+   
+                   <tr>
+	    <th width="5%">&nbsp;<span class="red">*</span>内容：</th>
+		<td width="35%"><textarea rows="25"  cols="45" name="content" id="editor_id"  tag="notnull"><!--{$singlepage.content}--></textarea></td></tr>
+                
+            <tr>
+	    <th width="5%">使用外部url（开启则原内容不生效）：</th>
+		<td width="35%">
+                    <select name="useurl">
+                        <option value="0"
+                            <!--{if $singlepage.useurl=='0'}-->
+                            selected
+                                        <!--{/if}-->
+                            >关闭</option>
+                        <option value="1"
+                            <!--{if $singlepage.useurl=='1'}-->
+                            selected
+                                        <!--{/if}-->
+                            >开启</option>
+                    </select></td></tr>
+         <tr>
+	    <th width="5%">URL：</th>
+		<td width="35%"><input type="text" name="url" value="<!--{$singlepage.url}-->" class="input-b" tag="cannull isurl"/></td></tr>
+        
+	    <th width="5%">排序 ：</th>
+		<td width="35%"><input type="text" name="orders" value="<!--{$singlepage.orders}-->" class="input-b" tag="cannull isnum"/></td></tr>
+       
+         <tr>
+	            <th width="5%">显示</th>
+		        <td width="35%">
+                    <select name="flag">
+                        <option value="0"
+                            <!--{if $singlepage.flag=='0'}-->
+                            selected
+                                        <!--{/if}-->
+                           >正常</option>
+                        <option value="1"
+                            <!--{if $singlepage.flag=='1'}-->
+                            selected
+                                        <!--{/if}-->
+                           >隐藏</option>
+                    </select></td></tr>
+         
+           <tr>
+	    <th width="5%">meta标题：</th>
+		<td width="35%"><input type="text" name="metatitle" value="<!--{$singlepage.alias}-->" class="input-b" /></td></tr>
+         <tr>
+	    <th width="5%">meta关键词：</th>
+		<td width="35%"><textarea rows="2"  cols="45" name="metakeyword" ></textarea></td></tr>
+           <tr>
+	    <th width="5%">meta描述：</th>
+		<td width="35%"><textarea rows="2"  cols="45" name="metadesc"></textarea></td></tr>
+     </table>
+  <div class="oe_button_layout">
+	  <input type="button" class="button_2" value="提交保存" tag="submit" /> 
+	  <span id="submit_tips" class="error"></span>
+	</div>
+</form>
+</div>
+</div>
+</body>

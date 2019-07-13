@@ -1,0 +1,412 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//Dspan XHTML 1.0 divansitional//EN" "http://www.w3.org/div/xhtml1/Dspan/xhtml1-divansitional.dspan">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=<!--{$page_charset}-->" />
+	<!--{include file={$admintpl}"top/headerjs.html"}-->
+	<style type="text/css">
+	.apply {
+    border: 1px solid #c4d5e0;
+    overflow: hidden;
+    position: relative;
+}
+.apply_left {
+    border-right: 1px solid #c4d5e0;
+    float: left;
+    margin-bottom: -4999px;
+    padding: 12px 0 4999px;
+    position: relative;
+    width: 60%;
+    z-index: 200;
+}
+.apply_right {
+    float: right;
+    margin-bottom: -4999px;
+    padding: 12px 12px 4999px;
+    position: relative;
+    width: 37%;
+    z-index: 200;
+}
+.apply h1 {
+    border-bottom: 1px solid #e6e6e6;
+    font-size: 14px;
+    line-height: 34px;
+    margin-bottom: 10px;
+    padding-bottom: 12px;
+    position: relative;
+}
+.apply table {
+    font-size: 12px;
+    margin-bottom: 5px;
+    overflow-wrap: break-word;
+    table-layout: fixed;
+    width: 100%;
+    word-break: break-all;
+}
+.apply_left h1 {
+    margin: 0 17px;
+}
+.apply_left h1 em {
+    float: left;
+    font-size: 14px;
+    line-height: 26px;
+    padding: 3px 0;
+}
+.apply_left h1 strong {
+    font-size: 14px;
+    padding: 3px 25px 3px 10px;
+}
+.apply_left .mt20 {
+    margin-top: 20px;
+}
+ .btnm {
+    background: #f25b00 ;
+    border: 1px solid #f25b00;
+    border-radius: 2px;
+    color: #fff!important;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 14px;
+    letter-spacing: normal;
+    margin-top: 10px;
+    padding: 6px 20px;
+    vertical-align: top;
+    word-spacing: normal;
+}
+.apply_left .btn:hover {
+    background: rgba(0, 0, 0, 0) -moz-linear-gradient(center top , #ff6933 0px, #ff5c21 100%) repeat scroll 0 0;
+    text-decoration: none;
+}
+.apply_left .white {
+    background: #fff none repeat scroll 0 0;
+    border: 1px solid #aaa;
+    color: #333;
+    margin-left: 10px;
+}
+.apply_left .white:hover {
+    background: #fff none repeat scroll 0 0;
+    border: 1px solid #aaa;
+    color: #333;
+    text-decoration: none;
+}
+.apply_left .refuse {
+    margin: 20px auto 0;
+}
+.apply_left .refuse textarea {
+    height: 60px;
+    resize: none;
+    width: 100%;
+}
+.main-box {
+    padding: 40px;
+}
+.main-box h2 {
+    color: #333333;
+    font-family: "Microsoft YaHei";
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+.main-box ul {
+    color: #666666;
+    font-size: 14px;
+    line-height: 24px;
+    padding-top: 15px;
+}
+.main-box li {
+    padding-left: 10px;
+    text-indent: -3px;
+}
+.main-box i {
+    background-color: #999;
+    display: inline-block;
+    font-size: 0;
+    height: 3px;
+    left: -5px;
+    line-height: 0;
+    position: relative;
+    top: -1px;
+    vertical-align: middle;
+    width: 3px;
+}
+.other-actions {
+    border-top: 1px solid #e6e6e6;
+    color: #808080;
+    font-size: 14px;
+    margin-top: 30px;
+    padding-top: 28px;
+}
+.other-actions span {
+    color: #d0d0d0;
+    padding: 0 10px;
+}
+.review-panel .mt {
+    background-color: #f5f5f5;
+    border-bottom: 1px solid #e4e4e4;
+    border-top: 1px solid #e4e4e4;
+    font-size: 14px;
+    line-height: 35px;
+    padding: 0 20px;
+}
+.review-panel .mt h2 {
+    font-size: 14px;
+    font-weight: bold;
+    line-height: 35px;
+}
+.review-panel .mc p {
+    padding: 10px;
+}
+.review-panel img{width: 80px;height: 80px;margin: 0 2px;}
+.review-panel .mc p textarea {
+    height: 72px;
+    resize: none;
+    width: 98%;
+}
+.review-panel .mc em {
+    height: 30px;
+    line-height: 30px;
+    margin-top: 10px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    width: 380px;
+}
+.review-panel .mc div {
+}
+.review-panel .mc div p {
+    float: right;
+    padding: 0;
+}
+.review-panel .mc div em {
+    color: #999;
+    height: 30px;
+    line-height: 30px;
+    margin-top: 10px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    width: 380px;
+}
+.review-panel .mc ul {
+    padding: 0 10px;
+}
+.review-panel .mc img {
+    border: 1px solid #eee;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    padding: 2px;
+}
+.review-panel .mb {
+    padding: 5px 20px 0;
+}
+.review-panel .reivew-item {
+    border-bottom: 1px solid #e6e6e6;
+    padding: 15px 0;
+}
+.review-panel .reivew-item p {
+    border: 1px solid #e6e6e6;
+    display: block;
+    float: left;
+    height: 38px;
+    overflow: hidden;
+    padding: 1px;
+    width: 38px;
+}
+.review-panel dl {
+    color: #575756;
+    margin-left: 55px;
+}
+.lineD div{
+	    width: 80px;
+   height: 160px;
+    float: left;
+}
+.review-panel dt {
+    font-size: 12px;
+    line-height: 14px;
+    padding-bottom: 6px;
+    text-align: right;
+}
+.review-panel dt em {
+    float: left;
+}
+.review-panel dd {
+    font-size: 12px;
+}
+.reivew-item  ul li{width: 80px;float: left;height: 80px;}
+	</style>
+	 
+</head>
+<body>
+	<div class="oemarry_layout">
+		<div class="oe_top_nav">
+			<!--{include file={$admintpl}"a_nav.html"}-->
+			<span><a href="javascript:;" tag="back" url="<!--{url action="run"}-->">&lt;&lt;返回列表</a></span>
+		</div>
+		<div class="a_content oe_dlv">
+		<div class="apply clearfix">
+    <div class="apply_left"> 
+    	<div class="main-box">
+        	
+        	   
+        	       <!--{if $data.orderstatus==0}-->
+                       <h2>请您等待卖家处理</h2>   
+                   <!--{elseif $data.orderstatus==1}-->
+                     <h2>卖家已同意</h2>  
+                    <!--{elseif $data.orderstatus==2}-->
+                      <h2>卖家已拒绝</h2>  
+                      <!--{elseif $data.orderstatus==3}-->
+                      <h2>等待您的确认</h2> 
+                      <!--{elseif $data.orderstatus==4}--> 
+                      <h2>完成</h2>  <!--{elseif $data.orderstatus==5}--> 
+                      <h2>关闭</h2> 
+                  <!--{/if}--> 
+                  <!--{if $data.jr!=0}-->
+                  <ul>
+                  	  <li ><i>·</i><b>已申请平台介入。</b></li>
+                  </ul>
+                  <!--{/if}--> 
+                 <!--{if $data.orderstatus!=4 && $data.orderstatus!=5 }-->  
+                   <div class="other-actions">
+                        操作：
+                     
+                          <a onclick="return confirm('取消售后申请后，本次售后将关闭，将不能再次申请。确定继续吗？')" class="btnm" href="<!--{url action='close' args="refundid:{$data.refundid}"}-->">关闭申请</a>
+                       
+                        <span>|</span>
+                     
+                      
+                       <a class="btnm" href="<!--{url args="refundid:{$data.refundid}" action='qr'}-->">完成申请</a>
+                       
+                      
+                    </div>  
+                   <!--{/if}-->               
+                                    </div>
+        <div class="review-panel">
+        	<div class="mt">
+        	<h2>留言板</h2></div>
+                   	<div class="mc">
+            <form style="
+    position: relative;
+" method="post" action="<!--{url action='tkhd'}-->">
+            <input  type="hidden" name='refundid' value="<!--{$data.refundid}-->"/>
+                <p><textarea name="remark"></textarea></p>
+               
+                <div class="control-bar">
+                    <span>      
+         <button type='button' class='userimg' tag='img_up_more'>上传凭证</button>
+                    </span>
+                    <em>单张不超过0M，最多5张，支持<!--{$config.filetype}-->格式</em>
+                    <p><input type="submit" class="btnm" value="发表留言" style="z-index: 9999"></p>    
+                </div>
+                
+                 <dl class="lineD" id="viewimg_userimg"></dl>
+            </form>
+            </div>
+                <div class="mb">
+                <div style='clear: both'></div>
+                <div class="reivew-item clearfix">
+            		<p><img width="38" src="<!--{$data.headimg}-->"></p>
+                    <dl>
+                    	<dt><em><!--{$data.username}--></em> (2016-12-18&nbsp;19:16:48)</dt>
+                        <dd>买家（<!--{$data.username}-->）于 <!--{$data.apptime|date_format:"%Y-%m-%d %H:%M:%S"}--> 创建了退款申请。买家要求：
+                        <!--{if $data.servertype==1}-->退款
+                        <!--{elseif $data.servertype==2}-->退货退款
+                        
+                        <!--{elseif $data.servertype==3}-->换货
+                        <!--{elseif $data.servertype==4}-->返修
+                        <!--{/if}-->
+                        ，退款金额：<!--{$data.cash}-->元，退款原因：<!--{$data.remark}--></dd>
+                    </dl>
+                                        <ul>
+                               <!--{if $data.userimg}-->  
+                                 <!--{set $vs=explode(',',$data.userimg)}-->      
+                        <!--{foreach $vs as $value}-->
+                        <li><a target="_blank" href="<!--{$value}-->"><img width="80" src="<!--{$value}-->"></a></li><!--{/foreach}--><!--{/if}-->
+                    </ul>
+                                    </div>
+                <!--{foreach $data.list as $volist}-->
+                       	 	<div class="reivew-item clearfix">
+            		<!--{if !$volist.issystem}-->
+                    <p><img width="38" src="<!--{$volist.headimg}-->"></p>
+                    <dl>
+                    	<dt><em><!--{$volist.username}--></em> (<!--{$volist.apptime|date_format:"%Y-%m-%d %H:%M:%S"}--> )</dt><!--{else}-->
+                    	<p><img width="38" src="<!--{$config.logo}-->"></p>
+                    <dl>
+                    	<dt><em style='color:red'>【系统】<!--{$volist.adminname}--></em> (<!--{$volist.apptime|date_format:"%Y-%m-%d %H:%M:%S"}--> )</dt>
+                    	<!--{/if}-->
+                        <dd><!--{$volist.remark}--></dd>
+                          <ul>
+                               <!--{if $volist.userimg}-->   
+                               <!--{set $vs=explode(',',$volist.userimg)}-->       
+                        <!--{foreach $vs as $value}-->
+                        <li><a target="_blank" href="<!--{$value}-->"><img width="80" src="<!--{$value}-->"></a></li><!--{/foreach}--><!--{/if}-->
+                    </ul>
+                    </dl>
+                                    </div>
+<!--{/foreach}-->
+                       
+                       	 	
+                        </div>
+        </div>	
+    </div>
+
+
+
+
+    <div class="apply_right">
+    	<h1><strong>售后申请</strong></h1>
+        <table>
+        	<tbody>
+        	<tr>
+            	<th>订单编号：</th>
+            	<td><a target="_blank" href=""><!--{$data.ordernum}--></a></td>
+            </tr>
+        	<tr>
+            	<th><img src="<!--{$data.smallimg}-->" style="width: 50px;height:50px"></th>
+                <td><a target="_blank" href="<!--{url mod='product' action='detail' grou='index' args="productid:{$data.productid}"}-->"><!--{$data.productname|tostr}--></a></td>
+            </tr>
+            <tr class="empty dotted">
+            	<th></th>
+            	<td></td>
+            </tr>
+            <tr class="empty">
+            	<th></th>
+            	<td></td>
+            </tr>
+        	<tr>
+            	<th>单　　价：</th>
+            	<td><!--{$data.price}-->元 * <!--{$data.num}-->（数量）</td>
+            </tr>
+        	<tr>
+            	<th>宝贝优惠：</th>
+            	<td>无优惠</td>
+            </tr>
+            <tr>
+            	<th>宝贝总价：</th>
+            	<td><!--{$data.subtotal}-->元</td>
+            </tr>
+<tr>
+            	<th>订单实付：</th>
+            	<td><!--{$data.paytotal}-->元</td>
+            </tr>
+        	<tr>
+            	<th>运　　费：</th>
+            	<td><!--{$data.logisfee}-->元</td>
+            </tr>
+            
+        </tbody></table>
+        <table class="seller">
+            <tbody><tr class="empty">
+            	<th></th>
+            	<td></td>
+            </tr>
+            <tr>
+            	<th>卖　　家：</th>
+            	<td><a target="_blank" href="<!--{url mod='shop' group='index' action='show' args="id:{$data.muid}"}-->"><!--{$data.merchantname}--></a></td>
+            </tr>
+        </tbody></table>
+    </div>
+</div>
+	</div>
+</body>
+
+

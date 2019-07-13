@@ -1,0 +1,127 @@
+<!--{include file={$admintpl}"top/headerjs.html"}-->
+<body>
+<div class="oemarry_layout"> 
+   <div class="oe_top_nav">
+	 <!--{include file={$admintpl}"a_nav.html"}-->
+	
+  </div>
+
+<form action="" method="post">
+<div class="oe_tools_bar clearfix">
+    <a class="icon-checkbox-checked icon-checkbox-unchecked" href="javascript:;" onClick="tools_select('productid[]',this)" title="全选" data="true"> 全选 </a>
+    <a class="icon-remove-2" href="javascript:;" do="tools_submit({action:'<!--{url action="del" }-->',id:'productid'})" title="删除" onclick="boxyn($(this))"> 删除</a>
+      <!--{if $a=='temp'}-->
+     <a class="icon-remove-2" href="<!--{url action="clear" }-->"> 清空缓存</a>
+     <!--{/if}-->
+    <a href="<!--{url action="add" }-->" class="icon-plus">添加</a>
+
+    <span class="fr"><a href="javascript:;"  onClick="lbox('筛选条件')"  id="condition" class="icon-search <!--{if $where}-->red<!--{/if}-->"> 筛选条件</a></span>
+</div>
+<table class="oe_table_list table_cs"  id="paixun">
+    <tr>
+        <th style="width:4%; text-align:center;">选择</th>
+        <th >商品名称</th>
+        <th >商品LOGO</th>
+        <th >商品类目</th>
+        <th >商铺名称</th>
+       
+        <th>商户名</th>
+         <th >商品价格</th>
+        <th>销量</th>
+        <th>点击量</th>
+        <th>上架</th>
+        <th>状态</th>
+        <th>创建时间</th>
+        <th style="text-align:center;">操作</th>
+    </tr>
+    <tbody>
+    <!--{foreach $product as $volist}-->
+    <tr>
+      <td  style="text-align:center;"><input type="checkbox" value="<!--{$volist.productid}-->" name="productid[]"></input></td>
+      <td > <!--{$volist.productname|tostr}--> </td>
+      <td > <img src="<!--{$volist.smallimg1}-->" width="80px" height="80px"/>
+      </td>
+       <td > <!--{$volist.catname}-->
+      </td>
+       <td > <!--{$volist.merchantname}-->
+      </td>
+      <td > <!--{$volist.username}-->
+      </td>
+      <td > <!--{$volist.price}-->/<!--{$volist.unit}-->
+      </td>
+      <td > <!--{$volist.sales}-->
+      </td>
+      <td > <!--{$volist.hits}-->
+      </td>
+      <td > <!--{if $volist.shelves==1}-->已上架<!--{elseif $volist.shelves==0}-->未上架<!--{elseif $volist.shelves==2}-->已下架<!--{elseif $volist.shelves==3}-->违规下架<!--{elseif $volist.shelves==4}-->永久下架<!--{/if}-->
+      </td>
+      <td > <!--{if $volist.pfalg==0}-->未审核<!--{elseif $volist.pfalg==1}-->审核成功<!--{elseif $volist.pfalg==2}-->审核失败<!--{elseif $volist.pfalg==3}-->编辑重审<!--{/if}-->
+      </td>
+       <td > <!--{$volist.addtime|date_format:"%Y-%m-%d %H:%M:%S"}-->
+      </td>
+        
+       
+
+         
+        <td  style="text-align:center;" class="a_edit_del">  
+         
+           <a class="oe_ico_blue" href="<!--{url action="edit"  args="productid:{$volist.productid}"}-->">编辑</a>
+         
+        <a class="oe_ico_red" a="<!--{url action="del"  args="productid:{$volist.productid}"}-->" onclick="boxyn($(this))">删除</a>
+        </td>
+      </tr>
+    <!--{/foreach}--></tbody>
+       </table>
+               
+   <div class="oe_page_box">
+                   <!--{$page}-->
+                </div>
+</form> <!--{include file={$admintpl}"paix.html"}-->
+</div>
+</div>
+<div style="display:none;" id="searchbox">
+  <form method="post" style="width:400px;" action="">
+       <input name="sflag" type="hidden" value="1">
+     <table  align="center" width="473" class="oe_table_warp">
+      <tr>
+        <td height="40"  style="text-align:right;">用户ID</td>
+        <td>
+        <input name="uid" class="input-b" type="text" value="<!--{$where.uid}-->" />
+            
+        </td>
+           
+      </tr>
+        
+        <tr>
+        <td height="40"  style="text-align:right;">用户名</td>
+        <td>
+        <input name="username" class="input-b" type="text" value="<!--{$where.username}-->" />
+            
+        </td>
+           
+      </tr>
+      <tr>
+        <td height="40"  style="text-align:right;">收货人</td>
+        <td>
+        <input name="realname" class="input-b" type="text" value="<!--{$where.realname}-->" />
+            
+        </td>
+           
+      </tr>
+        <tr>
+        <td height="40"  style="text-align:right;">收货地址</td>
+        <td>
+        <input name="address" class="input-b" type="text" value="<!--{$where.address}-->" />
+            
+        </td>
+           
+      </tr>
+    </table>
+        <div style="text-align:center">
+           <input name="" value="清空" class="oe_boxbut" tag="reset" type="button">
+        <span style="padding-left:50px;"></span>
+          <input name="" value="提交查询" class="oe_boxbut" tag="submit" type="button">
+    </div>
+  </form>
+</div>
+</body>

@@ -1,0 +1,131 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.thd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=<!--{$page_charset}-->" />
+    <!--{include file={$admintpl}"top/headerjs.html"}-->
+</head>
+<body>
+    <div class="oemarry_layout">
+  <div class="oe_top_nav">
+	 <!--{include file={$admintpl}"a_nav.html"}-->
+	<span><a href="javascript:;" tag="back" url="<!--{url action='run'}-->">&lt;&lt;返回列表</a></span>
+  </div>
+  <div class="a_content oe_trv">
+<form method="post"  >
+<input type="hitden" name="muid" value="<!--{$user.muid}-->"/>
+     <table class="oe_table_warp">
+       
+     <tr>
+	    <th withh="5%"><span class="red">*</span>用户名：</th>
+		<td withh="35%">
+           <!--{$data.username}-->
+              </td></tr>
+<tr>
+	    <th withh="5%"><span class="red">*</span>用户手机：</th>
+		<td withh="35%">
+             <!--{$data.mobile}-->
+              </td></tr>
+<tr>
+	    <th withh="5%"><span class="red">*</span>用户邮箱：</th>
+		<td withh="35%">
+            <!--{$data.email}-->
+              </td></tr>
+<tr>
+	<td colspan="2"><h1>待审核信息</h1></td>
+</tr>
+
+   <tr>
+	    <th withh="5%"><span class="red">*</span>姓名：</th>
+		<td withh="35%">
+            <!--{$data.realname}-->
+              </td></tr>
+              <tr>
+	    <th withh="5%"><span class="red">*</span>身份证号码：</th>
+		<td withh="35%">
+            <!--{$data.sfznum}-->
+              </td></tr> 
+<tr>
+								<th>身份证正面</th>
+								<td class="img">
+	
+                 <!--{if $data.sfzimgzm}-->
+				 <span id="viewimg_img"><div style="float:left;withh:auto;"><div class="upimg_view" style="height:80px;withh:80px;overflow:hitden;cursor:pointer;margin-top:5px;"><img alt="点击查看大图" src="<!--{$data.sfzimgzm}-->" withh="80px" onclick="window.open('<!--{$data.sfzimgzm}-->');" style="height: 80px; withh: 79px; margin-top: 0px; margin-left: 0.5px;"></div><input type="hitden" value="<!--{$data.sfzimgzm}-->" name="sfzimgzm"> </div></span>
+     <!--{/if}-->   
+								</td>
+							</tr>
+<tr>
+								<th>身份证反面</th>
+								<td class="img">
+                 <!--{if $data.sfzimgfm}-->
+				 <span id="viewimg_img"><div style="float:left;withh:auto;"><div class="upimg_view" style="height:80px;withh:80px;overflow:hitden;cursor:pointer;margin-top:5px;"><img alt="点击查看大图" src="<!--{$data.sfzimgfm}-->" withh="80px" onclick="window.open('<!--{$data.sfzimgfm}-->');" style="height: 80px; withh: 79px; margin-top: 0px; margin-left: 0.5px;"></div><input type="hitden" value="<!--{$data.sfzimgfm}-->" name="sfzimgfm"> </div></span>
+     <!--{/if}-->   
+								</td>
+							</tr>
+							<tr>
+								<th>身份证手持照</th>
+								<td class="img">
+	
+                 <!--{if $data.sfzsc}-->
+				 <span id="viewimg_img"><div style="float:left;withh:auto;"><div class="upimg_view" style="height:80px;withh:80px;overflow:hitden;cursor:pointer;margin-top:5px;"><img alt="点击查看大图" src="<!--{$data.sfzsc}-->" withh="80px" onclick="window.open('<!--{$data.sfzsc}-->');" style="height: 80px; withh: 79px; margin-top: 0px; margin-left: 0.5px;"></div><input type="hitden" value="<!--{$data.sfzsc}-->" name="sfzsc"> </div></span>
+     <!--{/if}-->   
+								</td>
+							</tr>
+
+<!--{if $data.ckflag==1}-->
+
+<tr>
+	<td colspan="2"><h1>操作</h1></td>
+</tr>
+<tr>
+								<th>审核状态：</th>
+								<td style="font-size: 150%">
+	
+     
+               
+               <span style="margin-right: 25px;color:red">  <input  type="radio" name="status" value="3"/>审核失败</span>
+                <span > <input  type="radio" name="status" value="2"/>审核成功</span>
+ 
+    
+								</td>
+							</tr>
+<tr>
+								<th>备注：</th>
+								<td >
+	<textarea name="desc" style="width: 500px;height: auto"></textarea>
+            
+								</td>
+							</tr>
+<!--{else}-->
+<tr>
+	<td colspan="2"><h1>审核详情</h1></td>
+	
+</tr>
+<tr>
+	<th>操作管理员：</th>
+	<td><!--{$data.adminname}--></td>
+	<th>操作状态：</th>
+	<td><!--{if $data.ckflag==2}--> 审核失败
+		<!--{elseif $data.ckflag==3}-->审核成功
+		<!--{/if}-->(<!--{$data.checktime|date_format:"%Y-%m-%d %H:%M:%S"}-->)
+	</td>
+</tr><tr>
+	<td colspan="2">
+		<!--{$data.desc}-->
+	</td>
+</tr>
+<!--{/if}-->
+
+
+         </table>
+
+
+  
+  <div class="oe_button_layout">
+	  <input type="button" class="button_2" value="提交保存" tag="submit" />
+	  <span id="submit_tips" class="error"></span>
+	</div>
+</form>
+</div>
+</div>
+</body>
+    </html>

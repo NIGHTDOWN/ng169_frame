@@ -1,0 +1,56 @@
+<!--{include file={$admintpl}"top/headerjs.html"}-->
+<body>
+<div class="oemarry_layout"> 
+  <div class="oe_top_nav"><!--{include file={$admintpl}"a_nav.html"}--></div>
+  <div class="a_content">
+<form action="" method="post">
+
+</div>
+<table class="oe_table_list table_cs"  id="paixun">
+    <tr>
+       
+          <th 
+      
+          
+          >APIID</th>
+          <th 
+          
+       
+          
+          >支付接口名称</th>
+          <th 
+         
+          
+          >接口LOGO</th>
+          <th 
+         
+          
+          >状态</th>
+        <th style="text-align:center;">操作</th>
+    </tr><tbody>
+    <!--{foreach $data as $volist}-->
+    <tr  >
+   
+         
+       
+        <td ><!--{$volist.apiid}--></td> 
+        <td ><!--{$volist.name}--></td>
+        <td ><img src="<!--{$volist.logo}-->" style="width: 130px;"/></td>
+          <td ><!--{if $volist.flag}--><b style="color:red">未启用</b>
+          	<!--{else}--><b style="color:green">启用</b>
+          	<!--{/if}-->
+          </td>
+        <td  style="text-align:center;" class="a_edit_del">  
+         <a class="oe_ico_blue" href="<!--{url mod="pay" action="edit"  args="apiid:{$volist.apiid}"}-->">设置</a>
+        </td>
+      </tr>
+    <!--{/foreach}--></tbody>
+       </table>
+   <div class="oe_page_box">
+                   <!--{$page}-->
+                </div>
+</form>  <!--{include file={$admintpl}"paix.html"}-->
+</div>
+</div>
+
+</body>

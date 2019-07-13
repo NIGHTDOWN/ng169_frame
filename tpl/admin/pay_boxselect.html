@@ -1,0 +1,92 @@
+<!--{include file={$admintpl}"top/headerjs.html"}-->
+<body>
+<form action="" method="post">
+<div class=" clearfix">
+<span class="fl"> <table style="float: left">
+   	<tr>
+   	<th>用户名</th>
+   		<td><input type="text" name="username" class="input-200" value="<!--{$where.username}-->"/></td>
+   			<th>昵称</th>
+   		<td><input type="text" name="realname" class="input-200" value="<!--{$where.realname}-->"/></td>
+   			<th>手机</th>
+   		<td><input type="text" name="mobile" class="input-200" value="<!--{$where.mobile}-->"/></td>
+   		<td>
+   		<div class="oe_tools_bar"><a href="javascript:$('form').submit();" class="icon-search"  > 查找</a></div></td>
+   	</tr>
+   	
+   </table></span>
+  
+    </div>
+</div>
+	<table class="oe_table_list table_cs"  id="paixun">
+		<tr>
+		
+			<th >编号</th>
+			<th >用户名</th>
+			<th >昵称</th>
+			<th >手机</th>
+			<th >总金额</th>
+			<th>未匹配金额</th>
+		
+			<th style="text-align:center;">操作</th>
+		</tr>
+		<style>
+			.fk{
+				color: #0E2AFF;
+			}
+			.sk{
+				color: #04481A;
+			}
+		</style>
+		<tbody>
+			<!--{foreach $<!--{$c}--> as $volist}-->
+			<tr  style="cursor: point" onclick="jh('<!--{$volist.iid}--><!--{$volist.oid}-->','<!--{if $volist.alloc==0}--><!--{$volist.cash}--><!--{elseif $volist.alloc==1}--><!--{$volist.allocmoney}--><!--{/if}-->')" >
+				<td  style="text-align:center;"><!--{$volist.iid}--><!--{$volist.oid}--></td>
+				<td class="fk"><!--{$volist.username}--></td>
+				<td class="fk"><!--{$volist.realname}--></td>
+				<td class="fk"><!--{$volist.mobile}--></td>
+        
+				<td >RMB <span style="color:#39EF2F!important"><!--{$volist.cash}--></span></td>
+				<td style="text-align:center;">RMB
+				<span style="color:red!important">	<!--{if $volist.alloc==0}--> <!--{$volist.cash}-->
+					<!--{elseif $volist.alloc==1}--><!--{$volist.allocmoney}--><!--{/if}-->
+				</span>
+					
+				</td>
+				<td  style="text-align:center;" class="a_edit_del">  
+					<a class="oe_ico_blue" >选中</a>
+					
+				</td>
+			</tr>
+			<!--{/foreach}-->
+		</tbody>
+  
+    
+    
+	</table>
+	<div class="oe_page_box"> 
+		<!--{$page}--> 
+	</div>
+ <script>
+ 	function jh($id,$money){
+ 		/*d(parent);*/
+ 		if(parent.ordertype){
+ 				parent.$('[name=iid]').val($id);
+ 			   parent.$('#inm').text("("+$money+")");
+ 		}else{
+ 			   parent.$('[name=oid]').val($id);
+ 		    parent.$('#outm').text("("+$money+")");
+ 		}
+ 		parent.closebox();
+ 	
+ 		return false;
+ 	}
+ 	
+ </script>
+ 
+ 
+	<!--{include file={$admintpl}"paix.html"}-->
+	</div>
+	</div>
+
+</body>

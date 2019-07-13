@@ -1,0 +1,1010 @@
+<?xml version="1.0" encoding="utf-8"?>
+<project name="D:\work\dns\dns.clpprj">
+	<settings><PM_URL><![CDATA[D:/work/chat/]]></PM_URL><PM_HOME_URL><![CDATA[D:/work/chat/]]></PM_HOME_URL><PM_LIBS><![CDATA[]]></PM_LIBS><PM_FTP_CONNECTION><![CDATA[]]></PM_FTP_CONNECTION><PM_FTP_DIR><![CDATA[]]></PM_FTP_DIR><PM_FTP_UPLOAD_ON_SAVE><![CDATA[INT:0]]></PM_FTP_UPLOAD_ON_SAVE></settings><removed value=";"/><added value=""/><lastopfiles>
+		<file name="D:\work\dns\source\core\tool\Out.php"/>
+	</lastopfiles>
+	<errors version="5.11">
+		<errfile name="D:\work\dns\tpl\admin\new\layui.css">
+			<error val="4;32;1;33;2502;1;"/>
+			<error val="4;185;1;186;2502;1;"/>
+			<error val="4;184;40;184;2502;1;"/>
+			<error val="4;4093;1;4094;2502;1;"/>
+			<error val="4;4092;40;4092;2502;1;"/>
+			<error val="35;4471;41;4471;2502;1;"/>
+			<error val="42;4471;105;4471;2502;1;"/>
+			<error val="106;4471;152;4471;2502;1;"/>
+			<error val="35;4571;41;4571;2502;1;"/>
+			<error val="42;4571;105;4571;2502;1;"/>
+			<error val="106;4571;152;4571;2502;1;"/>
+			<error val="35;4612;41;4612;2502;1;"/>
+			<error val="42;4612;105;4612;2502;1;"/>
+			<error val="106;4612;152;4612;2502;1;"/>
+		</errfile>
+		<errfile name="D:\work\dns\tpl\admin\new\layer.css">
+			<error val="257;1;276;1;2502;1;"/>
+			<error val="351;1;403;1;2502;1;"/>
+			<error val="416;1;449;1;2502;1;"/>
+			<error val="6223;1;6240;1;2502;1;"/>
+			<error val="6393;1;6410;1;2502;1;"/>
+			<error val="7082;1;7096;1;2502;1;"/>
+			<error val="8063;1;8075;1;2502;1;"/>
+			<error val="9699;1;9711;1;2502;1;"/>
+			<error val="12610;1;12622;1;2502;1;"/>
+			<error val="12661;1;12702;1;2502;1;"/>
+			<error val="12763;1;12795;1;2502;1;"/>
+			<error val="12853;1;12886;1;2502;1;"/>
+			<error val="12960;1;12993;1;2502;1;"/>
+			<error val="12918;1;12929;1;2502;1;"/>
+			<error val="13052;1;13086;1;2502;1;"/>
+			<error val="14334;1;14367;1;2502;1;"/>
+		</errfile>
+		<errfile name="D:\work\dns\tpl\admin\frame_index.html">
+			<error val="32;13;62;13;2002;1;"/>
+			<error val="34;21;60;21;2002;1;"/>
+			<error val="54;20;70;20;2002;1;"/>
+			<error val="50;25;66;25;2002;1;"/>
+			<error val="34;31;59;31;2002;1;"/>
+			<error val="36;30;52;30;2002;1;"/>
+			<error val="29;55;51;55;2002;1;"/>
+			<error val="46;54;62;54;2002;1;"/>
+			<error val="29;60;57;60;2002;1;"/>
+			<error val="46;59;62;59;2002;1;"/>
+			<error val="42;70;54;70;2002;1;"/>
+			<error val="68;70;82;70;2002;1;"/>
+			<error val="14;70;42;70;2002;1;"/>
+			<error val="54;70;68;70;2002;1;"/>
+			<error val="69;71;83;71;2002;1;"/>
+			<error val="14;71;42;71;2002;1;"/>
+			<error val="55;71;69;71;2002;1;"/>
+			<error val="42;71;55;71;2002;1;"/>
+			<error val="48;72;80;72;2002;1;"/>
+			<error val="42;72;48;72;2002;1;"/>
+			<error val="94;72;108;72;2002;1;"/>
+			<error val="14;72;42;72;2002;1;"/>
+			<error val="80;72;94;72;2002;1;"/>
+			<error val="113;74;127;74;2002;1;"/>
+			<error val="66;74;94;74;2002;1;"/>
+			<error val="94;74;101;74;2002;1;"/>
+			<error val="101;74;113;74;2002;1;"/>
+			<error val="11;74;35;74;2002;1;"/>
+			<error val="32;64;48;64;2002;1;"/>
+			<error val="46;78;62;78;2002;1;"/>
+			<error val="29;82;51;82;2002;1;"/>
+			<error val="73;81;89;81;2002;1;"/>
+			<error val="45;39;80;39;2002;1;"/>
+			<error val="29;90;54;90;2002;1;"/>
+			<error val="115;95;154;95;2002;1;"/>
+			<error val="72;95;89;95;2002;1;"/>
+			<error val="85;106;103;106;2002;1;"/>
+			<error val="31;106;68;106;2002;1;"/>
+			<error val="13;118;98;118;2002;1;"/>
+			<error val="66;147;92;147;2002;1;"/>
+			<error val="66;148;93;148;2002;1;"/>
+			<error val="12;154;43;154;2002;1;"/>
+			<error val="12;155;44;155;2002;1;"/>
+			<error val="12;156;42;156;2002;1;"/>
+			<error val="33;151;49;151;2002;1;"/>
+			<error val="48;150;83;150;2002;1;"/>
+			<error val="41;161;63;161;2002;1;"/>
+			<error val="63;161;97;161;2002;1;"/>
+			<error val="27;161;41;161;2002;1;"/>
+			<error val="36;176;59;176;2002;1;"/>
+			<error val="199;95;201;95;2501;1;"/>
+			<error val="202;95;204;95;2502;1;"/>
+			<error val="206;95;208;95;2502;1;"/>
+			<error val="215;95;228;95;2501;1;"/>
+			<error val="212;95;228;95;2501;1;"/>
+			<error val="229;95;231;95;2501;1;"/>
+			<error val="233;95;235;95;2502;1;"/>
+			<error val="236;95;240;95;2501;1;"/>
+		</errfile>
+		<errfile name="D:\work\dns\tpl\admin\domian_index.html">
+			<error val="127;10;139;10;2002;1;"/>
+			<error val="92;11;153;11;2002;1;"/>
+			<error val="48;11;92;11;2002;1;"/>
+			<error val="30;12;61;12;2002;1;"/>
+			<error val="9;31;23;31;2002;1;"/>
+			<error val="12;33;26;33;2002;1;"/>
+			<error val="59;47;83;47;2002;1;"/>
+			<error val="54;47;59;47;2002;1;"/>
+			<error val="29;48;50;48;2002;1;"/>
+			<error val="54;48;78;48;2002;1;"/>
+			<error val="50;48;54;48;2002;1;"/>
+			<error val="54;71;66;71;2002;1;"/>
+			<error val="55;73;68;73;2002;1;"/>
+		</errfile>
+		<errfile name="D:\work\dns\tpl\admin\domian_edit.html">
+			<error val="61;11;72;11;2002;1;"/>
+			<error val="29;11;61;11;2002;1;"/>
+			<error val="53;46;66;46;2002;1;"/>
+			<error val="50;20;71;20;2002;1;"/>
+			<error val="46;25;67;25;2002;1;"/>
+		</errfile>
+		<errfile name="D:\work\dns\tpl\admin\domian_add.html">
+			<error val="61;11;72;11;2002;1;"/>
+			<error val="29;11;61;11;2002;1;"/>
+			<error val="53;46;66;46;2002;1;"/>
+			<error val="45;14;4;15;2002;1;"/>
+			<error val="50;20;71;20;2002;1;"/>
+			<error val="46;25;67;25;2002;1;"/>
+		</errfile>
+		<errfile name="D:\work\dns\source\core\tool\simplehtmldom\simple_html_dom.php">
+			<error val="30;1066;31;1066;901;2;"/>
+		</errfile>
+		<errfile name="D:\work\dns\source\core\tool\simple_html_dom.php">
+			<error val="30;1001;31;1001;901;2;"/>
+		</errfile>
+		<errfile name="D:\work\dns\source\core\tool\Image.php">
+			<error val="45;538;46;538;901;2;"/>
+		</errfile>
+		<errfile name="D:\work\dns\source\core\tool\Exesql.php">
+			<error val="33;58;40;58;303;2;"/>
+			<error val="32;62;39;62;303;2;"/>
+		</errfile>
+		<errfile name="D:\work\dns\source\core\tool\Code.php">
+			<error val="45;18;46;18;901;2;"/>
+		</errfile>
+		<errfile name="D:\work\dns\source\core\service\Input.php">
+			<error val="23;25;30;25;302;2;"/>
+			<error val="26;38;33;38;302;2;"/>
+		</errfile>
+		<errfile name="D:\work\dns\source\core\other\qrrscode.php">
+			<error val="0;114;13;114;901;2;"/>
+		</errfile>
+		<errfile name="D:\work\dns\source\core\other\phpqrcode.php">
+			<error val="0;2369;13;2369;901;2;"/>
+		</errfile>
+		<errfile name="D:\work\dns\source\core\lib\Epoll.php">
+			<error val="29;13;31;13;101;1;"/>
+			<error val="31;15;33;15;101;1;"/>
+		</errfile>
+		<errfile name="D:\work\dns\source\core\api\paypal\paypal\rest-api-sdk-php\vendor\webmozart\assert\src\Assert.php">
+			<error val="22;200;23;200;102;1;"/>
+			<error val="22;824;23;824;102;1;"/>
+			<error val="22;1069;23;1069;102;1;"/>
+		</errfile>
+		<errfile name="D:\work\dns\source\core\api\paypal\paypal\rest-api-sdk-php\vendor\sebastian\diff\tests\ParserTest.php">
+			<error val="0;84;1;84;102;1;"/>
+			<error val="0;128;4;128;102;1;"/>
+		</errfile>
+		<errfile name="D:\work\dns\source\core\api\paypal\paypal\rest-api-sdk-php\vendor\phpunit\php-token-stream\tests\_fixture\classUsesNamespacedFunction.php">
+			<error val="3;3;12;3;601;1;"/>
+		</errfile>
+		<errfile name="D:\work\dns\source\core\api\paypal\paypal\rest-api-sdk-php\vendor\doctrine\instantiator\src\Doctrine\Instantiator\Exception\UnexpectedValueException.php">
+			<error val="3;7;12;7;601;1;"/>
+		</errfile>
+		<errfile name="D:\work\dns\source\core\api\paypal\paypal\rest-api-sdk-php\vendor\doctrine\instantiator\src\Doctrine\Instantiator\Exception\InvalidArgumentException.php">
+			<error val="3;7;12;7;601;1;"/>
+			<error val="3;8;12;8;601;1;"/>
+			<error val="3;9;12;9;601;1;"/>
+		</errfile>
+		<errfile name="D:\work\dns\source\core\api\paypal\paypal\rest-api-sdk-php\vendor\doctrine\instantiator\src\Doctrine\Instantiator\Instantiator.php">
+			<error val="3;9;12;9;601;1;"/>
+			<error val="3;10;12;10;601;1;"/>
+			<error val="3;11;12;11;601;1;"/>
+			<error val="3;12;12;12;601;1;"/>
+			<error val="3;13;12;13;601;1;"/>
+			<error val="3;14;12;14;601;1;"/>
+			<error val="21;103;30;103;102;1;"/>
+			<error val="106;134;108;134;204;1;"/>
+		</errfile>
+		<errfile name="D:\work\dns\source\core\api\m3\aop\AopClient.php">
+			<error val="10;761;11;761;102;1;"/>
+			<error val="10;762;11;762;102;1;"/>
+			<error val="24;767;25;767;102;1;"/>
+		</errfile>
+		<errfile name="D:\work\dns\source\core\api\4\sdk\SDKConfig.php">
+			<error val="37;8;38;8;101;1;"/>
+			<error val="40;9;41;9;101;1;"/>
+			<error val="38;37;39;37;101;1;"/>
+			<error val="37;38;38;38;101;1;"/>
+			<error val="36;39;37;39;101;1;"/>
+		</errfile>
+		<errfile name="D:\work\dns\source\core\api\3\aop\AopClient.php">
+			<error val="10;761;11;761;102;1;"/>
+			<error val="10;762;11;762;102;1;"/>
+			<error val="24;767;25;767;102;1;"/>
+		</errfile>
+	</errors>
+	<cakedata>
+	</cakedata>
+	<dplmenupath>
+	</dplmenupath><laravael>
+	</laravael><smartyassings>
+	</smartyassings><twigtemplate>
+	</twigtemplate><yiidata>
+	</yiidata>
+	<todoblock>
+		<todofile name="D:\work\dns\source\core\api\2\lib\WxPay.Notify.php">
+			<todo name="TODO 用户基础该类之后需要重写该方法，成功的时候返回true，失败返回false" pos="3;49"/>
+		</todofile>
+		<todofile name="D:\work\dns\source\core\api\3\aop\AlipayMobilePublicMultiMediaClient.php">
+			<todo name="todo" pos="43;25"/>
+			<todo name="todo" pos="42;26"/>
+		</todofile>
+		<todofile name="D:\work\dns\source\core\api\3\lotusphp_runtime\DB\Adapter\ConnectionAdapter\DbConnectionAdapter.php">
+			<todo name="todo 兼容使用Unix Domain Socket方式连接数据库（即：可以不指定port）" pos="5;4"/>
+		</todofile>
+		<todofile name="D:\work\dns\source\core\api\3\lotusphp_runtime\DB\Adapter\ConnectionAdapter\DbConnectionAdapterPdo.php">
+			<todo name="todo pgsql support" pos="5;52"/>
+		</todofile>
+		<todofile name="D:\work\dns\source\core\api\3\lotusphp_runtime\DB\DbHandle.php">
+			<todo name="todo 兼容pgsql等其它数据库，pgsql的某些数据类型不接受单引号引起来的值" pos="5;127"/>
+			<todo name="todo 更新连接缓存" pos="5;188"/>
+		</todofile>
+		<todofile name="D:\work\dns\source\core\api\3\lotusphp_runtime\DB\QueryEngine\TableDataGateway\DbTableDataGateway.php">
+			<todo name="todo pretty join support" pos="4;4"/>
+		</todofile>
+		<todofile name="D:\work\dns\source\core\api\3\lotusphp_runtime\MVC\Dispatcher.php">
+			<todo name="todo allow one action dispatch another action" pos="5;53"/>
+		</todofile>
+		<todofile name="D:\work\dns\source\core\api\3\lotusphp_runtime\MVC\TemplateView.php">
+			<todo name="todo 注意相互引用的模板嵌套会导致死循环" pos="5;272"/>
+		</todofile>
+		<todofile name="D:\work\dns\source\core\api\3\lotusphp_runtime\Router\Router.php">
+			<todo name="todo 修复导致$_GET多出属性的BUG" pos="5;136"/>
+			<todo name="todo 如果是rewrite或者path_info模式，可能需要unset module和action两个$_GET变量" pos="5;137"/>
+		</todofile>
+		<todofile name="D:\work\dns\source\core\api\3\lotusphp_runtime\StoreFile.php">
+			<todo name="todo detect dir is exists and writable" pos="6;11"/>
+		</todofile>
+		<todofile name="D:\work\dns\source\core\api\4\api.php">
+			<todo name="TODO 以下信息需要填写" pos="4;34"/>
+		</todofile>
+		<todofile name="D:\work\dns\source\core\api\Facebook\Authentication\AccessTokenMetadata.php">
+			<todo name="todo v6: Remove this method" pos="8;93"/>
+		</todofile>
+		<todofile name="D:\work\dns\source\core\api\Facebook\Facebook.php">
+			<todo name="@todo v6: Throw an InvalidArgumentException if &quot;default_graph_version&quot; is not set" pos="9;161"/>
+		</todofile>
+		<todofile name="D:\work\dns\source\core\api\Facebook\FacebookBatchRequest.php">
+			<todo name="@TODO Does Graph support multiple uploads on one endpoint" pos="9;166"/>
+		</todofile>
+		<todofile name="D:\work\dns\source\core\api\Facebook\FacebookBatchResponse.php">
+			<todo name="@TODO With PHP 5.5 support, this becomes array_column($response['headers'], 'value', 'name')" pos="9;104"/>
+			<todo name="TODO replace with array_column() when PHP 5.5 is supported." pos="8;157"/>
+		</todofile>
+		<todofile name="D:\work\dns\source\core\api\Facebook\FacebookRequest.php">
+			<todo name="@TODO Refactor code above with this" pos="9;337"/>
+		</todofile>
+		<todofile name="D:\work\dns\source\core\api\Facebook\FacebookResponse.php">
+			<todo name="@TODO Remove this after Graph 2.0 is no longer supported" pos="13;243"/>
+			<todo name="todo v6: Remove this method" pos="8;268"/>
+			<todo name="todo v6: Remove this method" pos="8;386"/>
+		</todofile>
+		<todofile name="D:\work\dns\source\core\api\Facebook\GraphNodes\Collection.php">
+			<todo name="todo v6: Remove this method" pos="8;83"/>
+			<todo name="todo v6: Remove this method" pos="8;106"/>
+		</todofile>
+		<todofile name="D:\work\dns\source\core\api\Facebook\GraphNodes\GraphList.php">
+			<todo name="todo v6: Remove this class" pos="4;31"/>
+		</todofile>
+		<todofile name="D:\work\dns\source\core\api\Facebook\GraphNodes\GraphNode.php">
+			<todo name="TODO Add auto-casting to AccessToken entities." pos="8;51"/>
+		</todofile>
+		<todofile name="D:\work\dns\source\core\api\Facebook\GraphNodes\GraphObject.php">
+			<todo name="todo v6: Remove this class" pos="4;31"/>
+		</todofile>
+		<todofile name="D:\work\dns\source\core\api\Facebook\GraphNodes\GraphObjectFactory.php">
+			<todo name="todo v6: Remove this class" pos="4;33"/>
+		</todofile>
+		<todofile name="D:\work\dns\source\core\api\Facebook\autoload.php">
+			<todo name="@todo v6: Remove support for 'FACEBOOK_SDK_V4_SRC_DIR'" pos="5;52"/>
+		</todofile>
+		<todofile name="D:\work\dns\source\core\api\m2\lib\WxPay.Notify.php">
+			<todo name="TODO 用户基础该类之后需要重写该方法，成功的时候返回true，失败返回false" pos="3;48"/>
+		</todofile>
+		<todofile name="D:\work\dns\source\core\api\m3\aop\AlipayMobilePublicMultiMediaClient.php">
+			<todo name="todo" pos="43;25"/>
+			<todo name="todo" pos="42;26"/>
+		</todofile>
+		<todofile name="D:\work\dns\source\core\api\m3\lotusphp_runtime\DB\Adapter\ConnectionAdapter\DbConnectionAdapter.php">
+			<todo name="todo 兼容使用Unix Domain Socket方式连接数据库（即：可以不指定port）" pos="5;4"/>
+		</todofile>
+		<todofile name="D:\work\dns\source\core\api\m3\lotusphp_runtime\DB\Adapter\ConnectionAdapter\DbConnectionAdapterPdo.php">
+			<todo name="todo pgsql support" pos="5;52"/>
+		</todofile>
+		<todofile name="D:\work\dns\source\core\api\m3\lotusphp_runtime\DB\DbHandle.php">
+			<todo name="todo 兼容pgsql等其它数据库，pgsql的某些数据类型不接受单引号引起来的值" pos="5;127"/>
+			<todo name="todo 更新连接缓存" pos="5;188"/>
+		</todofile>
+		<todofile name="D:\work\dns\source\core\api\m3\lotusphp_runtime\DB\QueryEngine\TableDataGateway\DbTableDataGateway.php">
+			<todo name="todo pretty join support" pos="4;4"/>
+		</todofile>
+		<todofile name="D:\work\dns\source\core\api\m3\lotusphp_runtime\MVC\Dispatcher.php">
+			<todo name="todo allow one action dispatch another action" pos="5;53"/>
+		</todofile>
+		<todofile name="D:\work\dns\source\core\api\m3\lotusphp_runtime\MVC\TemplateView.php">
+			<todo name="todo 注意相互引用的模板嵌套会导致死循环" pos="5;272"/>
+		</todofile>
+		<todofile name="D:\work\dns\source\core\api\m3\lotusphp_runtime\Router\Router.php">
+			<todo name="todo 修复导致$_GET多出属性的BUG" pos="5;136"/>
+			<todo name="todo 如果是rewrite或者path_info模式，可能需要unset module和action两个$_GET变量" pos="5;137"/>
+		</todofile>
+		<todofile name="D:\work\dns\source\core\api\m3\lotusphp_runtime\StoreFile.php">
+			<todo name="todo detect dir is exists and writable" pos="6;11"/>
+		</todofile>
+		<todofile name="D:\work\dns\source\core\api\paypal\paypal\rest-api-sdk-php\lib\PayPal\Common\PayPalModel.php">
+			<todo name="TODO: Replace this code with return json_encode($this-&gt;toArray(), $options | 64); once we support P" pos="9;292"/>
+		</todofile>
+		<todofile name="D:\work\dns\source\core\api\paypal\paypal\rest-api-sdk-php\lib\PayPal\Common\ReflectionUtil.php">
+			<todo name="todo: smarter regexp" pos="9;114"/>
+		</todofile>
+		<todofile name="D:\work\dns\source\core\api\paypal\paypal\rest-api-sdk-php\vendor\phpdocumentor\reflection-docblock\src\DocBlock\StandardTagFactory.php">
+			<todo name="TODO: Annotation support is planned for a later stage and as such is disabled for now" pos="13;217"/>
+			<todo name="todo this method should be populated once we implement Annotation notation support." pos="8;305"/>
+		</todofile>
+		<todofile name="D:\work\dns\source\core\api\paypal\paypal\rest-api-sdk-php\vendor\phpunit\phpunit\tests\Regression\GitHub\1468\Issue1468Test.php">
+			<todo name="todo Implement this test" pos="8;4"/>
+		</todofile>
+		<todofile name="D:\work\dns\source\core\api\paypal\paypal\rest-api-sdk-php\vendor\phpunit\phpunit\tests\Util\TestTest.php">
+			<todo name="todo   Split up in separate tests" pos="8;29"/>
+			<todo name="todo   This test does not really test functionality of PHPUnit_Util_Test" pos="8;234"/>
+			<todo name="todo   Not sure what this test tests (name is misleading at least)" pos="8;370"/>
+			<todo name="todo    Remove fixture from test class" pos="8;384"/>
+			<todo name="TODO Remove fixture from test class" pos="9;404"/>
+		</todofile>
+		<todofile name="D:\work\dns\source\core\api\paypal\paypal\rest-api-sdk-php\vendor\sebastian\global-state\src\Snapshot.php">
+			<todo name="todo   Implement this properly" pos="8;400"/>
+		</todofile>
+		<todofile name="D:\work\dns\source\core\api\paypal\paypal\rest-api-sdk-php\vendor\symfony\yaml\Tests\DumperTest.php">
+			<todo name="TODO" pos="21;124"/>
+		</todofile>
+		<todofile name="D:\work\dns\source\core\api\paypal\paypal\rest-api-sdk-php\vendor\symfony\yaml\Tests\ParserTest.php">
+			<todo name="TODO" pos="21;1910"/>
+		</todofile>
+	</todoblock>
+	<filescache>
+		<file name="D:\work\dns\tpl\static\js\themes\simple\simple.css" crc="1558487943"/>
+		<file name="D:\work\dns\tpl\static\js\themes\qq\qq.css" crc="1558487943"/>
+		<file name="D:\work\dns\tpl\static\js\themes\default\default.css" crc="1558487943"/>
+		<file name="D:\work\dns\tpl\static\js\skin\red.css" crc="1558487943"/>
+		<file name="D:\work\dns\tpl\static\js\skin\jedate.css" crc="1558487943"/>
+		<file name="D:\work\dns\tpl\static\js\skin\green.css" crc="1558487943"/>
+		<file name="D:\work\dns\tpl\static\js\skin\gray.css" crc="1558487943"/>
+		<file name="D:\work\dns\tpl\static\js\plugins\wordpaste\wordpaste.js" crc="1558487943"/>
+		<file name="D:\work\dns\tpl\static\js\plugins\template\html\3.html" crc="1558487943"/>
+		<file name="D:\work\dns\tpl\static\js\plugins\template\html\2.html" crc="1558487943"/>
+		<file name="D:\work\dns\tpl\static\js\plugins\template\html\1.html" crc="1558487943"/>
+		<file name="D:\work\dns\tpl\static\js\plugins\template\template.js" crc="1558487943"/>
+		<file name="D:\work\dns\tpl\static\js\plugins\table\table.js" crc="1558487943"/>
+		<file name="D:\work\dns\tpl\static\js\plugins\quickformat\quickformat.js" crc="1558487943"/>
+		<file name="D:\work\dns\tpl\static\js\plugins\preview\preview.js" crc="1558487943"/>
+		<file name="D:\work\dns\tpl\static\js\plugins\plainpaste\plainpaste.js" crc="1558487943"/>
+		<file name="D:\work\dns\tpl\static\js\plugins\pagebreak\pagebreak.js" crc="1558487943"/>
+		<file name="D:\work\dns\tpl\static\js\plugins\multiimage\multiimage.js" crc="1558487943"/>
+		<file name="D:\work\dns\tpl\static\js\plugins\media\media.js" crc="1558487943"/>
+		<file name="D:\work\dns\tpl\static\js\plugins\map\map.js" crc="1558487943"/>
+		<file name="D:\work\dns\tpl\static\js\plugins\map\map.html" crc="1558487943"/>
+		<file name="D:\work\dns\tpl\static\js\plugins\link\link.js" crc="1558487943"/>
+		<file name="D:\work\dns\tpl\static\js\plugins\lineheight\lineheight.js" crc="1558487943"/>
+		<file name="D:\work\dns\tpl\static\js\plugins\insertfile\insertfile.js" crc="1558487943"/>
+		<file name="D:\work\dns\tpl\static\js\plugins\image\image.js" crc="1558487943"/>
+		<file name="D:\work\dns\tpl\static\js\plugins\flash\flash.js" crc="1558487943"/>
+		<file name="D:\work\dns\tpl\static\js\plugins\filemanager\filemanager.js" crc="1558487943"/>
+		<file name="D:\work\dns\tpl\static\js\plugins\emoticons\emoticons.js" crc="1558487943"/>
+		<file name="D:\work\dns\tpl\static\js\plugins\code\prettify.js" crc="1558487943"/>
+		<file name="D:\work\dns\tpl\static\js\plugins\code\prettify.css" crc="1558487943"/>
+		<file name="D:\work\dns\tpl\static\js\plugins\code\code.js" crc="1558487943"/>
+		<file name="D:\work\dns\tpl\static\js\plugins\clearhtml\clearhtml.js" crc="1558487943"/>
+		<file name="D:\work\dns\tpl\static\js\plugins\baidumap\map.html" crc="1558487943"/>
+		<file name="D:\work\dns\tpl\static\js\plugins\baidumap\index.html" crc="1558487943"/>
+		<file name="D:\work\dns\tpl\static\js\plugins\baidumap\baidumap.js" crc="1558487943"/>
+		<file name="D:\work\dns\tpl\static\js\plugins\autoheight\autoheight.js" crc="1558487943"/>
+		<file name="D:\work\dns\tpl\static\js\plugins\artDialog4.1.6\skins\twitter.css" crc="1558487943"/>
+		<file name="D:\work\dns\tpl\static\js\plugins\artDialog4.1.6\skins\simple.css" crc="1558487943"/>
+		<file name="D:\work\dns\tpl\static\js\plugins\artDialog4.1.6\skins\opera.css" crc="1558487943"/>
+		<file name="D:\work\dns\tpl\static\js\plugins\artDialog4.1.6\skins\idialog.css" crc="1558487943"/>
+		<file name="D:\work\dns\tpl\static\js\plugins\artDialog4.1.6\skins\green.css" crc="1558487943"/>
+		<file name="D:\work\dns\tpl\static\js\plugins\artDialog4.1.6\skins\default.css" crc="1558487943"/>
+		<file name="D:\work\dns\tpl\static\js\plugins\artDialog4.1.6\skins\chrome.css" crc="1558487943"/>
+		<file name="D:\work\dns\tpl\static\js\plugins\artDialog4.1.6\skins\blue.css" crc="1558487943"/>
+		<file name="D:\work\dns\tpl\static\js\plugins\artDialog4.1.6\skins\black.css" crc="1558487943"/>
+		<file name="D:\work\dns\tpl\static\js\plugins\artDialog4.1.6\skins\aero.css" crc="1558487943"/>
+		<file name="D:\work\dns\tpl\static\js\plugins\artDialog4.1.6\plugins\iframeTools.source.js" crc="1558487943"/>
+		<file name="D:\work\dns\tpl\static\js\plugins\artDialog4.1.6\plugins\iframeTools.js" crc="1558487943"/>
+		<file name="D:\work\dns\tpl\static\js\plugins\artDialog4.1.6\license.txt" crc="1558487943"/>
+		<file name="D:\work\dns\tpl\static\js\plugins\artDialog4.1.6\jquery.artDialog.source.js" crc="1558487943"/>
+		<file name="D:\work\dns\tpl\static\js\plugins\artDialog4.1.6\jquery.artDialog.js" crc="1558487943"/>
+		<file name="D:\work\dns\tpl\static\js\plugins\artDialog4.1.6\artDialog.source.js" crc="1558487943"/>
+		<file name="D:\work\dns\tpl\static\js\plugins\artDialog4.1.6\artDialog.js" crc="1558487943"/>
+		<file name="D:\work\dns\tpl\static\js\plugins\anchor\anchor.js" crc="1558487943"/>
+		<file name="D:\work\dns\tpl\static\js\plugins\iframeTools.js" crc="1558487943"/>
+		<file name="D:\work\dns\tpl\static\js\encode\tripledes.js" crc="1358260982"/>
+		<file name="D:\work\dns\tpl\static\js\encode\mode-ecb.js" crc="1358260984"/>
+		<file name="D:\work\dns\tpl\static\js\encode\jquery.min.js" crc="1453861496"/>
+		<file name="D:\work\dns\tpl\static\js\ZhCN_Pinyin.min.js" crc="1558487943"/>
+		<file name="D:\work\dns\tpl\static\js\ZhCN_Pinyin.js" crc="1558487943"/>
+		<file name="D:\work\dns\tpl\static\js\zh_CN.js" crc="1558487943"/>
+		<file name="D:\work\dns\tpl\static\js\TableOrder.js" crc="1558487943"/>
+		<file name="D:\work\dns\tpl\static\js\public.js" crc="1558487943"/>
+		<file name="D:\work\dns\tpl\static\js\prettify.min.css" crc="1558487943"/>
+		<file name="D:\work\dns\tpl\static\js\prettify.css" crc="1558487943"/>
+		<file name="D:\work\dns\tpl\static\js\oe_soso_map_js.js" crc="1558487943"/>
+		<file name="D:\work\dns\tpl\static\js\night_Trad.v1.0.js" crc="1559637102"/>
+		<file name="D:\work\dns\tpl\static\js\manhuaDate.js" crc="1558487943"/>
+		<file name="D:\work\dns\tpl\static\js\log.js" crc="1558487943"/>
+		<file name="D:\work\dns\tpl\static\js\kindeditor.js" crc="1558487943"/>
+		<file name="D:\work\dns\tpl\static\js\kindeditor-min.js" crc="1558487943"/>
+		<file name="D:\work\dns\tpl\static\js\jquery.min.js" crc="1558487943"/>
+		<file name="D:\work\dns\tpl\static\js\jquery.md5.js" crc="1558487943"/>
+		<file name="D:\work\dns\tpl\static\js\jquery.linscroll.js" crc="1558487943"/>
+		<file name="D:\work\dns\tpl\static\js\jquery.Jcrop_new.js" crc="1558487943"/>
+		<file name="D:\work\dns\tpl\static\js\jedate.js" crc="1558487943"/>
+		<file name="D:\work\dns\tpl\static\js\getad.js" crc="1558487943"/>
+		<file name="D:\work\dns\tpl\static\js\data2.js" crc="1558487943"/>
+		<file name="D:\work\dns\tpl\static\js\data2.css" crc="1558487943"/>
+		<file name="D:\work\dns\tpl\static\js\ajaxfileupload.js" crc="1558487943"/>
+		<file name="D:\work\dns\tpl\static\js\acommon.js" crc="1558487943"/>
+		<file name="D:\work\dns\tpl\static\css\prettify.css" crc="1558487943"/>
+		<file name="D:\work\dns\tpl\static\css\jquery.Jcrop.min.css" crc="1558487943"/>
+		<file name="D:\work\dns\tpl\static\css\global.css" crc="1558487943"/>
+		<file name="D:\work\dns\tpl\static\css\date.css" crc="1558487943"/>
+		<file name="D:\work\dns\tpl\general\mhalt\style.css" crc="1558487943"/>
+		<file name="D:\work\dns\tpl\general\mhalt\halt.php" crc="1558487943"/>
+		<file name="D:\work\dns\tpl\general\halt\style.css" crc="1558487943"/>
+		<file name="D:\work\dns\tpl\general\halt\halt.php" crc="1558487943"/>
+		<file name="D:\work\dns\tpl\general\development\files\cmstop-error.css" crc="1558487943"/>
+		<file name="D:\work\dns\tpl\general\development\index.html" crc="1558487943"/>
+		<file name="D:\work\dns\tpl\general\404\files\cmstop-error.css" crc="1558487943"/>
+		<file name="D:\work\dns\tpl\general\404\index.html" crc="1558487943"/>
+		<file name="D:\work\dns\tpl\admin\top\search.html" crc="1558487943"/>
+		<file name="D:\work\dns\tpl\admin\top\map.js.html" crc="1558487943"/>
+		<file name="D:\work\dns\tpl\admin\top\headerjs.html" crc="1562318916"/>
+		<file name="D:\work\dns\tpl\admin\res\css\style.css" crc="1558487943"/>
+		<file name="D:\work\dns\tpl\admin\res\css\prettify.css" crc="1558487943"/>
+		<file name="D:\work\dns\tpl\admin\res\css\jquery.jOrgChart.css" crc="1558487943"/>
+		<file name="D:\work\dns\tpl\admin\res\css\custom.css" crc="1558487943"/>
+		<file name="D:\work\dns\tpl\admin\res\css\bootstrap.min.css" crc="1558487943"/>
+		<file name="D:\work\dns\tpl\admin\res\css\b2.css" crc="1558487943"/>
+		<file name="D:\work\dns\tpl\admin\res\prettify.js" crc="1558487943"/>
+		<file name="D:\work\dns\tpl\admin\res\jquery.min.js" crc="1558487943"/>
+		<file name="D:\work\dns\tpl\admin\res\jquery.jOrgChart.js" crc="1558487943"/>
+		<file name="D:\work\dns\tpl\admin\res\jquery-ui.min.js" crc="1558487943"/>
+		<file name="D:\work\dns\tpl\admin\public\head.html" crc="1558487943"/>
+		<file name="D:\work\dns\tpl\admin\new\modules\console.js" crc="1562234418"/>
+		<file name="D:\work\dns\tpl\admin\new\modules\common.js" crc="1562318737"/>
+		<file name="D:\work\dns\tpl\admin\new\lib\view.js" crc="1562316545"/>
+		<file name="D:\work\dns\tpl\admin\new\lib\index.js" crc="1562316580"/>
+		<file name="D:\work\dns\tpl\admin\new\lib\admin.js" crc="1562316829"/>
+		<file name="D:\work\dns\tpl\admin\new\lay\modules\util.js" crc="1562292722"/>
+		<file name="D:\work\dns\tpl\admin\new\lay\modules\table.js" crc="1562292726"/>
+		<file name="D:\work\dns\tpl\admin\new\lay\modules\laytpl.js" crc="1562292729"/>
+		<file name="D:\work\dns\tpl\admin\new\lay\modules\laypage.js" crc="1562292732"/>
+		<file name="D:\work\dns\tpl\admin\new\lay\modules\layer.js" crc="1562292735"/>
+		<file name="D:\work\dns\tpl\admin\new\lay\modules\jquery.js" crc="1562292738"/>
+		<file name="D:\work\dns\tpl\admin\new\lay\modules\form.js" crc="1562292741"/>
+		<file name="D:\work\dns\tpl\admin\new\lay\modules\element.js" crc="1562292744"/>
+		<file name="D:\work\dns\tpl\admin\new\lay\modules\carousel.js" crc="1562292746"/>
+		<file name="D:\work\dns\tpl\admin\new\rq.js" crc="1562316342"/>
+		<file name="D:\work\dns\tpl\admin\new\layui.css" crc="1562839990"/>
+		<file name="D:\work\dns\tpl\admin\new\layer.css" crc="1562292621"/>
+		<file name="D:\work\dns\tpl\admin\new\laydate.css" crc="1562292632"/>
+		<file name="D:\work\dns\tpl\admin\new\config.js" crc="1562291968"/>
+		<file name="D:\work\dns\tpl\admin\new\admin.css" crc="1562307872"/>
+		<file name="D:\work\dns\tpl\admin\css\style.css" crc="1558487943"/>
+		<file name="D:\work\dns\tpl\admin\css\main.css" crc="1562321588"/>
+		<file name="D:\work\dns\tpl\admin\css\font_icon.css" crc="1558487943"/>
+		<file name="D:\work\dns\tpl\admin\css\admin.css" crc="1562319921"/>
+		<file name="D:\work\dns\tpl\admin\withdraw_show.html" crc="1561529902"/>
+		<file name="D:\work\dns\tpl\admin\withdraw.html" crc="1561515894"/>
+		<file name="D:\work\dns\tpl\admin\version_show.html" crc="1560397892"/>
+		<file name="D:\work\dns\tpl\admin\version_index.html" crc="1560398396"/>
+		<file name="D:\work\dns\tpl\admin\version_add.html" crc="1560397405"/>
+		<file name="D:\work\dns\tpl\admin\userlog_show.html" crc="1558487943"/>
+		<file name="D:\work\dns\tpl\admin\userlog_index.html" crc="1558487943"/>
+		<file name="D:\work\dns\tpl\admin\user_wiatcheck.html" crc="1558487943"/>
+		<file name="D:\work\dns\tpl\admin\user_show.html" crc="1562060962"/>
+		<file name="D:\work\dns\tpl\admin\user_recharge.html" crc="1560233448"/>
+		<file name="D:\work\dns\tpl\admin\user_like.html" crc="1562057280"/>
+		<file name="D:\work\dns\tpl\admin\user_index.html" crc="1562056803"/>
+		<file name="D:\work\dns\tpl\admin\user_edit.html" crc="1558487943"/>
+		<file name="D:\work\dns\tpl\admin\user_checkinfo.html" crc="1558487943"/>
+		<file name="D:\work\dns\tpl\admin\user_cgpwd.html" crc="1558487943"/>
+		<file name="D:\work\dns\tpl\admin\user_add_view.html" crc="1558487943"/>
+		<file name="D:\work\dns\tpl\admin\ucomment_show.html" crc="1558487943"/>
+		<file name="D:\work\dns\tpl\admin\ucomment_index.html" crc="1558487943"/>
+		<file name="D:\work\dns\tpl\admin\template_show.html" crc="1558487943"/>
+		<file name="D:\work\dns\tpl\admin\template_index.html" crc="1558487943"/>
+		<file name="D:\work\dns\tpl\admin\template_add_view.html" crc="1558487943"/>
+		<file name="D:\work\dns\tpl\admin\tasklist_index.html" crc="1558487943"/>
+		<file name="D:\work\dns\tpl\admin\task_index.html" crc="1558487943"/>
+		<file name="D:\work\dns\tpl\admin\task_add.html" crc="1558487943"/>
+		<file name="D:\work\dns\tpl\admin\store_show.html" crc="1558487943"/>
+		<file name="D:\work\dns\tpl\admin\store_index.html" crc="1558487943"/>
+		<file name="D:\work\dns\tpl\admin\spec_index.html" crc="1558487943"/>
+		<file name="D:\work\dns\tpl\admin\spec_add.html" crc="1558487943"/>
+		<file name="D:\work\dns\tpl\admin\siteset_withdraw.html" crc="1558487943"/>
+		<file name="D:\work\dns\tpl\admin\siteset_userset.html" crc="1558487943"/>
+		<file name="D:\work\dns\tpl\admin\siteset_upset.html" crc="1558487943"/>
+		<file name="D:\work\dns\tpl\admin\siteset_smsset.html" crc="1558487943"/>
+		<file name="D:\work\dns\tpl\admin\siteset_pt.html" crc="1558487943"/>
+		<file name="D:\work\dns\tpl\admin\siteset_order.html" crc="1562639445"/>
+		<file name="D:\work\dns\tpl\admin\siteset_mailset.html" crc="1558487943"/>
+		<file name="D:\work\dns\tpl\admin\siteset_index.html" crc="1558487943"/>
+		<file name="D:\work\dns\tpl\admin\singlepage_show.html" crc="1560844998"/>
+		<file name="D:\work\dns\tpl\admin\singlepage_index.html" crc="1560845128"/>
+		<file name="D:\work\dns\tpl\admin\singlepage_category_show.html" crc="1558487943"/>
+		<file name="D:\work\dns\tpl\admin\singlepage_category_add_view.html" crc="1558487943"/>
+		<file name="D:\work\dns\tpl\admin\singlepage_add_view.html" crc="1562579792"/>
+		<file name="D:\work\dns\tpl\admin\siglepagecategory_show.html" crc="1558487943"/>
+		<file name="D:\work\dns\tpl\admin\siglepagecategory_index.html" crc="1560151389"/>
+		<file name="D:\work\dns\tpl\admin\siglepagecategory_add_view.html" crc="1558487943"/>
+		<file name="D:\work\dns\tpl\admin\server_show.html" crc="1558487943"/>
+		<file name="D:\work\dns\tpl\admin\server_index.html" crc="1558487943"/>
+		<file name="D:\work\dns\tpl\admin\server_add_view.html" crc="1558487943"/>
+		<file name="D:\work\dns\tpl\admin\seo_index.html" crc="1558487943"/>
+		<file name="D:\work\dns\tpl\admin\seo_edit.html" crc="1558487943"/>
+		<file name="D:\work\dns\tpl\admin\role_show.html" crc="1562549967"/>
+		<file name="D:\work\dns\tpl\admin\role_index.html" crc="1560239933"/>
+		<file name="D:\work\dns\tpl\admin\role_add.html" crc="1562549557"/>
+		<file name="D:\work\dns\tpl\admin\rewrite_index.html" crc="1558487943"/>
+		<file name="D:\work\dns\tpl\admin\queue_index.html" crc="1558487943"/>
+		<file name="D:\work\dns\tpl\admin\product_temp.html" crc="1558487943"/>
+		<file name="D:\work\dns\tpl\admin\product_stopsell.html" crc="1558487943"/>
+		<file name="D:\work\dns\tpl\admin\product_index.html" crc="1558487943"/>
+		<file name="D:\work\dns\tpl\admin\product_edit.html" crc="1558487943"/>
+		<file name="D:\work\dns\tpl\admin\product_check.html" crc="1558487943"/>
+		<file name="D:\work\dns\tpl\admin\product_category_show.html" crc="1558487943"/>
+		<file name="D:\work\dns\tpl\admin\product_category_index.html" crc="1558487943"/>
+		<file name="D:\work\dns\tpl\admin\product_category_add_view.html" crc="1558487943"/>
+		<file name="D:\work\dns\tpl\admin\product_box.html" crc="1558487943"/>
+		<file name="D:\work\dns\tpl\admin\product_add.html" crc="1558487943"/>
+		<file name="D:\work\dns\tpl\admin\payapi_index.html" crc="1558487943"/>
+		<file name="D:\work\dns\tpl\admin\payapi_add.html" crc="1558487943"/>
+		<file name="D:\work\dns\tpl\admin\pay2.html" crc="1558487943"/>
+		<file name="D:\work\dns\tpl\admin\pay_show.html" crc="1558487943"/>
+		<file name="D:\work\dns\tpl\admin\pay_index.html" crc="1558487943"/>
+		<file name="D:\work\dns\tpl\admin\pay_edit.html" crc="1558487943"/>
+		<file name="D:\work\dns\tpl\admin\pay_boxselect.html" crc="1558487943"/>
+		<file name="D:\work\dns\tpl\admin\pay_box.html" crc="1558487943"/>
+		<file name="D:\work\dns\tpl\admin\pay_add.html" crc="1558487943"/>
+		<file name="D:\work\dns\tpl\admin\paix.html" crc="1558487943"/>
+		<file name="D:\work\dns\tpl\admin\out_index.html" crc="1558487943"/>
+		<file name="D:\work\dns\tpl\admin\out_cgtime.html" crc="1558487943"/>
+		<file name="D:\work\dns\tpl\admin\out_cgcash.html" crc="1558487943"/>
+		<file name="D:\work\dns\tpl\admin\order_vipshow.html" crc="1562117169"/>
+		<file name="D:\work\dns\tpl\admin\order_vipedit.html" crc="1562119663"/>
+		<file name="D:\work\dns\tpl\admin\order_vip.html" crc="1562116421"/>
+		<file name="D:\work\dns\tpl\admin\order_show.html" crc="1558487943"/>
+		<file name="D:\work\dns\tpl\admin\order_index.html" crc="1558487943"/>
+		<file name="D:\work\dns\tpl\admin\order_coinshow.html" crc="1562117325"/>
+		<file name="D:\work\dns\tpl\admin\order_coinedit.html" crc="1562119717"/>
+		<file name="D:\work\dns\tpl\admin\order_coin.html" crc="1562116435"/>
+		<file name="D:\work\dns\tpl\admin\mplog_index.html" crc="1558487943"/>
+		<file name="D:\work\dns\tpl\admin\mp_add_view.html" crc="1558487943"/>
+		<file name="D:\work\dns\tpl\admin\message_show.html" crc="1558487943"/>
+		<file name="D:\work\dns\tpl\admin\message_send.html" crc="1558487943"/>
+		<file name="D:\work\dns\tpl\admin\message_recv.html" crc="1558487943"/>
+		<file name="D:\work\dns\tpl\admin\message_index.html" crc="1558487943"/>
+		<file name="D:\work\dns\tpl\admin\message_history.html" crc="1558487943"/>
+		<file name="D:\work\dns\tpl\admin\message_add_view.html" crc="1558487943"/>
+		<file name="D:\work\dns\tpl\admin\merchant_rz.html" crc="1558487943"/>
+		<file name="D:\work\dns\tpl\admin\merchant_index.html" crc="1558487943"/>
+		<file name="D:\work\dns\tpl\admin\merchant_category_show.html" crc="1558487943"/>
+		<file name="D:\work\dns\tpl\admin\merchant_category_index.html" crc="1558487943"/>
+		<file name="D:\work\dns\tpl\admin\merchant_category_add_view.html" crc="1558487943"/>
+		<file name="D:\work\dns\tpl\admin\merchant_add.html" crc="1558487943"/>
+		<file name="D:\work\dns\tpl\admin\marticle_show.html" crc="1558487943"/>
+		<file name="D:\work\dns\tpl\admin\logistemp_index.html" crc="1558487943"/>
+		<file name="D:\work\dns\tpl\admin\logistemp_add.html" crc="1558487943"/>
+		<file name="D:\work\dns\tpl\admin\login_index.html" crc="1562838650"/>
+		<file name="D:\work\dns\tpl\admin\level_merchant.html" crc="1558487943"/>
+		<file name="D:\work\dns\tpl\admin\level_index.html" crc="1558487943"/>
+		<file name="D:\work\dns\tpl\admin\level_add.html" crc="1558487943"/>
+		<file name="D:\work\dns\tpl\admin\jfproduct_index.html" crc="1558487943"/>
+		<file name="D:\work\dns\tpl\admin\jfproduct_edit.html" crc="1558487943"/>
+		<file name="D:\work\dns\tpl\admin\jfproduct_add.html" crc="1558487943"/>
+		<file name="D:\work\dns\tpl\admin\jforder_show.html" crc="1558487943"/>
+		<file name="D:\work\dns\tpl\admin\jforder_index.html" crc="1558487943"/>
+		<file name="D:\work\dns\tpl\admin\in_index.html" crc="1558487943"/>
+		<file name="D:\work\dns\tpl\admin\groupon_index.html" crc="1558487943"/>
+		<file name="D:\work\dns\tpl\admin\groupon_add.html" crc="1558487943"/>
+		<file name="D:\work\dns\tpl\admin\group_index.html" crc="1558487943"/>
+		<file name="D:\work\dns\tpl\admin\fund_show.html" crc="1558487943"/>
+		<file name="D:\work\dns\tpl\admin\fund_index.html" crc="1558487943"/>
+		<file name="D:\work\dns\tpl\admin\fund_add_view.html" crc="1558487943"/>
+		<file name="D:\work\dns\tpl\admin\friendlink_index.html" crc="1558487943"/>
+		<file name="D:\work\dns\tpl\admin\friendlink_add.html" crc="1558487943"/>
+		<file name="D:\work\dns\tpl\admin\frame_main.html" crc="1562905339"/>
+		<file name="D:\work\dns\tpl\admin\frame_index.html" crc="1562838653"/>
+		<file name="D:\work\dns\tpl\admin\feedback_show.html" crc="1561369200"/>
+		<file name="D:\work\dns\tpl\admin\feedback_index.html" crc="1560149949"/>
+		<file name="D:\work\dns\tpl\admin\domian_index.html" crc="1562836478"/>
+		<file name="D:\work\dns\tpl\admin\domian_edit.html" crc="1562836509"/>
+		<file name="D:\work\dns\tpl\admin\domian_add.html" crc="1562836501"/>
+		<file name="D:\work\dns\tpl\admin\depot_tk.html" crc="1558487943"/>
+		<file name="D:\work\dns\tpl\admin\depot_show.html" crc="1558487943"/>
+		<file name="D:\work\dns\tpl\admin\country_index.html" crc="1561684555"/>
+		<file name="D:\work\dns\tpl\admin\country_edit.html" crc="1561684509"/>
+		<file name="D:\work\dns\tpl\admin\country_add.html" crc="1561684497"/>
+		<file name="D:\work\dns\tpl\admin\config_index.html" crc="1558487943"/>
+		<file name="D:\work\dns\tpl\admin\coinset_index.html" crc="1562638395"/>
+		<file name="D:\work\dns\tpl\admin\coinset_edit2.html" crc="1562142889"/>
+		<file name="D:\work\dns\tpl\admin\coinset_edit.html" crc="1562638156"/>
+		<file name="D:\work\dns\tpl\admin\coinset_add.html" crc="1562637796"/>
+		<file name="D:\work\dns\tpl\admin\coinlog_index.html" crc="1562638052"/>
+		<file name="D:\work\dns\tpl\admin\cj_do.html" crc="1558487943"/>
+		<file name="D:\work\dns\tpl\admin\cj.html" crc="1558487943"/>
+		<file name="D:\work\dns\tpl\admin\census_index.html" crc="1561514735"/>
+		<file name="D:\work\dns\tpl\admin\census_foam.html" crc="1558487943"/>
+		<file name="D:\work\dns\tpl\admin\card_index.html" crc="1558487943"/>
+		<file name="D:\work\dns\tpl\admin\box.html" crc="1558487943"/>
+		<file name="D:\work\dns\tpl\admin\backstagemenu_index.html" crc="1558487943"/>
+		<file name="D:\work\dns\tpl\admin\attribute_index.html" crc="1558487943"/>
+		<file name="D:\work\dns\tpl\admin\attribute_add.html" crc="1558487943"/>
+		<file name="D:\work\dns\tpl\admin\articlecategory_show.html" crc="1558487943"/>
+		<file name="D:\work\dns\tpl\admin\articlecategory_index.html" crc="1560151288"/>
+		<file name="D:\work\dns\tpl\admin\articlecategory_add_view.html" crc="1558487943"/>
+		<file name="D:\work\dns\tpl\admin\article_show.html" crc="1560152762"/>
+		<file name="D:\work\dns\tpl\admin\article_index.html" crc="1560154629"/>
+		<file name="D:\work\dns\tpl\admin\article_changcoin.html" crc="1560153865"/>
+		<file name="D:\work\dns\tpl\admin\article_add_view.html" crc="1561367036"/>
+		<file name="D:\work\dns\tpl\admin\area_province.html" crc="1558487943"/>
+		<file name="D:\work\dns\tpl\admin\area_index.html" crc="1559795119"/>
+		<file name="D:\work\dns\tpl\admin\area_editprovince.html" crc="1558487943"/>
+		<file name="D:\work\dns\tpl\admin\area_editcity.html" crc="1558487943"/>
+		<file name="D:\work\dns\tpl\admin\area_editarea.html" crc="1558487943"/>
+		<file name="D:\work\dns\tpl\admin\area_city.html" crc="1559794535"/>
+		<file name="D:\work\dns\tpl\admin\area_addprovince.html" crc="1558487943"/>
+		<file name="D:\work\dns\tpl\admin\area_add_view.html" crc="1558487943"/>
+		<file name="D:\work\dns\tpl\admin\ads_show.html" crc="1558487943"/>
+		<file name="D:\work\dns\tpl\admin\ads_index.html" crc="1558487943"/>
+		<file name="D:\work\dns\tpl\admin\ads_add_view.html" crc="1560841315"/>
+		<file name="D:\work\dns\tpl\admin\ads_add.html" crc="1560841389"/>
+		<file name="D:\work\dns\tpl\admin\admins_show.html" crc="1558487943"/>
+		<file name="D:\work\dns\tpl\admin\admins_index.html" crc="1560240431"/>
+		<file name="D:\work\dns\tpl\admin\admins_cgthispwd.html" crc="1558487943"/>
+		<file name="D:\work\dns\tpl\admin\admins_cgpwd.html" crc="1558487943"/>
+		<file name="D:\work\dns\tpl\admin\admins_add_view.html" crc="1558487943"/>
+		<file name="D:\work\dns\tpl\admin\adminlog_show.html" crc="1558487943"/>
+		<file name="D:\work\dns\tpl\admin\adminlog_index.html" crc="1558487943"/>
+		<file name="D:\work\dns\tpl\admin\address_index.html" crc="1558487943"/>
+		<file name="D:\work\dns\tpl\admin\address_add.html" crc="1558487943"/>
+		<file name="D:\work\dns\tpl\admin\adcontent_show.html" crc="1558487943"/>
+		<file name="D:\work\dns\tpl\admin\adcontent_index.html" crc="1558487943"/>
+		<file name="D:\work\dns\tpl\admin\adcontent_add_view.html" crc="1558487943"/>
+		<file name="D:\work\dns\tpl\admin\ad_index.html" crc="1560752632"/>
+		<file name="D:\work\dns\tpl\admin\ad_add.html" crc="1560841240"/>
+		<file name="D:\work\dns\tpl\admin\a_nav.html" crc="1562318388"/>
+		<file name="D:\work\dns\tpl\_compiled\c_e7e86b7e5ad5b8d2c1637c3660995776.php" crc="1562919424"/>
+		<file name="D:\work\dns\tpl\_compiled\c_d7b91d3cb66035855945fcc26e620b04.php" crc="1562920058"/>
+		<file name="D:\work\dns\tpl\_compiled\c_c4ace32bc488f4d4657156839862731e.php" crc="1562920064"/>
+		<file name="D:\work\dns\tpl\_compiled\c_c009c874a8e2aa6bcfa6f48675aff466.php" crc="1562920063"/>
+		<file name="D:\work\dns\tpl\_compiled\c_b57b9f813f6e46aa0074806eb69e0b73.php" crc="1562838867"/>
+		<file name="D:\work\dns\tpl\_compiled\c_6adb8ef02d651365c4b06bc707cf6d9b.php" crc="1562838866"/>
+		<file name="D:\work\dns\tpl\_compiled\c_34a6a139156c036e1e84c836b8076265.php" crc="1562920064"/>
+		<file name="D:\work\dns\tpl\_compiled\c_24eeb2201c25081b5cd7de1e12732e9e.php" crc="1562920064"/>
+		<file name="D:\work\dns\tpl\_compiled\c_24bbf12260f2e9eb378635aee3a47961.php" crc="1562896705"/>
+		<file name="D:\work\dns\tpl\_compiled\c_1e162c6089a3faa72e420ca9ea404f4e.php" crc="1562920063"/>
+		<file name="D:\work\dns\tpl\desktop.ini" crc="1560913455"/>
+		<file name="D:\work\dns\source\sock\user\wxpay.php" crc="1558487942"/>
+		<file name="D:\work\dns\source\sock\user\test.php" crc="1558516316"/>
+		<file name="D:\work\dns\source\sock\user\rtc.php" crc="1559030833"/>
+		<file name="D:\work\dns\source\sock\user\mobilezfbpay.php" crc="1558487942"/>
+		<file name="D:\work\dns\source\sock\user\mobilewxpay.php" crc="1558487942"/>
+		<file name="D:\work\dns\source\sock\user\login.php" crc="1559719634"/>
+		<file name="D:\work\dns\source\sock\user\cheat.php" crc="1559376039"/>
+		<file name="D:\work\dns\source\sock\user\a1.php" crc="1558487942"/>
+		<file name="D:\work\dns\source\sock\system\wxpay2.php" crc="1558487942"/>
+		<file name="D:\work\dns\source\sock\system\wxpay.php" crc="1558487942"/>
+		<file name="D:\work\dns\source\sock\system\wxcz.php" crc="1558487942"/>
+		<file name="D:\work\dns\source\sock\system\wxbuy.php" crc="1558487942"/>
+		<file name="D:\work\dns\source\sock\system\udp.php" crc="1562900978"/>
+		<file name="D:\work\dns\source\sock\system\relay.php" crc="1559716783"/>
+		<file name="D:\work\dns\source\sock\system\close.php" crc="1558487942"/>
+		<file name="D:\work\dns\source\sock\userSock.php" crc="1562667418"/>
+		<file name="D:\work\dns\source\sock\systemSock.php" crc="1559708813"/>
+		<file name="D:\work\dns\source\sock\out.php" crc="1562667029"/>
+		<file name="D:\work\dns\source\sock\adminSock.php" crc="1559198704"/>
+		<file name="D:\work\dns\source\plugin\sharebar\sharebar.php" crc="1558487942"/>
+		<file name="D:\work\dns\source\plugin\sharebar\sharebar.js" crc="1558487942"/>
+		<file name="D:\work\dns\source\plugin\sharebar\sharebar.css" crc="1558487942"/>
+		<file name="D:\work\dns\source\plugin\sharebar\index.htm" crc="1558487942"/>
+		<file name="D:\work\dns\source\plugin\runtime\runtime.php" crc="1558487942"/>
+		<file name="D:\work\dns\source\plugin\runtime\index.htm" crc="1558487942"/>
+		<file name="D:\work\dns\source\plugin\online\js\online.js" crc="1558487942"/>
+		<file name="D:\work\dns\source\plugin\online\index.htm" crc="1558487942"/>
+		<file name="D:\work\dns\source\plugin\datatool\tpl\import.tpl.php" crc="1558487942"/>
+		<file name="D:\work\dns\source\plugin\datatool\tpl\export.tpl.php" crc="1558487942"/>
+		<file name="D:\work\dns\source\plugin\datatool\db\mysql.php" crc="1558487942"/>
+		<file name="D:\work\dns\source\plugin\datatool\db\config.php" crc="1558487942"/>
+		<file name="D:\work\dns\source\plugin\datatool\index.htm" crc="1558487942"/>
+		<file name="D:\work\dns\source\plugin\datatool\datatool.php" crc="1558487942"/>
+		<file name="D:\work\dns\source\plugin\datatool\admin.inc.php" crc="1558487942"/>
+		<file name="D:\work\dns\source\plugin\index.php" crc="1558487942"/>
+		<file name="D:\work\dns\source\model\index\vlog.php" crc="1558487942"/>
+		<file name="D:\work\dns\source\model\index\user.php" crc="1562828490"/>
+		<file name="D:\work\dns\source\model\index\qr.php" crc="1558487942"/>
+		<file name="D:\work\dns\source\model\index\fb.php" crc="1560758890"/>
+		<file name="D:\work\dns\source\model\index\domain.php" crc="1560908309"/>
+		<file name="D:\work\dns\source\model\index\ad.php" crc="1562123787"/>
+		<file name="D:\work\dns\source\model\admin\task.php" crc="1561340346"/>
+		<file name="D:\work\dns\source\model\admin\power.php" crc="1560243372"/>
+		<file name="D:\work\dns\source\model\admin\paypal.php" crc="1561694417"/>
+		<file name="D:\work\dns\source\model\admin\options.php" crc="1559787195"/>
+		<file name="D:\work\dns\source\model\admin\login.php" crc="1560243533"/>
+		<file name="D:\work\dns\source\model\admin\log.php" crc="1558487942"/>
+		<file name="D:\work\dns\source\model\admin\jf.php" crc="1558487942"/>
+		<file name="D:\work\dns\source\model\admin\iplog.php" crc="1558487942"/>
+		<file name="D:\work\dns\source\model\admin\ip.php" crc="1558487942"/>
+		<file name="D:\work\dns\source\model\admin\index.php" crc="1562904754"/>
+		<file name="D:\work\dns\source\model\admin\coin.php" crc="1561086097"/>
+		<file name="D:\work\dns\source\model\admin\census.php" crc="1560916723"/>
+		<file name="D:\work\dns\source\model\admin\backstage_menu.php" crc="1559787759"/>
+		<file name="D:\work\dns\source\model\Imodel.php" crc="1559701957"/>
+		<file name="D:\work\dns\source\model\Amodel.php" crc="1560129865"/>
+		<file name="D:\work\dns\source\core\tool\simplehtmldom\testcase\reader\selector_testcase.php" crc="1558487942"/>
+		<file name="D:\work\dns\source\core\tool\simplehtmldom\testcase\reader\performance_test.php" crc="1558487942"/>
+		<file name="D:\work\dns\source\core\tool\simplehtmldom\testcase\reader\memory_test.php" crc="1558487942"/>
+		<file name="D:\work\dns\source\core\tool\simplehtmldom\testcase\reader\element_testcase.php" crc="1558487942"/>
+		<file name="D:\work\dns\source\core\tool\simplehtmldom\testcase\reader\all_test.php" crc="1558487942"/>
+		<file name="D:\work\dns\source\core\tool\simplehtmldom\testcase\strip_testcase.php" crc="1558487942"/>
+		<file name="D:\work\dns\source\core\tool\simplehtmldom\testcase\std_testcase.php" crc="1558487942"/>
+		<file name="D:\work\dns\source\core\tool\simplehtmldom\testcase\slickspeed.htm" crc="1558487942"/>
+		<file name="D:\work\dns\source\core\tool\simplehtmldom\testcase\slick_test.php" crc="1558487942"/>
+		<file name="D:\work\dns\source\core\tool\simplehtmldom\testcase\selector_testcase.php" crc="1558487942"/>
+		<file name="D:\work\dns\source\core\tool\simplehtmldom\testcase\performance_test.php" crc="1558487942"/>
+		<file name="D:\work\dns\source\core\tool\simplehtmldom\testcase\misc_testcase.php" crc="1558487942"/>
+		<file name="D:\work\dns\source\core\tool\simplehtmldom\testcase\memory_test.php" crc="1558487942"/>
+		<file name="D:\work\dns\source\core\tool\simplehtmldom\testcase\mass_test.php" crc="1558487942"/>
+		<file name="D:\work\dns\source\core\tool\simplehtmldom\testcase\jquery-1.2.3.pack.js" crc="1558487942"/>
+		<file name="D:\work\dns\source\core\tool\simplehtmldom\testcase\invalid_testcase.php" crc="1558487942"/>
+		<file name="D:\work\dns\source\core\tool\simplehtmldom\testcase\element_testcase.php" crc="1558487942"/>
+		<file name="D:\work\dns\source\core\tool\simplehtmldom\testcase\dom_testcase.php" crc="1558487942"/>
+		<file name="D:\work\dns\source\core\tool\simplehtmldom\testcase\callback_testcase.php" crc="1558487942"/>
+		<file name="D:\work\dns\source\core\tool\simplehtmldom\testcase\all_test.php" crc="1558487942"/>
+		<file name="D:\work\dns\source\core\tool\simplehtmldom\manual\js\ui.tabs.pack.js" crc="1558487942"/>
+		<file name="D:\work\dns\source\core\tool\simplehtmldom\manual\js\jquery-1.2.3.pack.js" crc="1558487942"/>
+		<file name="D:\work\dns\source\core\tool\simplehtmldom\manual\css\ui.tabs.css" crc="1558487942"/>
+		<file name="D:\work\dns\source\core\tool\simplehtmldom\manual\css\default.css" crc="1558487942"/>
+		<file name="D:\work\dns\source\core\tool\simplehtmldom\manual\manual_faq.htm" crc="1558487942"/>
+		<file name="D:\work\dns\source\core\tool\simplehtmldom\manual\manual_api.htm" crc="1558487942"/>
+		<file name="D:\work\dns\source\core\tool\simplehtmldom\manual\manual.htm" crc="1558487942"/>
+		<file name="D:\work\dns\source\core\tool\simplehtmldom\example\scraping\example_scraping_slashdot.php" crc="1558487942"/>
+		<file name="D:\work\dns\source\core\tool\simplehtmldom\example\scraping\example_scraping_imdb.php" crc="1558487942"/>
+		<file name="D:\work\dns\source\core\tool\simplehtmldom\example\scraping\example_scraping_digg.php" crc="1558487942"/>
+		<file name="D:\work\dns\source\core\tool\simplehtmldom\example\simple_html_dom_utility.php" crc="1558487942"/>
+		<file name="D:\work\dns\source\core\tool\simplehtmldom\example\example_modify_contents.php" crc="1558487942"/>
+		<file name="D:\work\dns\source\core\tool\simplehtmldom\example\example_extract_html.php" crc="1558487942"/>
+		<file name="D:\work\dns\source\core\tool\simplehtmldom\example\example_callback.php" crc="1558487942"/>
+		<file name="D:\work\dns\source\core\tool\simplehtmldom\example\example_basic_selector.php" crc="1558487942"/>
+		<file name="D:\work\dns\source\core\tool\simplehtmldom\example\example_advanced_selector.php" crc="1558487942"/>
+		<file name="D:\work\dns\source\core\tool\simplehtmldom\app\js\screen.css" crc="1558487942"/>
+		<file name="D:\work\dns\source\core\tool\simplehtmldom\app\js\jquery.treeview.js" crc="1558487942"/>
+		<file name="D:\work\dns\source\core\tool\simplehtmldom\app\js\jquery.treeview.css" crc="1558487942"/>
+		<file name="D:\work\dns\source\core\tool\simplehtmldom\app\js\jquery.js" crc="1558487942"/>
+		<file name="D:\work\dns\source\core\tool\simplehtmldom\app\index.php" crc="1558487942"/>
+		<file name="D:\work\dns\source\core\tool\simplehtmldom\app\google.htm" crc="1558487942"/>
+		<file name="D:\work\dns\source\core\tool\simplehtmldom\simple_html_dom.php" crc="1558487942"/>
+		<file name="D:\work\dns\source\core\tool\simplehtmldom\change_log.txt" crc="1558487942"/>
+		<file name="D:\work\dns\source\core\tool\Valid.php" crc="1558487942"/>
+		<file name="D:\work\dns\source\core\tool\Url.php" crc="1560911936"/>
+		<file name="D:\work\dns\source\core\tool\Upfile.php" crc="1559784697"/>
+		<file name="D:\work\dns\source\core\tool\Smtp.php" crc="1558487942"/>
+		<file name="D:\work\dns\source\core\tool\Sms.php" crc="1558487942"/>
+		<file name="D:\work\dns\source\core\tool\simple_html_dom.php" crc="1558487942"/>
+		<file name="D:\work\dns\source\core\tool\Session.php" crc="1558487942"/>
+		<file name="D:\work\dns\source\core\tool\Scok.php" crc="1558487942"/>
+		<file name="D:\work\dns\source\core\tool\Request.php" crc="1558487942"/>
+		<file name="D:\work\dns\source\core\tool\Remote.php" crc="1558487942"/>
+		<file name="D:\work\dns\source\core\tool\Process.php" crc="1558487942"/>
+		<file name="D:\work\dns\source\core\tool\Pop3.php" crc="1558487942"/>
+		<file name="D:\work\dns\source\core\tool\Phpmailer.php" crc="1558487942"/>
+		<file name="D:\work\dns\source\core\tool\Page.php" crc="1560152364"/>
+		<file name="D:\work\dns\source\core\tool\Out.php" crc="1562921607"/>
+		<file name="D:\work\dns\source\core\tool\Mail.php" crc="1558487942"/>
+		<file name="D:\work\dns\source\core\tool\Json.php" crc="1558487942"/>
+		<file name="D:\work\dns\source\core\tool\Init.php" crc="1561371396"/>
+		<file name="D:\work\dns\source\core\tool\Image.php" crc="1559363463"/>
+		<file name="D:\work\dns\source\core\tool\Http.php" crc="1558487942"/>
+		<file name="D:\work\dns\source\core\tool\Handle.php" crc="1558487942"/>
+		<file name="D:\work\dns\source\core\tool\Filter.php" crc="1558487942"/>
+		<file name="D:\work\dns\source\core\tool\File.php" crc="1560236259"/>
+		<file name="D:\work\dns\source\core\tool\Exesql.php" crc="1560506820"/>
+		<file name="D:\work\dns\source\core\tool\Domain.php" crc="1558487942"/>
+		<file name="D:\work\dns\source\core\tool\Curl.php" crc="1561538969"/>
+		<file name="D:\work\dns\source\core\tool\Cookie.php" crc="1560137069"/>
+		<file name="D:\work\dns\source\core\tool\Code.php" crc="1558942459"/>
+		<file name="D:\work\dns\source\core\tool\Catchhtml.php" crc="1558487942"/>
+		<file name="D:\work\dns\source\core\tool\Cache.php" crc="1558487942"/>
+		<file name="D:\work\dns\source\core\tool\Asyn.php" crc="1558487942"/>
+		<file name="D:\work\dns\source\core\template\src\plugins\shared.make_timestamp.php" crc="1558487942"/>
+		<file name="D:\work\dns\source\core\template\src\plugins\shared.escape_chars.php" crc="1558487942"/>
+		<file name="D:\work\dns\source\core\template\src\plugins\prefilter.showinfoheader.php" crc="1558487942"/>
+		<file name="D:\work\dns\source\core\template\src\plugins\prefilter.jstrip.php" crc="1558487942"/>
+		<file name="D:\work\dns\source\core\template\src\plugins\postfilter.showtemplatevars.php" crc="1558487942"/>
+		<file name="D:\work\dns\source\core\template\src\plugins\outputfilter.trimwhitespace.php" crc="1558487942"/>
+		<file name="D:\work\dns\source\core\template\src\plugins\outputfilter.gzip.php" crc="1558487942"/>
+		<file name="D:\work\dns\source\core\template\src\plugins\modifier.upper.php" crc="1558487942"/>
+		<file name="D:\work\dns\source\core\template\src\plugins\modifier.truncate.php" crc="1558487942"/>
+		<file name="D:\work\dns\source\core\template\src\plugins\modifier.strip.php" crc="1558487942"/>
+		<file name="D:\work\dns\source\core\template\src\plugins\modifier.string_format.php" crc="1558487942"/>
+		<file name="D:\work\dns\source\core\template\src\plugins\modifier.spacify.php" crc="1558487942"/>
+		<file name="D:\work\dns\source\core\template\src\plugins\modifier.replace.php" crc="1558487942"/>
+		<file name="D:\work\dns\source\core\template\src\plugins\modifier.regex_replace.php" crc="1558487942"/>
+		<file name="D:\work\dns\source\core\template\src\plugins\modifier.lower.php" crc="1558487942"/>
+		<file name="D:\work\dns\source\core\template\src\plugins\modifier.indent.php" crc="1558487942"/>
+		<file name="D:\work\dns\source\core\template\src\plugins\modifier.escape.php" crc="1558487942"/>
+		<file name="D:\work\dns\source\core\template\src\plugins\modifier.default.php" crc="1558487942"/>
+		<file name="D:\work\dns\source\core\template\src\plugins\modifier.debug_print_var.php" crc="1558487942"/>
+		<file name="D:\work\dns\source\core\template\src\plugins\modifier.date_format.php" crc="1558487942"/>
+		<file name="D:\work\dns\source\core\template\src\plugins\modifier.date.php" crc="1558487942"/>
+		<file name="D:\work\dns\source\core\template\src\plugins\modifier.count_words.php" crc="1558487942"/>
+		<file name="D:\work\dns\source\core\template\src\plugins\modifier.count_sentences.php" crc="1558487942"/>
+		<file name="D:\work\dns\source\core\template\src\plugins\modifier.count_paragraphs.php" crc="1558487942"/>
+		<file name="D:\work\dns\source\core\template\src\plugins\modifier.count_characters.php" crc="1558487942"/>
+		<file name="D:\work\dns\source\core\template\src\plugins\modifier.cat.php" crc="1558487942"/>
+		<file name="D:\work\dns\source\core\template\src\plugins\modifier.capitalize.php" crc="1558487942"/>
+		<file name="D:\work\dns\source\core\template\src\plugins\modifier.bbcode2html.php" crc="1558487942"/>
+		<file name="D:\work\dns\source\core\template\src\plugins\function.resize_image.php" crc="1558487942"/>
+		<file name="D:\work\dns\source\core\template\src\plugins\function.popup_init.php" crc="1558487942"/>
+		<file name="D:\work\dns\source\core\template\src\plugins\function.popup.php" crc="1558487942"/>
+		<file name="D:\work\dns\source\core\template\src\plugins\function.math.php" crc="1558487942"/>
+		<file name="D:\work\dns\source\core\template\src\plugins\function.mailto.php" crc="1558487942"/>
+		<file name="D:\work\dns\source\core\template\src\plugins\function.in_array.php" crc="1558487942"/>
+		<file name="D:\work\dns\source\core\template\src\plugins\function.html_textbox.php" crc="1558487942"/>
+		<file name="D:\work\dns\source\core\template\src\plugins\function.html_table.php" crc="1558487942"/>
+		<file name="D:\work\dns\source\core\template\src\plugins\function.html_select_time.php" crc="1558487942"/>
+		<file name="D:\work\dns\source\core\template\src\plugins\function.html_select_date.php" crc="1558487942"/>
+		<file name="D:\work\dns\source\core\template\src\plugins\function.html_radios.php" crc="1558487942"/>
+		<file name="D:\work\dns\source\core\template\src\plugins\function.html_options.php" crc="1558487942"/>
+		<file name="D:\work\dns\source\core\template\src\plugins\function.html_input.php" crc="1558487942"/>
+		<file name="D:\work\dns\source\core\template\src\plugins\function.html_image.php" crc="1558487942"/>
+		<file name="D:\work\dns\source\core\template\src\plugins\function.html_hidden.php" crc="1558487942"/>
+		<file name="D:\work\dns\source\core\template\src\plugins\function.html_checkboxes.php" crc="1558487942"/>
+		<file name="D:\work\dns\source\core\template\src\plugins\function.get_region.php" crc="1558487942"/>
+		<file name="D:\work\dns\source\core\template\src\plugins\function.db_result_call.php" crc="1558487942"/>
+		<file name="D:\work\dns\source\core\template\src\plugins\function.db_function_call.php" crc="1558487942"/>
+		<file name="D:\work\dns\source\core\template\src\plugins\function.cycle.php" crc="1558487942"/>
+		<file name="D:\work\dns\source\core\template\src\plugins\function.counter.php" crc="1558487942"/>
+		<file name="D:\work\dns\source\core\template\src\plugins\compiler.tplheader.php" crc="1558487942"/>
+		<file name="D:\work\dns\source\core\template\src\plugins\compiler.debug.php" crc="1558487942"/>
+		<file name="D:\work\dns\source\core\template\src\plugins\block.textformat.php" crc="1558487942"/>
+		<file name="D:\work\dns\source\core\template\src\plugins\block.strip.php" crc="1558487942"/>
+		<file name="D:\work\dns\source\core\template\src\plugins\block.capture.php" crc="1558487942"/>
+		<file name="D:\work\dns\source\core\template\src\internal\template.generate_debug_output.php" crc="1558487942"/>
+		<file name="D:\work\dns\source\core\template\src\internal\template.fetch_compile_include.php" crc="1558487942"/>
+		<file name="D:\work\dns\source\core\template\src\internal\template.destroy_dir.php" crc="1558487942"/>
+		<file name="D:\work\dns\source\core\template\src\internal\template.config_loader.php" crc="1558487942"/>
+		<file name="D:\work\dns\source\core\template\src\internal\template.build_dir.php" crc="1558487942"/>
+		<file name="D:\work\dns\source\core\template\src\internal\debug.tpl" crc="1558487942"/>
+		<file name="D:\work\dns\source\core\template\src\internal\compile.section_start.php" crc="1558487942"/>
+		<file name="D:\work\dns\source\core\template\src\internal\compile.parse_is_expr.php" crc="1558487942"/>
+		<file name="D:\work\dns\source\core\template\src\internal\compile.include.php" crc="1558487942"/>
+		<file name="D:\work\dns\source\core\template\src\internal\compile.generate_compiler_debug_output.php" crc="1558487942"/>
+		<file name="D:\work\dns\source\core\template\src\internal\compile.compile_region_start.php" crc="1558487942"/>
+		<file name="D:\work\dns\source\core\template\src\internal\compile.compile_region_end.php" crc="1558487942"/>
+		<file name="D:\work\dns\source\core\template\src\internal\compile.compile_if.php" crc="1558487942"/>
+		<file name="D:\work\dns\source\core\template\src\internal\compile.compile_custom_function.php" crc="1558487942"/>
+		<file name="D:\work\dns\source\core\template\src\internal\compile.compile_custom_block.php" crc="1558487942"/>
+		<file name="D:\work\dns\source\core\template\src\internal\compile.compile_config.php" crc="1558487942"/>
+		<file name="D:\work\dns\source\core\template\src\class.template.php" crc="1558487942"/>
+		<file name="D:\work\dns\source\core\template\src\class.config.php" crc="1558487942"/>
+		<file name="D:\work\dns\source\core\template\src\class.compiler.php" crc="1560243288"/>
+		<file name="D:\work\dns\source\core\shortcut\function.php" crc="1560402284"/>
+		<file name="D:\work\dns\source\core\service\Output.php" crc="1562728310"/>
+		<file name="D:\work\dns\source\core\service\Input.php" crc="1560909201"/>
+		<file name="D:\work\dns\source\core\safe\safe.php" crc="1558487942"/>
+		<file name="D:\work\dns\source\core\roll\roles.php" crc="1558487942"/>
+		<file name="D:\work\dns\source\core\power\powercheck.php" crc="1558487942"/>
+		<file name="D:\work\dns\source\core\power\Ipowercheck.php" crc="1558487942"/>
+		<file name="D:\work\dns\source\core\plugin\sharebar\sharebar.php" crc="1558487942"/>
+		<file name="D:\work\dns\source\core\plugin\sharebar\sharebar.js" crc="1558487942"/>
+		<file name="D:\work\dns\source\core\plugin\sharebar\sharebar.css" crc="1558487942"/>
+		<file name="D:\work\dns\source\core\plugin\sharebar\index.htm" crc="1558487942"/>
+		<file name="D:\work\dns\source\core\plugin\runtime\runtime.php" crc="1558487942"/>
+		<file name="D:\work\dns\source\core\plugin\runtime\index.htm" crc="1558487942"/>
+		<file name="D:\work\dns\source\core\plugin\online\js\online.js" crc="1558487942"/>
+		<file name="D:\work\dns\source\core\plugin\online\block\skin_css.tpl.php" crc="1558487942"/>
+		<file name="D:\work\dns\source\core\plugin\online\block\skin_body.tpl.php" crc="1558487942"/>
+		<file name="D:\work\dns\source\core\plugin\online\block\float_right.tpl.php" crc="1558487942"/>
+		<file name="D:\work\dns\source\core\plugin\online\block\float_left.tpl.php" crc="1558487942"/>
+		<file name="D:\work\dns\source\core\plugin\online\block\adm_list.tpl.php" crc="1558487942"/>
+		<file name="D:\work\dns\source\core\plugin\online\block\adm_config.tpl.php" crc="1558487942"/>
+		<file name="D:\work\dns\source\core\plugin\online\online.php" crc="1558487942"/>
+		<file name="D:\work\dns\source\core\plugin\online\index.htm" crc="1558487942"/>
+		<file name="D:\work\dns\source\core\plugin\online\function.php" crc="1558487942"/>
+		<file name="D:\work\dns\source\core\plugin\online\admin.inc.php" crc="1558487942"/>
+		<file name="D:\work\dns\source\core\plugin\datatool\tpl\import.tpl.php" crc="1558487942"/>
+		<file name="D:\work\dns\source\core\plugin\datatool\tpl\export.tpl.php" crc="1558487942"/>
+		<file name="D:\work\dns\source\core\plugin\datatool\db\mysql.php" crc="1558487942"/>
+		<file name="D:\work\dns\source\core\plugin\datatool\db\config.php" crc="1558487942"/>
+		<file name="D:\work\dns\source\core\plugin\datatool\index.htm" crc="1558487942"/>
+		<file name="D:\work\dns\source\core\plugin\datatool\datatool.php" crc="1558487942"/>
+		<file name="D:\work\dns\source\core\plugin\datatool\admin.inc.php" crc="1558487942"/>
+		<file name="D:\work\dns\source\core\plugin\index.php" crc="1558487942"/>
+		<file name="D:\work\dns\source\core\other\tools\merged_header.php" crc="1558487942"/>
+		<file name="D:\work\dns\source\core\other\tools\merged_config.php" crc="1558487942"/>
+		<file name="D:\work\dns\source\core\other\tools\merge.php" crc="1558487942"/>
+		<file name="D:\work\dns\source\core\other\bindings\tcpdf\qrcode.php" crc="1558487942"/>
+		<file name="D:\work\dns\source\core\other\qrtools.php" crc="1558487942"/>
+		<file name="D:\work\dns\source\core\other\qrsplit.php" crc="1558487942"/>
+		<file name="D:\work\dns\source\core\other\qrspec.php" crc="1558487942"/>
+		<file name="D:\work\dns\source\core\other\qrrscode.php" crc="1558487942"/>
+		<file name="D:\work\dns\source\core\other\qrmask.php" crc="1558487942"/>
+		<file name="D:\work\dns\source\core\other\qrlib.php" crc="1558487942"/>
+		<file name="D:\work\dns\source\core\other\qrinput.php" crc="1558487942"/>
+		<file name="D:\work\dns\source\core\other\qrimage.php" crc="1558487942"/>
+		<file name="D:\work\dns\source\core\other\qrencode.php" crc="1558487942"/>
+		<file name="D:\work\dns\source\core\other\qrconst.php" crc="1558487942"/>
+		<file name="D:\work\dns\source\core\other\qrconfig.php" crc="1558487942"/>
+		<file name="D:\work\dns\source\core\other\qrbitstream.php" crc="1558487942"/>
+		<file name="D:\work\dns\source\core\other\phpqrcode.php" crc="1558487942"/>
+		<file name="D:\work\dns\source\core\lib\Udp.php" crc="1562915121"/>
+		<file name="D:\work\dns\source\core\lib\Tcp.php" crc="1562918142"/>
+		<file name="D:\work\dns\source\core\lib\SocketCache.php" crc="1559290042"/>
+		<file name="D:\work\dns\source\core\lib\Socket.php" crc="1562818391"/>
+		<file name="D:\work\dns\source\core\lib\Route.php" crc="1558487942"/>
+		<file name="D:\work\dns\source\core\lib\Option.php" crc="1558487942"/>
+		<file name="D:\work\dns\source\core\lib\Log.php" crc="1559193179"/>
+		<file name="D:\work\dns\source\core\lib\loader.php" crc="1559282563"/>
+		<file name="D:\work\dns\source\core\lib\Lang.php" crc="1560407864"/>
+		<file name="D:\work\dns\source\core\lib\Job.php" crc="1560222171"/>
+		<file name="D:\work\dns\source\core\lib\Hook.php" crc="1558487942"/>
+		<file name="D:\work\dns\source\core\lib\Epoll.php" crc="1559722740"/>
+		<file name="D:\work\dns\source\core\lib\Dns.php" crc="1562641639"/>
+		<file name="D:\work\dns\source\core\lib\Cache.php" crc="1558487942"/>
+		<file name="D:\work\dns\source\core\hook\volist.php" crc="1560243949"/>
+		<file name="D:\work\dns\source\core\hook\user.php" crc="1560234048"/>
+		<file name="D:\work\dns\source\core\hook\url.php" crc="1558487942"/>
+		<file name="D:\work\dns\source\core\hook\seo.php" crc="1558487942"/>
+		<file name="D:\work\dns\source\core\hook\label.php" crc="1558487942"/>
+		<file name="D:\work\dns\source\core\hook\hook.php" crc="1558487942"/>
+		<file name="D:\work\dns\source\core\hook\charts.php" crc="1558487942"/>
+		<file name="D:\work\dns\source\core\hook\category.php" crc="1558487942"/>
+		<file name="D:\work\dns\source\core\hook\area.php" crc="1558487942"/>
+		<file name="D:\work\dns\source\core\hook\ads.php" crc="1558487942"/>
+		<file name="D:\work\dns\source\core\hook\ac.php" crc="1558496631"/>
+		<file name="D:\work\dns\source\core\db\Dbsql.php" crc="1559807168"/>
+		<file name="D:\work\dns\source\core\db\daoClass.php" crc="1561512646"/>
+		<file name="D:\work\dns\source\core\cache\Rediscache.php" crc="1560323686"/>
+		<file name="D:\work\dns\source\core\cache\Nosql.php" crc="1558931454"/>
+		<file name="D:\work\dns\source\core\cache\Mysql.php" crc="1560402453"/>
+		<file name="D:\work\dns\source\core\cache\File.php" crc="1558487942"/>
+		<file name="D:\work\dns\source\core\tpl.php" crc="1560242254"/>
+		<file name="D:\work\dns\source\core\run.php" crc="1562576367"/>
+		<file name="D:\work\dns\source\core\enter.php" crc="1562913817"/>
+		<file name="D:\work\dns\source\core\core.php" crc="1561515744"/>
+		<file name="D:\work\dns\source\core\Application.php" crc="1561339479"/>
+		<file name="D:\work\dns\source\control\public\night.php" crc="1562061619"/>
+		<file name="D:\work\dns\source\control\index\login.php" crc="1559363436"/>
+		<file name="D:\work\dns\source\control\index\index.php" crc="1562834153"/>
+		<file name="D:\work\dns\source\control\admin\siteset.php" crc="1562639372"/>
+		<file name="D:\work\dns\source\control\admin\role.php" crc="1560239991"/>
+		<file name="D:\work\dns\source\control\admin\login.php" crc="1560243569"/>
+		<file name="D:\work\dns\source\control\admin\frame.php" crc="1560218123"/>
+		<file name="D:\work\dns\source\control\admin\domian.php" crc="1562835786"/>
+		<file name="D:\work\dns\source\control\admin\census.php" crc="1560757882"/>
+		<file name="D:\work\dns\source\control\admin\backstagemenu.php" crc="1561370690"/>
+		<file name="D:\work\dns\source\control\admin\aysn.php" crc="1558487941"/>
+		<file name="D:\work\dns\source\control\admin\articlecategory.php" crc="1560402263"/>
+		<file name="D:\work\dns\source\control\admin\ajax.php" crc="1558487941"/>
+		<file name="D:\work\dns\source\control\admin\admins.php" crc="1560240377"/>
+		<file name="D:\work\dns\source\control\userbase.php" crc="1558487941"/>
+		<file name="D:\work\dns\source\control\indexbase.php" crc="1560735819"/>
+		<file name="D:\work\dns\source\control\apibase.php" crc="1562722723"/>
+		<file name="D:\work\dns\source\control\adminbase.php" crc="1562060648"/>
+		<file name="D:\work\dns\source\compile\define.inc.php" crc="1562913771"/>
+		<file name="D:\work\dns\source\index.php" crc="1558487942"/>
+		<file name="D:\work\dns\source\api.php" crc="1558662489"/>
+		<file name="D:\work\dns\source\admin.php" crc="1558487941"/>
+		<file name="D:\work\dns\lang\cn\sock\user\index.php" crc="1559006806"/>
+		<file name="D:\work\dns\lang\cn\index\index_index.php" crc="1558487941"/>
+		<file name="D:\work\dns\lang\cn\index.php" crc="1558487941"/>
+		<file name="D:\work\dns\conf\type.php" crc="1562060841"/>
+		<file name="D:\work\dns\conf\redis.inc.php" crc="1558948712"/>
+		<file name="D:\work\dns\conf\facebook.inc.php" crc="1562663440"/>
+		<file name="D:\work\dns\conf\db.inc.php" crc="1562912270"/>
+		<file name="D:\work\dns\conf\config.php" crc="1562832662"/>
+		<file name="D:\work\dns\conf\conf.inc.php" crc="1562913767"/>
+		<file name="D:\work\dns\conf\admin.inc.php" crc="1562834855"/>
+		<file name="D:\work\dns\udp.php" crc="1562916799"/>
+		<file name="D:\work\dns\install.php" crc="1562911657"/>
+		<file name="D:\work\dns\index.php" crc="1562913496"/>
+		<file name="D:\work\dns\httpd.ini" crc="1558487941"/>
+		<file name="D:\work\dns\dns.php" crc="1562900885"/>
+		<file name="D:\work\dns\admin.php" crc="1559361743"/>
+		<file name="D:\work\dns\.htaccess" crc="1558487937"/>
+	</filescache>
+</project>

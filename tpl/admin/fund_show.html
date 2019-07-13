@@ -1,0 +1,83 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=<!--{$page_charset}-->" />
+   <!--{include file={$admintpl}"top/headerjs.html"}-->
+</head>
+<body>
+    <div class="oemarry_layout">
+  <div class="oe_top_nav">
+	 <!--{include file={$admintpl}"a_nav.html"}-->
+	<span><a href="javascript:;" url="<!--{url action='run'}-->" tag="back">&lt;&lt;返回列表</a></span>
+  </div>
+  <div class="a_content oe_dlv">
+<form method="post" action="<!--{url action='add'}-->" >
+                      
+                            <input type="hidden" name="userid" value="<!--{$select.userid}-->"> 
+    
+     <table class="oe_table_warp">
+              <tr>
+	    <th width="15%">待操作账号名称：</th>
+		<td><span class="alt"><!--{$<!--{$c}-->.name}--></span></td>
+	  <th width="15%">待操作账号ID：</th>
+		<td><span class="alt"><!--{$<!--{$c}-->.userid}--></span></td>
+              </tr>
+          <tr>
+          <th >流水类型：</th>
+		<td >
+          <span class="alt"><!--{if $<!--{$c}-->.glidetype}-->入账<!--{else}-->出账<!--{/if}--></span>
+		</td>
+         <th >金额：</th>
+		<td >
+          <span class="alt"><!--{$<!--{$c}-->.money}--><!--{$config.currency}--></span> </td>
+         </tr>
+         <tr>
+             <th ><span class="red"></span>执行人：</th>
+		<td >
+                    <span class="alt"><!--{$<!--{$c}-->.adminname}--></span> <label></label>
+		</td>
+                <th >执行状态：</th>
+		<td >
+                    <span class="alt"><!--{if $<!--{$c}-->.status}-->已执行<!--{else}-->待执行<!--{/if}--></span> </td>
+         </tr>
+         <tr>
+             <th >资金作用说明：</th>
+		<td >
+                    <span class="alt"><!--{$<!--{$c}-->.sourcetype}--></span> 
+		</td>
+               <th >执行时间：</th>
+		<td >
+                    <span class="alt"><!--{$<!--{$c}-->.addtime|date_format:"%Y-%m-%d %H:%M:%S"}--></span> 
+		</td>
+         </tr>
+          <tr>
+	    <th >证据图片：</th>
+		<td colspan="3">
+          
+            <span class="oe_img"></span>
+                <span id="viewimg_drawimg">
+                    
+                          <!--{if <!--{$<!--{$c}-->.drawimg}-->!=''}-->
+                        <!--{foreach $<!--{$c}-->.drawimg as $k}-->
+                        <div style="float:left;width:auto;margin-right:5px;">
+                            <div style="height:80px;width:80px;overflow:hidden;cursor:pointer;margin-top:5px;" class="upimg_view">
+                                <img width="80px" onclick="window.open('<!--{$k}-->');" src="<!--{$k}-->" alt="点击查看大图" style="height: 80px; width: 50px; margin-top: 0px; margin-left: 15px;"> </div>
+                            <input type="hidden" name="drawimg[]" value="<!--{$k}-->"> <button onclick="javascript:delobj($(this).parent('div'));" style=" background: none repeat scroll 0 0 #fafafa; border: 1px solid #ebebeb;border-radius: 3px; cursor: pointer;display: block;margin-top: 10px;width: 80px;" type="button">删除</button></div>
+                           
+                    <!--{/foreach}--> <!--{/if}--> 
+                </span></td>
+          </tr>
+        <tr>
+	    <th>&nbsp;备注说明：</th>
+		<td colspan="3"><span class="alt-area"><!--{$<!--{$c}-->.remark}--></span></td></tr>
+          </table>
+  <div class="oe_button_layout">
+	  <input type="button" class="button_2" value="返回" tag="back" /> 
+	  <span id="submit_tips" class="error"></span>
+	</div>
+</form>
+</div>
+</div>
+  
+
+</body>

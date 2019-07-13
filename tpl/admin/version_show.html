@@ -1,0 +1,82 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=<!--{$page_charset}-->" />
+	<!--{include file={$admintpl}"top/headerjs.html"}-->
+</head>
+
+<body>
+	<div class="oemarry_layout">
+		<div class="oe_top_nav">
+			<!--{include file={$admintpl}"a_nav.html"}-->
+			<span><a href="javascript:;" url="<!--{url action='run'}-->" tag="back">&lt;&lt;返回列表</a></span>
+		</div>
+		<div class="a_content oe_dlv">
+			<form method="post" action="" >
+				<input name="vid" type="hidden" value="<!--{$data.vid}-->">
+				<table class="oe_table_warp">
+					<tr>
+						<th width="5%">版本类型：</th>
+						<td width="35%">
+							<select name="type">
+								<option value="0"
+									<!--{if $data.type=='0'}-->
+									selected
+									<!--{/if}-->
+									>安卓</option>
+								<option value="1"
+									<!--{if $data.type=='1'}-->
+									selected
+									<!--{/if}-->
+									>IOS</option>
+							</select></td></tr>
+					<tr>
+						<th width="5%"><span class="red">*</span>版本号：</th>
+						<td width="35%"><input type="text" name="version" tag="notnull " value="<!--{$data.version}-->"  class="input-b"/>
+							<span class="oe_trap"><label></label><em></em></span>
+						</td></tr>
+					<tr>
+						<th width="5%"><span class="red">*</span>URL：</th>
+						<td width="35%"><input type="text" name="url" tag="notnull isurl" value="<!--{$data.url}-->"  class="input-b"/>
+							<span class="oe_trap"><label></label><em></em></span>
+						</td></tr>
+					<tr>
+						<th width="5%">是否升级：</th>
+						<td width="35%">
+							<select name="isup">
+								<option value="0"
+									<!--{if $data.isup=='0'}-->
+									selected
+									<!--{/if}-->
+									>不升级 </option>
+								<option value="1"
+									<!--{if $data.isup=='1'}-->
+									selected
+									<!--{/if}-->
+									>升级</option>
+									<option value="2"
+									<!--{if $data.isup=='2'}-->
+									selected
+									<!--{/if}-->
+									>强制升级</option>
+							</select></td></tr>
+							<tr>
+						<th width="5%"><span class="red">*</span>提示消息：</th>
+						<td width="35%"><input type="text" name="desc" tag="notnull " value="<!--{$data.desc}-->"  class="input-b"/>
+							<span class="oe_trap"><label></label><em></em></span>
+						</td></tr>
+<tr>
+						<th width="5%"><span class="red">*</span>更新时间：</th>
+						<td width="35%"><input type="text" name="updatetime" tag="notnull "  value="<!--{$data.updatetime|date_format:"%Y-%m-%d %H:%M:%S"}-->"  class="input-b date2"/>
+							<span class="oe_trap"><label></label><em></em></span>
+						</td></tr>
+				</table>
+
+				<div class="oe_button_layout">
+					<input type="button" class="button_2" value="提交保存" tag="submit" /> 
+					<span id="submit_tips" class="error"></span>
+				</div>
+			</form>
+		</div>
+	</div>
+</body>

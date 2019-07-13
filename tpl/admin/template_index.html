@@ -1,0 +1,76 @@
+<!--{include file={$admintpl}"top/headerjs.html"}-->
+<body>
+<div class="oemarry_layout"> 
+   <div class="oe_top_nav">
+	 <!--{include file={$admintpl}"a_nav.html"}-->
+  </div>
+<form action="" method="post">
+<div class="oe_tools_bar clearfix">
+    <a class="icon-checkbox-checked icon-checkbox-unchecked" href="javascript:;" onClick="tools_select('tmpid[]',this)" title="全选" data="true"> 全选 </a>
+    <a class="icon-remove-2 none" href="javascript:;" do="tools_submit({action:'<!--{url action="del" }-->',id:'tmpid'})" title="删除" onclick="boxyn($(this))"> 删除</a>
+    <a href="<!--{url action="add_view" }-->" class="icon-plus" style="display:none">添加</a>
+    <span class="fr"><a href="javascript:;"  onClick="lbox('筛选条件')"  id="condition" class="icon-search <!--{if $where}-->red<!--{/if}-->"> 筛选条件</a></span>
+</div>
+<table class="oe_table_list table_cs"  id="paixun">
+    <tr>
+        <th style="width:4%; text-align:center;">选择</th>
+        <th style="width:25%">标题</th>
+         <th style="width:10%">标识</th>
+        <th style="width:15%">创建时间</th>
+        <th style="width:5%">排序</th>
+        <th style="width:4%">状态</th>
+        <th style="text-align:center;">操作</th>
+    </tr>
+    <tbody>
+    <!--{foreach $template as $volist}-->
+    <tr>
+      <td  style="text-align:center;"><input type="checkbox" value="<!--{$volist.tmpid}-->" name="tmpid[]"></input></td>
+      <td tag="ajaxtext" key="<!--{$volist.tmpid}-->" who="<!--{$c}-->" name="title"> <!--{$volist.title}-->
+      </td>
+         <td style="text-align:center;"><!--{$volist.idenfity}--></td>
+         <td style="text-align:center;">
+             <!--{$volist.addtime|date_format:"%Y-%m-%d %H:%M:%S"}-->
+         </td>
+       <td  who="<!--{$c}-->" key="<!--{$volist.tmpid}-->" name="orders" tag="ajaxtext" style="cursor:pointer;text-align:center;" ><!--{$volist.orders}--></td>
+      <td  who="<!--{$c}-->" key="<!--{$volist.tmpid}-->" name="flag" tag="ajaxchoose" style="cursor:pointer;text-align:center;" >
+             <!--{if $volist.flag==0}--> <div class="yes"></div>
+             <!--{else}--><div class="no"></div>
+             <!--{/if}-->
+                </td>
+        <td  style="text-align:center;" class="a_edit_del">  
+              &nbsp;<a class="oe_ico_blue" href="<!--{url action="show"  args="tmpid:{$volist.tmpid}"}-->">编辑</a>
+        </td>
+      </tr>
+    <!--{/foreach}-->
+    </tbody>
+       </table>
+               
+   <div class="oe_page_box">
+                   <!--{$page}-->
+                </div>
+</form>
+</div>
+</div>
+<div style="display:none;" id="searchbox">
+  <form method="post" style="width:400px;" action="">
+       <input name="sflag" type="hidden" value="1">
+     <table  align="center" width="473" class="oe_table_warp">
+      <tr>
+        <td height="40"  style="text-align:right;">  标识：</td>
+        <td>
+        <input name="idenfity" class="input-b" type="text" value="<!--{$where.idenfity}-->" />
+            
+        </td>
+           </tr>
+    
+  
+    </table>
+        <div style="text-align:center">
+           <input name="" value="清空" class="oe_boxbut" tag="reset" type="button">
+        <span style="padding-left:50px;"></span>
+          <input name="" value="提交查询" class="oe_boxbut" tag="submit" type="button">
+    </div>
+  </form>
+</div>
+</body>
+<!--{include file={$admintpl}"paix.html"}-->

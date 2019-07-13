@@ -1,0 +1,137 @@
+<!--{include file={$admintpl}"top/headerjs.html"}-->
+<body>
+<div class="oemarry_layout"> 
+   <div class="oe_top_nav">
+	 <!--{include file={$admintpl}"a_nav.html"}-->
+	
+  </div>
+
+<form action="" method="post">
+<div class="oe_tools_bar clearfix">
+    <a class="icon-checkbox-checked icon-checkbox-unchecked" href="javascript:;" onClick="tools_select('articleid[]',this)" title="全选" data="true"> 全选 </a>
+    <a class="icon-remove-2" href="javascript:;" do="tools_submit({action:'<!--{url action="del" }-->',id:'articleid'})" title="删除" onclick="boxyn($(this))"> 删除</a>
+    <a href="<!--{url action="add_view" }-->" class="icon-plus">添加</a>
+
+    <span class="fr"><a href="javascript:;"  onClick="lbox('筛选条件')"  id="condition" class="icon-search <!--{if $where}-->red<!--{/if}-->"> 筛选条件</a></span>
+</div>
+<table class="oe_table_list table_cs"  id="paixun">
+    <tr>
+        <th style="width:4%; text-align:center;">选择</th>
+        <th style="width:25%">标题</th>
+        <th style="width:5%">国家 </th>
+         <th style="width:10%">分类</th>
+        <th style="width:15%">添加时间</th>
+        <th style="width:5%">金币</th>
+        <th style="width:5%">排序</th>
+        
+        <th style="width:4%">状态</th>
+         <th style="width:4%">推荐</th>
+        <th style="text-align:center;">操作</th>
+    </tr>
+    <tbody>
+    <!--{foreach $article as $volist}-->
+    <tr>
+      <td  style="text-align:center;"><input type="checkbox" value="<!--{$volist.articleid}-->" name="articleid[]"></input></td>
+      <td > <!--{$volist.title}-->
+      </td>
+       
+         <td style="text-align:center;"><!--{$volist.country}--></td>
+         <td style="text-align:center;"><!--{$volist.catname}--></td>
+         <td style="text-align:center;">
+             <!--{$volist.addtime|date_format:"%Y-%m-%d %H:%M:%S"}-->
+         </td>
+       <td   ><!--{$volist.coin}--></td>
+       <td   ><!--{$volist.orders}--></td>
+      
+      <td  >
+             <!--{if $volist.flag==0}--> <div class="yes"></div>
+             <!--{else}--><div class="no"></div>
+             <!--{/if}-->
+                </td>
+           <td   >
+             <!--{if $volist.elite==1}--> <div class="yes"></div>
+             <!--{else}--><div class="no"></div>
+             <!--{/if}-->
+                </td>
+        <td  style="text-align:center;" class="a_edit_del">  
+        <a class="oe_ico_green" href="<!--{url action="changcoin"  args="articleid:{$volist.articleid}"}-->">修改金币</a>
+        <a class="oe_ico_blue" href="<!--{url action="show"  args="articleid:{$volist.articleid}"}-->">编辑</a>
+        <a class="oe_ico_red" a="<!--{url action="del"  args="articleid:{$volist.articleid}"}-->" onclick="boxyn($(this))">删除</a>
+        </td>
+      </tr>
+    <!--{/foreach}--></tbody>
+       </table>
+               
+   <div class="oe_page_box">
+                   <!--{$page}-->
+                </div>
+</form> <!--{include file={$admintpl}"paix.html"}-->
+</div>
+</div>
+<div style="display:none;" id="searchbox">
+  <form method="post" style="width:400px;" action="<!--{url action='run'}-->">
+       <input name="sflag" type="hidden" value="1">
+     <table  align="center" width="473" class="oe_table_warp">
+      <tr>
+        <td height="40"  style="text-align:right;">标题：</td>
+        <td>
+        <input name="title" class="input-b" type="text" value="<!--{$where.title}-->" />
+            
+        </td>
+           
+      </tr>
+        <tr>
+        <td height="40"  style="text-align:right;">国家：</td>
+        <td>
+        <!--{assign var="cat" vo_list("fun={get_all} mod={country} field={countryid,country,alias} array={flag:0} num={50}")}-->
+                
+                 <select name='countryid' >
+                     <option value=''>--选择国家--</option>
+                     <!--{foreach $cat as $volist}-->
+                     <option value='<!--{$volist.countryid}-->'
+                         <!--{if $where.countryid==$volist.countryid}-->
+                         selected
+                                <!--{/if}-->
+                         >
+                        
+                         <!--{$volist.country}-->--<!--{$volist.alias}--></option>
+                     <!--{/foreach}-->
+                 </select>
+        
+            
+        </td>
+           
+      </tr>
+       <tr>
+        <td height="40"  style="text-align:right;">分类：</td>
+        <td>
+        <!--{assign var="cat" vo_list("fun={get_child} mod={article_category} field={catid,catname,depth} array={catid}")}-->
+                 <select name='catid'>
+                     <option value=''>--选择文章分类--</option>
+                     <!--{foreach $cat as $volist}-->
+                     <option value='<!--{$volist.catid}-->'
+                         <!--{if $where.catid==$volist.catid}-->
+                         selected
+                                <!--{/if}-->
+                         >
+                         <!--{section name=customer loop=$volist.depth-1}-->
+                         |
+                         <!--{/section}-->
+                         <!--{section name=customer loop=$volist.depth-1}-->
+                         --<!--{/section}-->
+                         <!--{$volist.catname}--></option>
+                     <!--{/foreach}-->
+                 </select>
+        </td>
+           
+      </tr> 
+        
+    </table>
+        <div style="text-align:center">
+           <input name="" value="清空" class="oe_boxbut" tag="reset" type="button">
+        <span style="padding-left:50px;"></span>
+          <input name="" value="提交查询" class="oe_boxbut" tag="submit" type="button">
+    </div>
+  </form>
+</div>
+</body>

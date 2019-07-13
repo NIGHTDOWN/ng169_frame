@@ -1,0 +1,81 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=<!--{$page_charset}-->" />
+   <!--{include file={$admintpl}"top/headerjs.html"}-->
+</head>
+<body>
+    <div class="oemarry_layout">
+  <div class="oe_top_nav">
+	 <!--{include file={$admintpl}"a_nav.html"}-->
+	<span><a href="javascript:;" url="<!--{url action='run'}-->" tag="back">&lt;&lt;返回列表</a></span>
+  </div>
+  <div class="a_content oe_dlv">
+<form method="post" action="<!--{url action='add'}-->" >
+                      
+                            <input type="hidden" name="userid" value="<!--{$select.userid}-->"> 
+    
+     <table class="oe_table_warp">
+              <tr>
+	    <th width="15%"><span class="red">*</span>待操作账号名称：</th>
+		<td><span class="alt"><!--{$select.name}--></span></td>
+	  <th width="15%"><span class="red">*</span>待操作账号ID：</th>
+		<td><span class="alt"><!--{$select.userid}--></span></td>
+              </tr>
+          <tr>
+             <th ><span class="red">*</span>流水类型：</th>
+		<td >
+                    <select name="glidetype">
+                       
+                        <option value="0"
+                            <!--{if $<!--{$c}-->.glidetype=='0'}-->
+                            selected
+                                        <!--{/if}-->
+                            >入账</option>
+                        <option value="1"
+                            <!--{if $<!--{$c}-->.glidetype=='1'}-->
+                            selected
+                                        <!--{/if}-->
+                            >出账</option>
+                    </select> <label></label>
+		</td>
+                <th >金额：</th>
+		<td >
+                    <input type="text" name="money" tag="notnull isnum" value="<!--{$<!--{$c}-->.money}-->"  class="input-100"/> <label><!--{$config.currency}--></label>&nbsp;</td>
+         </tr>
+         <tr>
+             <th ><span class="red">*</span>资金作用说明：</th>
+		<td >
+                    <input type="text" name="sourcetype" tag="cannull max" num="10" value="<!--{$<!--{$c}-->.sourcetype}-->"  class="input-b"/> 
+		</td>
+         </tr>
+          <tr>
+	    <th >证据图片：</th>
+		<td colspan="3">
+            <button id="oe_img_button" class="drawimg" tag="img_up_more" type="button">上传图片</button>
+            <span class="oe_img"></span>
+                <span id="viewimg_drawimg">
+                          <!--{if <!--{$<!--{$c}-->.thumbimg}-->!=''}-->
+                        <!--{foreach $<!--{$c}-->.thumbimg as $k}-->
+                        <div style="float:left;width:auto;margin-right:5px;">
+                            <div style="height:80px;width:80px;overflow:hidden;cursor:pointer;margin-top:5px;" class="upimg_view">
+                                <img width="80px" onclick="window.open('<!--{$k}-->');" src="<!--{$k}-->" alt="点击查看大图" style="height: 80px; width: 50px; margin-top: 0px; margin-left: 15px;"> </div>
+                            <input type="hidden" name="drawimg[]" value="<!--{$k}-->"> <button onclick="javascript:delobj($(this).parent('div'));" style=" background: none repeat scroll 0 0 #fafafa; border: 1px solid #ebebeb;border-radius: 3px; cursor: pointer;display: block;margin-top: 10px;width: 80px;" type="button">删除</button></div>
+                           
+                    <!--{/foreach}--> <!--{/if}--> 
+                </span></td>
+          </tr>
+        <tr>
+	    <th>&nbsp;备注说明：</th>
+		<td colspan="3"><textarea rows="5"  cols="45" name="remark"  tag="notnull" ><!--{$<!--{$c}-->.remark}--></textarea></td></tr>
+          </table>
+  <div class="oe_button_layout">
+	  <input type="button" class="button_2" value="提交保存" tag="submit" /> 
+	  <span id="submit_tips" class="error"></span>
+	</div>
+</form>
+</div>
+</div>
+  
+
+</body>

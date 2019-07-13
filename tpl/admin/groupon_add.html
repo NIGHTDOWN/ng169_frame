@@ -1,0 +1,153 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=<!--{$page_charset}-->" />
+    <!--{include file={$admintpl}"top/headerjs.html"}-->
+    
+    <style>
+    	h3{
+    		border-top-style: groove;
+    font-size: 18px;
+    padding: 6px 0;margin: 5px 0px;
+    width: auto;
+    	}
+    </style>
+</head>
+<body>
+    <div class="oemarry_layout">
+  <div class="oe_top_nav">
+	 <!--{include file={$admintpl}"a_nav.html"}-->
+<span><a href="javascript:;" url="<!--{url action='run'}-->" tag="back">&lt;&lt;返回列表</a></span>
+  </div>
+  <div class="a_content oe_dlv">
+<form method="post" action="<!--{url action='add'}-->" >
+ <input  type="hidden" name="gpid" value="<!--{$data.gpid}-->" />
+   
+     <table class="oe_table_warp">
+     
+	  
+<tr>
+	    <th width="15%">团购名称</th>
+		<td width="35%"><input type="text" name="gtitle" tag="notnull" value="<!--{$data.gtitle}-->"   class="input-b"/>
+		
+		</td>
+	  </tr>
+	  
+	  <tr>
+	    <th width="15%"><span class="red">*</span>团购商品：</th><td width="35%">
+	    <input type="hidden" name="pid" value="<!--{$data.pid}-->"  />
+	    <span class="search-goods-list-bd" style='float: left;'>
+	    	<!--{if $data.pid}-->
+	    	
+      <div class="goods-image">
+     <img src="<!--{$data.smallimg1}-->"></div> 
+     <div class="goods-name">
+     <!--{$data.productname|tostr}-->
+     </div>
+     <div class="goods-price">销售价：<!--{$data.price}-->	</div>
+	    	<!--{/if}-->
+	    </span>
+		
+		<script>
+		
+		$(function(){
+			$('.listproduct').click(function(){
+			msgbox('选择商品',$("<div><iframe style='height:800px' src='<!--{url mod='product' action='box'}-->'></iframe></div>"),'1000','800');				
+
+			});
+
+		});
+		
+		</script>
+		 <input type="button" class="listproduct" value="选择商品" id='oe_img_button'  /> 
+            
+		</td>
+       
+	  </tr>
+	  
+<tr>
+	    <th width="15%">团购图片：(尺寸<!--{$data.width}-->*<!--{$data.height}-->)</th>
+		<td class="img" >
+		 <button tag='img_up_one' class='gimg' type="button" id="oe_img_button">上传图片</button>
+                 <!--{if $data.gimg}-->
+				 <span id="viewimg_img"><div style="float:left;width:auto;"><div class="upimg_view" style="height:80px;width:80px;overflow:hidden;cursor:pointer;margin-top:5px;"><img alt="点击查看大图" src="<!--{$data.gimg}-->" width="80px" onclick="window.open('<!--{$data.gimg}-->');" style="height: 80px; width: 79px; margin-top: 0px; margin-left: 0.5px;"></div><input type="hidden" value="<!--{$data.gimg}-->" name="gimg"> <button type="button" style=" background: none repeat scroll 0 0 #fafafa; border: 1px solid #ebebeb;border-radius: 3px; cursor: pointer;display: block;margin-top: 10px;width: 80px;" onclick="javascript:delobj($(this).parent('div'));">删除</button></div></span>
+                 
+              <!--{/if}-->   
+		
+		
+		
+		</td>
+	  </tr>
+	  
+<tr>
+	    <th width="15%">广告产品价格：</th>
+		<td width="35%"><input type="text" name="gprice" tag="cannull " value="<!--{$data.gprice}-->"   class="input-b"/>
+		
+		</td>
+	  </tr>
+<tr>
+	    <th width="15%">有效时间</th>
+		<td width="35%">开始时间：<input type="text" name="gstime" tag="cannull " value="<!--{$data.gstime|date_format:"%Y-%m-%d %H:%M:%S"}-->"   class="input-b date2"/>
+		结束时间：<input type="text" name="getime" tag="cannull " value="<!--{$data.getime|date_format:"%Y-%m-%d %H:%M:%S"}-->"   class="input-b date2"/>
+		</td>
+	  </tr>
+ 
+ <tr>
+	    <th width="15%">浏览量：</th>
+		<td width="35%"><input type="text" name="ghits" tag="cannull fixnum isnum" value="<!--{$data.ghits}-->"   class="input-b"/>
+		
+		</td>
+	  </tr>
+	   <tr>
+	    <th width="15%">购买数：</th>
+		<td width="35%"><input type="text" name="gsells" tag="cannull fixnum isnum" value="<!--{$data.gsells}-->"   class="input-b"/>
+		
+		</td>
+	  </tr>
+<tr>
+	    <th width="15%"><span class="red">*</span>状态：</th>
+		<td width="35%">
+		<select name='gcheck'>
+                <option value=''>-选择-</option>
+                
+              
+                <option value='0'  
+                    <!--{if $data.gcheck==0}-->
+                  selected="selected"
+                                <!--{/if}-->
+                    >
+                    待审核</option>
+                 <option value='1'  
+                    <!--{if $data.gcheck==1}-->
+                  selected="selected"
+                                <!--{/if}-->
+                    >
+                    审核成功</option>
+                  <option value='2'  
+                    <!--{if $data.gcheck==2}-->
+                  selected="selected"
+                                <!--{/if}-->
+                    >
+                    审核失败</option> 
+                    <option value='3'  
+                    <!--{if $data.gcheck==3}-->
+                  selected="selected"
+                                <!--{/if}-->
+                    >
+                    失效</option> 
+            </select>
+
+		</td>
+       
+	  </tr>
+
+         </table>
+    
+  <div class="oe_button_layout">
+	  <input type="button" class="button_2" value="提交保存" tag="submit" /> 
+	  <span id="submit_tips" class="error"></span>
+	</div>
+</form>
+</div>
+</div>
+</body>

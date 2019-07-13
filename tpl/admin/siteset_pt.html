@@ -1,0 +1,236 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=<!--{$page_charset}-->" />
+		<!--{include file={$admintpl}"top/headerjs.html"}-->
+		<style>
+			h1{
+				    width: 100%;
+    border-bottom: #544635;
+  
+    margin-bottom: 5px;
+    text-align: center;
+    border-bottom: solid;
+    padding-bottom: 5px;
+    margin-top: 20px;border-bottom-color: #000;
+			}
+			
+		</style>
+	</head>
+
+	<body>
+		<div class="oemarry_layout">
+  
+			<div class="oe_top_nav">
+				<!--{include file={$admintpl}"a_nav.html"}-->
+	
+			</div>
+			<div class="oe_content">
+
+				<h6>配置<span style="font-size:12px; font-weight:normal; color:#999;">  使用($config.对应的标识)既可调用</span></h6>
+				<form action="<!--{url action="save" mod="siteset" group="admin"}-->" method="post" name="config_form">
+				<h1>评价设置</h1>
+					<table class="oe_table_warp">
+					<!--{assign var='options' vo_list("  fun={get_all} mod={options}  array={flag:0,identify:20,orders:10}}")}--><tr>
+						<!--{foreach $options as $volist}-->
+						
+							<th width="5%"><!--{$volist.name}-->：<span class="oe_lable_gray">(标识: <!--{$volist.optionname}-->)</span></th>
+							<td width="35%">
+								<!--{if $volist.htmltype=='1'}-->
+								<input class="input-b" type="text" value="<!--{$volist.optionvalue}-->" name="<!--{$volist.optionname}-->" />
+								
+								<!--{elseif $volist.htmltype=='3'}-->
+								<textarea name="<!--{$volist.optionname}-->" style="width:60%;height:80px;"><!--{$volist.optionvalue}--></textarea>
+								
+								<!--{/if}-->
+								<span class="oe_trap"><label></label><em> <!--{$volist.desc}--></em></span>
+							</td>
+						
+						<!--{/foreach}--></tr>
+					</table>
+				
+				
+				
+				 <h1>等级名称</h1>
+					<table class="oe_table_warp">
+					<!--{assign var='options' vo_list("  fun={get_all} mod={options}  array={flag:0,identify:20,orders:0}}")}-->
+						<!--{foreach $options as $volist}-->
+						<tr>
+							<th width="5%"><!--{$volist.name}-->：<span class="oe_lable_gray">(标识: <!--{$volist.optionname}-->)</span></th>
+							<td width="35%">
+								<!--{if $volist.htmltype=='1'}-->
+								<input class="input-b" type="text" value="<!--{$volist.optionvalue}-->" name="<!--{$volist.optionname}-->" />
+								
+								<!--{elseif $volist.htmltype=='3'}-->
+								<textarea name="<!--{$volist.optionname}-->" style="width:60%;height:80px;"><!--{$volist.optionvalue}--></textarea>
+								
+								<!--{/if}-->
+								<span class="oe_trap"><label></label><em> <!--{$volist.desc}--></em></span>
+							</td>
+						</tr>
+						<!--{/foreach}-->
+					</table>
+              <h1>1.<!--{$level.0}-->配置</h1>
+              	<!--{assign var='options' vo_list("  fun={get_all} mod={options}  array={flag:0,identify:20,orders:1}}")}-->
+					<table class="oe_table_warp">
+				
+					<tr>
+						<!--{foreach $options as $volist}-->
+						
+							<th width="5%"><!--{$volist.name}-->：<span class="oe_lable_gray">(标识: <!--{$volist.optionname}-->)</span></th>
+							<td width="35%">
+								<!--{if $volist.htmltype=='1'}-->
+								<input class="input-b" type="text" value="<!--{$volist.optionvalue}-->" name="<!--{$volist.optionname}-->" />
+								
+								<!--{elseif $volist.htmltype=='3'}-->
+								<textarea name="<!--{$volist.optionname}-->" style="width:60%;height:80px;"><!--{$volist.optionvalue}--></textarea>
+								
+								<!--{/if}-->
+								<span class="oe_trap"><label></label><em> <!--{$volist.desc}--></em></span>
+							</td>
+						<!--{if ($i%2)!=0}--></tr><tr><!--{/if}-->
+						<!--{/foreach}-->
+						</tr>
+					</table>
+<h1>2.<!--{$level.1}-->配置</h1>
+              	<!--{assign var='options' vo_list("  fun={get_all} mod={options}  array={flag:0,identify:20,orders:2}}")}-->
+					<table class="oe_table_warp">
+				
+					<tr>
+						<!--{foreach $options as $volist}-->
+						
+							<th width="5%"><!--{$volist.name}-->：<span class="oe_lable_gray">(标识: <!--{$volist.optionname}-->)</span></th>
+							<td width="35%">
+								<!--{if $volist.htmltype=='1'}-->
+								<input class="input-b" type="text" value="<!--{$volist.optionvalue}-->" name="<!--{$volist.optionname}-->" />
+								
+								<!--{elseif $volist.htmltype=='3'}-->
+								<textarea name="<!--{$volist.optionname}-->" style="width:60%;height:80px;"><!--{$volist.optionvalue}--></textarea>
+								
+								<!--{/if}-->
+								<span class="oe_trap"><label></label><em> <!--{$volist.desc}--></em></span>
+							</td>
+						<!--{if ($i%2)!=0}--></tr><tr><!--{/if}-->
+						<!--{/foreach}-->
+						</tr>
+					</table>
+					<h1>3.<!--{$level.2}-->配置</h1>
+              	<!--{assign var='options' vo_list("  fun={get_all} mod={options}  array={flag:0,identify:20,orders:3}}")}-->
+					<table class="oe_table_warp">
+				
+					<tr>
+						<!--{foreach $options as $volist}-->
+						
+							<th width="5%"><!--{$volist.name}-->：<span class="oe_lable_gray">(标识: <!--{$volist.optionname}-->)</span></th>
+							<td width="35%">
+								<!--{if $volist.htmltype=='1'}-->
+								<input class="input-b" type="text" value="<!--{$volist.optionvalue}-->" name="<!--{$volist.optionname}-->" />
+								
+								<!--{elseif $volist.htmltype=='3'}-->
+								<textarea name="<!--{$volist.optionname}-->" style="width:60%;height:80px;"><!--{$volist.optionvalue}--></textarea>
+								
+								<!--{/if}-->
+								<span class="oe_trap"><label></label><em> <!--{$volist.desc}--></em></span>
+							</td>
+						<!--{if ($i%2)!=0}--></tr><tr><!--{/if}-->
+						<!--{/foreach}-->
+						</tr>
+					</table>
+					<h1>4.<!--{$level.3}-->配置</h1>
+              	<!--{assign var='options' vo_list("  fun={get_all} mod={options}  array={flag:0,identify:20,orders:4}}")}-->
+					<table class="oe_table_warp">
+				
+					<tr>
+						<!--{foreach $options as $volist}-->
+						
+							<th width="5%"><!--{$volist.name}-->：<span class="oe_lable_gray">(标识: <!--{$volist.optionname}-->)</span></th>
+							<td width="35%">
+								<!--{if $volist.htmltype=='1'}-->
+								<input class="input-b" type="text" value="<!--{$volist.optionvalue}-->" name="<!--{$volist.optionname}-->" />
+								
+								<!--{elseif $volist.htmltype=='3'}-->
+								<textarea name="<!--{$volist.optionname}-->" style="width:60%;height:80px;"><!--{$volist.optionvalue}--></textarea>
+								
+								<!--{/if}-->
+								<span class="oe_trap"><label></label><em> <!--{$volist.desc}--></em></span>
+							</td>
+						<!--{if ($i%2)!=0}--></tr><tr><!--{/if}-->
+						<!--{/foreach}-->
+						</tr>
+					</table>
+					<h1>5.<!--{$level.4}-->配置</h1>
+              	<!--{assign var='options' vo_list("  fun={get_all} mod={options}  array={flag:0,identify:20,orders:5}}")}-->
+					<table class="oe_table_warp">
+				
+					<tr>
+						<!--{foreach $options as $volist}-->
+						
+							<th width="5%"><!--{$volist.name}-->：<span class="oe_lable_gray">(标识: <!--{$volist.optionname}-->)</span></th>
+							<td width="35%">
+								<!--{if $volist.htmltype=='1'}-->
+								<input class="input-b" type="text" value="<!--{$volist.optionvalue}-->" name="<!--{$volist.optionname}-->" />
+								
+								<!--{elseif $volist.htmltype=='3'}-->
+								<textarea name="<!--{$volist.optionname}-->" style="width:60%;height:80px;"><!--{$volist.optionvalue}--></textarea>
+								
+								<!--{/if}-->
+								<span class="oe_trap"><label></label><em> <!--{$volist.desc}--></em></span>
+							</td>
+						<!--{if ($i%2)!=0}--></tr><tr><!--{/if}-->
+						<!--{/foreach}-->
+						</tr>
+					</table>
+					<h1>6.<!--{$level.5}-->配置</h1>
+              	<!--{assign var='options' vo_list("  fun={get_all} mod={options}  array={flag:0,identify:20,orders:6}}")}-->
+					<table class="oe_table_warp">
+				
+					<tr>
+						<!--{foreach $options as $volist}-->
+						
+							<th width="5%"><!--{$volist.name}-->：<span class="oe_lable_gray">(标识: <!--{$volist.optionname}-->)</span></th>
+							<td width="35%">
+								<!--{if $volist.htmltype=='1'}-->
+								<input class="input-b" type="text" value="<!--{$volist.optionvalue}-->" name="<!--{$volist.optionname}-->" />
+								
+								<!--{elseif $volist.htmltype=='3'}-->
+								<textarea name="<!--{$volist.optionname}-->" style="width:60%;height:80px;"><!--{$volist.optionvalue}--></textarea>
+								
+								<!--{/if}-->
+								<span class="oe_trap"><label></label><em> <!--{$volist.desc}--></em></span>
+							</td>
+						<!--{if ($i%2)!=0}--></tr><tr><!--{/if}-->
+						<!--{/foreach}-->
+						</tr>
+					</table>
+					<h1>7.<!--{$level.6}-->配置</h1>
+              	<!--{assign var='options' vo_list("  fun={get_all} mod={options}  array={flag:0,identify:20,orders:7}}")}-->
+					<table class="oe_table_warp">
+				
+					<tr>
+						<!--{foreach $options as $volist}-->
+						
+							<th width="5%"><!--{$volist.name}-->：<span class="oe_lable_gray">(标识: <!--{$volist.optionname}-->)</span></th>
+							<td width="35%">
+								<!--{if $volist.htmltype=='1'}-->
+								<input class="input-b" type="text" value="<!--{$volist.optionvalue}-->" name="<!--{$volist.optionname}-->" />
+								
+								<!--{elseif $volist.htmltype=='3'}-->
+								<textarea name="<!--{$volist.optionname}-->" style="width:60%;height:80px;"><!--{$volist.optionvalue}--></textarea>
+								
+								<!--{/if}-->
+								<span class="oe_trap"><label></label><em> <!--{$volist.desc}--></em></span>
+							</td>
+						<!--{if ($i%2)!=0}--></tr><tr><!--{/if}-->
+						<!--{/foreach}-->
+						</tr>
+					</table>
+					<div class="oe_button_layout">
+						<input type="button" class="button_2" value="提交保存" tag="submit_uncheck" /> 
+						<span id="submit_tips" class="error"></span>
+					</div>
+				</form>
+			</div>
+		</div>
+    
+	</body>
+</html>
