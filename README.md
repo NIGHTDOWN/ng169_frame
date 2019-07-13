@@ -1,22 +1,67 @@
-交友后台
-命令行指令
 
-Git全球设置
-git config --global user.name“管理员”
-git config --global user.email“admin@zogheng.com”
+	本服务为快速dns server ，专为开发。
+  window（推荐使用集成环境快速部署） liunx都可安装
 
-创建一个新的存储库
-git clone git@3.15.90.203：root / test.git
-cd测试
-触摸README.md
-git add README.md
-git commit -m“add README”
-git push -u origin master
 
-现有文件夹或Git存储库
-cd existing_folder
-git init
-git remote add origin git@3.15.90.203：root / test.git
-git add。
-git commit
-git push -u origin master
+
+	相信大家都有一个烦恼（开发的时候需要绑定域名，每次都要修改host，对方也要修改host才能访问你的服务。然而对方可能是个小白，啥也不会，也可能对方客户端是手机端，修改host超级麻烦“要root或者越狱”，另外网上的dns服务搭建也是超级麻烦，一堆命令敲下去，小白瞬间懵逼了有没有，然后好不容易安装好了又是各种错误，说明正向解析，反向解析，总之一个字，超级烦）
+
+
+
+	所以呢本工程师决定为大家做个福利工具 dns server
+
+
+
+	优势：(如果各位大佬觉得好用的话可以打赏下)
+
+
+
+	避免了重复修改host，一次修改兼容所有配置了此dns的客户端
+
+
+
+	（
+
+
+
+	1、可以修改pc端的 dns 或者手机设置里面的ip，配置成对应的本服务服务器ip即可，（这个对小白来说可能比较复杂）
+
+
+
+	2、直接改路由器里面dhcp配置把dns 改成 本服务服务器ip 
+
+
+
+	）
+
+
+
+	本服务器可以架设在本地也可以直接架设在公网服务器；公网的用户只要解析到本服务器；所有你配置的域名都会按照你的解析生效。开发也方便了。
+
+
+
+	本服务依赖：mysql php（） webserver（apache 或者nginx，不装也可以；通过直接修改/hosts）
+
+
+
+	访问 域名/index.php管理后台
+
+
+
+	后台账号：admin
+
+
+
+	后台密码：admin
+
+
+
+	安装：/install.php
+
+
+
+	服务开启：执行命令 php dns.php（开启防火墙端口 udp 53）
+
+
+
+	本程序官网：霓光网络
