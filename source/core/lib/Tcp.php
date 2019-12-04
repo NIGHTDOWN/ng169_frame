@@ -6,7 +6,7 @@ use ng169\Y;
 use ng169\lib\Log as YLog;
 use ng169\lib\Socket;
 use ng169\lib\Job;
-use ng169\lib\Socket;
+
 /*use ng169\cache\Rediscache ;*/
 use ng169\lib\SocketCache ;
 checktop();
@@ -140,7 +140,7 @@ class Tcp extends Socket{
 			$buffer .= $content;
 			}*/
 		}
-		$buffer = stream_socket_recvfrom($socket,  $this->recvlength, 0);
+		$buffer = stream_socket_recvfrom($socket,  self::$recvlength, 0);
 	
 		$bytes=strlen($buffer);		
 		if($bytes < 9){

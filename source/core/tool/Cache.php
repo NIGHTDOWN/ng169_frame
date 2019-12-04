@@ -4,7 +4,7 @@ namespace ng169\tool;
 checktop();
 
 
-}
+
 class Cache
 {
     #数据库适配器
