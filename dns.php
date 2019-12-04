@@ -9,26 +9,12 @@ header('Access-Control-Allow-Origin:*');
 header('Access-Control-Allow-Methods:POST'); 
 // 响应头设置 
 header('Access-Control-Allow-Headers:x-requested-with,content-type');*/
-
-
-
-
-
-
-
-
-
-
 define('ROOT',dirname(__FILE__).'/');
 #相对URL路径
-
 if(!defined('PATH_URL'))define('PATH_URL','/');
-
 require_once ROOT.'source/core/enter.php';
 use \ng169\lib;
 use \ng169\tool\File;
-
-
 /*$server = 'udp://0.0.0.0:53'; 
 //消息结束符号 
 $msg_eof = "\n"; 
@@ -74,13 +60,8 @@ if(isset($lists[4])){
 		$dns[$row[0]]=$lists[1][$i][0];	
 	}
 }
-
 \ng169\sock\system\udp::$dnslist=$dns;
-			
-			
 			//load hosts
-		
-		
 $ip=isset($_SERVER['SERVER_ADDR'])?$_SERVER['SERVER_ADDR']:$ipx;
 $ip=$ip=='127.0.0.1'?$ipx:$ip;
 	\ng169\lib\Socket::$call=['\ng169\sock\system\udp','init_udp'];	
