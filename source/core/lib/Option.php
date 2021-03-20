@@ -55,12 +55,17 @@ class Option extends Y
         $conffile = $F->getPathname();
         $name     = pathinfo($conffile,PATHINFO_BASENAME );
         $names    = explode('.',$name);
+        
         if ($names[1] == 'inc') {
           $conf = include($conffile);
           self::$config[$names[0]] = $conf;
         }
         else {
-          im($conffile);
+        	
+        	if ($names[sizeof($names)-1] == 'php') {
+        		im($conffile);
+        	}
+          
         }
 
       }
